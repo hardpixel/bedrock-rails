@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir['{lib/**/*,[A-Z]*}']
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
+  spec.require_paths = ['lib', 'assets']
 
   spec.add_dependency 'sass', '~> 3.4'
   spec.add_development_dependency 'bundler', '~> 1.14'
