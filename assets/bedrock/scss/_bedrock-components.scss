@@ -1,0 +1,15 @@
+@import 'components/global';
+@import 'components/helper-classes';
+@import 'components/header';
+@import 'components/panel';
+@import 'components/logo-bar';
+@import 'components/off-canvas-menu';
+@import 'components/tiny-mce-editor';
+
+@include bedrock-global-styles;
+@include bedrock-prototype-classes;
+@include bedrock-header;
+@include bedrock-panel;
+@include bedrock-logo-bar;
+@include bedrock-off-canvas-menu;
+@include bedrock-tiny-mce-editor;
