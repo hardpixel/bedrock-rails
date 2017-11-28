@@ -12,10 +12,10 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Adds Bedrock Admin HTML framework, based on Zurb Foundation 6, into assets path.}
   spec.homepage      = 'https://github.com/hardpixel/bedrock-sass'
   spec.license       = 'MIT'
-  spec.files         = Dir['{lib/**/*,[A-Z]*}']
+  spec.files         = Dir['{lib/**/*,[A-Z]*}', '{assets/**/*,[A-Z]*}']
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib', 'assets']
+  spec.require_paths = ['lib']
 
   spec.add_dependency 'sass', '~> 3.4'
   spec.add_development_dependency 'bundler', '~> 1.14'
