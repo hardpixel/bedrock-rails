@@ -35,6 +35,10 @@ module BedrockSass
       @motion_ui_path ||= File.join(vendor_path, 'motion-ui')
     end
 
+    def tinymce_path
+      @tinymce_path ||= File.join(vendor_path, 'tinymce')
+    end
+
     private
 
       def configure_sass
@@ -46,6 +50,7 @@ module BedrockSass
       end
 
       def register_sprockets
+        Sprockets.append_path(tinymce_path)
         Sprockets.append_path(motion_ui_path)
         Sprockets.append_path(foundation_path)
         Sprockets.append_path(stylesheets_path)
