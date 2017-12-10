@@ -27655,7 +27655,7 @@ var TinyMceEditor = function (_Plugin) {
   return TinyMceEditor;
 }(_foundation.Plugin);
 
-TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote', 'alignleft aligncenter alignright alignjustify', 'outdent indent', 'link unlink', 'formatselect', 'charmap', 'removeformat pastetext', 'undo redo', 'fullscreen'];
+TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote', 'alignleft aligncenter alignright alignjustify', 'outdent indent', 'link unlink', 'formatselect', 'removeformat pastetext', 'fullscreen'];
 
 TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'table', 'wordcount', 'fullscreen'];
 
