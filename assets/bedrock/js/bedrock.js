@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 49);
+/******/ 	return __webpack_require__(__webpack_require__.s = 50);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15758,9 +15758,9 @@ var _whatInput = __webpack_require__(38);
 
 var _whatInput2 = _interopRequireDefault(_whatInput);
 
-__webpack_require__(48);
+__webpack_require__(49);
 
-__webpack_require__(47);
+__webpack_require__(48);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25760,6 +25760,243 @@ exports.DropzoneUpload = DropzoneUpload;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.InlineEditBox = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _foundation = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * InlineEditBox module.
+ * @module inlineEditBox
+ */
+
+var InlineEditBox = function (_Plugin) {
+  _inherits(InlineEditBox, _Plugin);
+
+  function InlineEditBox() {
+    _classCallCheck(this, InlineEditBox);
+
+    return _possibleConstructorReturn(this, (InlineEditBox.__proto__ || Object.getPrototypeOf(InlineEditBox)).apply(this, arguments));
+  }
+
+  _createClass(InlineEditBox, [{
+    key: '_setup',
+
+    /**
+     * Creates a new instance of an inline-edit-box.
+     * @class
+     * @name InlineEditBox
+     * @fires InlineEditBox#init
+     * @param {Object} element - jQuery object to initialize.
+     * @param {Object} options - Overrides to the default plugin settings.
+     */
+    value: function _setup(element, options) {
+      this.className = 'InlineEditBox'; // ie9 back compat
+      this.$element = element;
+      this.options = _jquery2.default.extend({}, InlineEditBox.defaults, this.$element.data(), options);
+
+      this._init();
+    }
+
+    /**
+     * Initializes the inline-edit-box wrapper.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_init',
+    value: function _init() {
+      this.$input = this.$element.find(':input');
+      this.$preview = this.$element.find('[data-preview]');
+
+      this._events();
+    }
+
+    /**
+     * Adds event handlers to the inline-edit-box.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_events',
+    value: function _events() {
+      this.$element.off('click', '[data-edit]').on({
+        'click': this._handleClick.bind(this)
+      }, '[data-edit]');
+
+      this.$element.off('click', '[data-save]').on({
+        'click': this._handleClick.bind(this)
+      }, '[data-save]');
+
+      this.$element.off('keydown', ':input').on({
+        'keydown': this._handleKey.bind(this)
+      }, ':input');
+
+      this.$element.off('.zf.trigger').on({
+        'edit.zf.trigger': this.edit.bind(this),
+        'save.zf.trigger': this.save.bind(this),
+        'toggle.zf.trigger': this.toggle.bind(this)
+      });
+    }
+
+    /**
+     * Updates preview element.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_updatePreview',
+    value: function _updatePreview() {
+      var pattern = this.$preview.attr('data-value') || '[val]';
+      var placeholder = this.$preview.attr('data-placeholder');
+      var value = this.$input.val();
+      var result = pattern.replace('[val]', value);
+
+      if (value) {
+        this.$preview.text(result);
+
+        if (this.$preview.is('a')) {
+          this.$preview.attr('href', result);
+        }
+      } else {
+        this.$preview.text(placeholder);
+
+        if (this.$preview.is('a')) {
+          this.$preview.removeAttr('href');
+        }
+      }
+    }
+
+    /**
+     * Handles click events on items.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_handleClick',
+    value: function _handleClick(event) {
+      var target = (0, _jquery2.default)(event.currentTarget);
+
+      if (target.is('[data-edit]')) {
+        this.$element.trigger('edit.zf.trigger');
+      }
+
+      if (target.is('[data-save]')) {
+        this.$element.trigger('save.zf.trigger');
+      }
+    }
+
+    /**
+     * Handles key events on inputs.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_handleKey',
+    value: function _handleKey(event) {
+      if (event.keyCode == 13) {
+        event.preventDefault();
+        this.$element.trigger('save.zf.trigger');
+
+        return false;
+      }
+    }
+
+    /**
+     * Shows inline edit input
+     * @param {Object} event - Event object passed from listener.
+     * @private
+     */
+
+  }, {
+    key: 'edit',
+    value: function edit(event) {
+      this.$element.addClass('is-editing');
+      this.$input.trigger('focus');
+      this._updatePreview();
+    }
+
+    /**
+     * Hides inline edit input
+     * @param {Object} event - Event object passed from listener.
+     * @private
+     */
+
+  }, {
+    key: 'save',
+    value: function save(event) {
+      this.$element.removeClass('is-editing');
+      this._updatePreview();
+    }
+
+    /**
+     * Toggles inline edit input
+     * @param {Object} event - Event object passed from listener.
+     * @private
+     */
+
+  }, {
+    key: 'toggle',
+    value: function toggle(event) {
+      if (this.$element.hasClass('is-editing')) {
+        this.$element.trigger('save.zf.trigger');
+      } else {
+        this.$element.trigger('edit.zf.trigger');
+      }
+    }
+
+    /**
+     * Destroys the inline-edit-box plugin.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_destroy',
+    value: function _destroy() {
+      this.$element.removeClass('is-editing');
+      this.$element.off('click', '[data-edit]');
+      this.$element.off('click', '[data-save]');
+      this.$element.off('keydown', ':input');
+      this.$element.off('.zf.trigger');
+    }
+  }]);
+
+  return InlineEditBox;
+}(_foundation.Plugin);
+
+InlineEditBox.defaults = {};
+
+exports.InlineEditBox = InlineEditBox;
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.ListRemove = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25917,7 +26154,7 @@ ListRemove.defaults = {};
 exports.ListRemove = ListRemove;
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26185,7 +26422,7 @@ ListSelect.defaults = {};
 exports.ListSelect = ListSelect;
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26422,7 +26659,7 @@ MediaAttach.defaults = {};
 exports.MediaAttach = MediaAttach;
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26719,7 +26956,7 @@ MediaReveal.defaults = {};
 exports.MediaReveal = MediaReveal;
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26997,7 +27234,7 @@ OffCanvasMenu.defaults = {};
 exports.OffCanvasMenu = OffCanvasMenu;
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27318,7 +27555,7 @@ TableCheckbox.defaults = {};
 exports.TableCheckbox = TableCheckbox;
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27432,27 +27669,29 @@ TinyMceEditor.defaults = {
 exports.TinyMceEditor = TinyMceEditor;
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _offcanvasMenu = __webpack_require__(44);
+var _offcanvasMenu = __webpack_require__(45);
 
-var _tinyMceEditor = __webpack_require__(46);
+var _tinyMceEditor = __webpack_require__(47);
 
-var _tableCheckbox = __webpack_require__(45);
+var _tableCheckbox = __webpack_require__(46);
 
-var _listSelect = __webpack_require__(41);
+var _listSelect = __webpack_require__(42);
 
-var _listRemove = __webpack_require__(40);
+var _listRemove = __webpack_require__(41);
 
-var _mediaReveal = __webpack_require__(43);
+var _mediaReveal = __webpack_require__(44);
 
-var _mediaAttach = __webpack_require__(42);
+var _mediaAttach = __webpack_require__(43);
 
 var _dropzoneUpload = __webpack_require__(39);
+
+var _inlineEditBox = __webpack_require__(40);
 
 Foundation.plugin(_offcanvasMenu.OffCanvasMenu, 'OffCanvasMenu');
 Foundation.plugin(_tinyMceEditor.TinyMceEditor, 'TinyMceEditor');
@@ -27462,9 +27701,10 @@ Foundation.plugin(_listRemove.ListRemove, 'ListRemove');
 Foundation.plugin(_mediaReveal.MediaReveal, 'MediaReveal');
 Foundation.plugin(_mediaAttach.MediaAttach, 'MediaAttach');
 Foundation.plugin(_dropzoneUpload.DropzoneUpload, 'DropzoneUpload');
+Foundation.plugin(_inlineEditBox.InlineEditBox, 'InlineEditBox');
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27610,7 +27850,7 @@ _foundation.Foundation.plugin(_foundation22.ResponsiveAccordionTabs, 'Responsive
 module.exports = _foundation.Foundation;
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(22);
