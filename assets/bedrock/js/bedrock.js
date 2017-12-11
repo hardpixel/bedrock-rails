@@ -27662,6 +27662,7 @@ TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'tab
 TinyMceEditor.defaults = {
   menubar: false,
   branding: false,
+  entity_encoding: 'raw',
   plugins: TinyMceEditor.plugins.join(' '),
   toolbar: TinyMceEditor.toolbar.join(' | ')
 };
