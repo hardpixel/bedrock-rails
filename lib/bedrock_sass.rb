@@ -1,3 +1,4 @@
+require 'bedrock_sass/engine'
 require 'bedrock_sass/version'
 
 module BedrockSass
