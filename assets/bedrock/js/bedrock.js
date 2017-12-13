@@ -32680,6 +32680,10 @@ var SelectBox = function (_Plugin) {
       this.$element = element;
       this.options = _jquery2.default.extend({}, SelectBox.defaults, this.$element.data(), options);
 
+      if (this.options.list) {
+        this.options['theme'] = 'list';
+      }
+
       this._init();
     }
 
@@ -32692,13 +32696,14 @@ var SelectBox = function (_Plugin) {
   }, {
     key: '_init',
     value: function _init() {
-      var options = {};
+      this.$element.select2(this.options);
 
-      if (this.options.list) {
-        options['theme'] = 'list';
-      }
+      this.select2 = this.$element.data('select2');
+      this.$container = this.select2.$container;
+      this.$dropdown = this.select2.$dropdown;
 
-      this.$element.select2(options);
+      this._events();
+      this._keepPlaceholder();
     }
 
     /**
@@ -32709,7 +32714,108 @@ var SelectBox = function (_Plugin) {
 
   }, {
     key: '_events',
-    value: function _events() {}
+    value: function _events() {
+      this.$element.off(['select2:select', 'select2:unselect', 'select2:open']).on({
+        'select2:open': this._handleEvent.bind(this),
+        'select2:select': this._handleEvent.bind(this),
+        'select2:unselect': this._handleEvent.bind(this)
+      });
+
+      this.$element.off('.zf.trigger').on({
+        'open.zf.trigger': this.open.bind(this),
+        'select.zf.trigger': this.select.bind(this),
+        'unselect.zf.trigger': this.unselect.bind(this)
+      });
+    }
+
+    /**
+     * Keeps placeholder on search field.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_keepPlaceholder',
+    value: function _keepPlaceholder() {
+      var search = this.$container.find('.select2-search__field');
+
+      if (search.length && this.options.list) {
+        search.attr('placeholder', this.options.placeholder);
+      }
+    }
+
+    /**
+     * Updates position on dropdown.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_updatePosition',
+    value: function _updatePosition() {
+      var search = this.$container.find('.select2-search__field');
+      var dropdown = this.$dropdown.find('.select2-dropdown');
+
+      if (search.length && this.options.list) {
+        if (dropdown.hasClass('select2-dropdown--above')) {
+          var position = this.$container.innerHeight() - search.outerHeight();
+          dropdown.css('margin-top', position);
+        } else {
+          dropdown.css('margin-top', false);
+        }
+      }
+    }
+
+    /**
+     * Handles events on element.
+     * @param {Object} event - Event object passed from listener.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_handleEvent',
+    value: function _handleEvent(event) {
+      this.$element.trigger(event.type.replace('select2:', ''));
+      this._keepPlaceholder();
+    }
+
+    /**
+     * Opens the select dropdown.
+     * @param {Object} event - Event object passed from listener.
+     * @function
+     */
+
+  }, {
+    key: 'open',
+    value: function open(event) {
+      this._updatePosition();
+      this.$element.trigger('open.zf.select.box');
+    }
+
+    /**
+     * Selects a list item.
+     * @param {Object} event - Event object passed from listener.
+     * @function
+     */
+
+  }, {
+    key: 'select',
+    value: function select(event) {
+      this.$element.trigger('changed.zf.select.box');
+    }
+
+    /**
+     * Unselects a list item.
+     * @param {Object} event - Event object passed from listener.
+     * @function
+     */
+
+  }, {
+    key: 'unselect',
+    value: function unselect(event) {
+      this.$element.trigger('changed.zf.select.box');
+    }
 
     /**
      * Destroys the select-box plugin.
@@ -32719,7 +32825,11 @@ var SelectBox = function (_Plugin) {
 
   }, {
     key: '_destroy',
-    value: function _destroy() {}
+    value: function _destroy() {
+      this.$element.select2('destroy');
+      this.$element.off(['select2:select', 'select2:unselect', 'select2:open']);
+      this.$element.off('.zf.trigger');
+    }
   }]);
 
   return SelectBox;
