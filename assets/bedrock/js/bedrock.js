@@ -31082,6 +31082,7 @@ var DropzoneUpload = function (_Plugin) {
   }, {
     key: '_init',
     value: function _init() {
+      this._handleEvents();
       this.dropzone = new _dropzone2.default('#' + this.id, this.options);
     }
 
@@ -31116,6 +31117,31 @@ var DropzoneUpload = function (_Plugin) {
   }, {
     key: '_events',
     value: function _events() {}
+
+    /**
+     * Handles events from the dropzone.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_handleEvents',
+    value: function _handleEvents() {
+      this.options.queuecomplete = function () {
+        this.$element.trigger('queuecomplete.zf.dropzone.upload');
+      }.bind(this);
+    }
+
+    /**
+     * Removes all uploaded items.
+     * @function
+     */
+
+  }, {
+    key: 'clear',
+    value: function clear() {
+      this.dropzone.removeAllFiles();
+    }
 
     /**
      * Destroys the dropzone-upload plugin.
@@ -32101,6 +32127,7 @@ var MediaReveal = function (_Plugin) {
     value: function _setup(element, options) {
       this.className = 'MediaReveal'; // ie9 back compat
       this.$element = element;
+      this.$dropzone = this.$element.find('[data-dropzone-upload]');
       this.id = this.$element.attr('id');
       this.options = _jquery2.default.extend({}, MediaReveal.defaults, this.$element.data(), options);
       this.template = (0, _jquery2.default)('#' + this.id + '-item-template').html();
@@ -32152,6 +32179,10 @@ var MediaReveal = function (_Plugin) {
 
       this.$insert.off('click').on({
         'click': this.insert.bind(this)
+      });
+
+      this.$dropzone.off('.zf.dropzone.upload').on({
+        'queuecomplete.zf.dropzone.upload': this._uploadComplete.bind(this)
       });
     }
 
@@ -32224,6 +32255,25 @@ var MediaReveal = function (_Plugin) {
       }.bind(this));
 
       this.$grid.append(this.items);
+    }
+
+    /**
+     * Switches ui elements when uploads are completed.
+     * @param {Object} event - Event object passed from listener.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_uploadComplete',
+    value: function _uploadComplete(event) {
+      var tabs = this.$element.find('[data-tabs]');
+      var tab = this.$grid.parents('.tabs-panel:first');
+
+      tabs.foundation('selectTab', tab);
+
+      this.open();
+      this.$dropzone.foundation('clear');
     }
 
     /**
@@ -32330,6 +32380,7 @@ var MediaReveal = function (_Plugin) {
       this.$element.off('.zf.reveal');
       this.$grid.off('changed.zf.select.list');
       this.$insert.off('click');
+      this.$dropzone.off('.zf.dropzone.upload');
     }
   }]);
 
