@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ 	return __webpack_require__(__webpack_require__.s = 53);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15758,9 +15758,9 @@ var _whatInput = __webpack_require__(39);
 
 var _whatInput2 = _interopRequireDefault(_whatInput);
 
-__webpack_require__(51);
+__webpack_require__(52);
 
-__webpack_require__(50);
+__webpack_require__(51);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31171,6 +31171,139 @@ exports.DropzoneUpload = DropzoneUpload;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.FileInput = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _foundation = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * FileInput module.
+ * @module fileInput
+ */
+
+var FileInput = function (_Plugin) {
+  _inherits(FileInput, _Plugin);
+
+  function FileInput() {
+    _classCallCheck(this, FileInput);
+
+    return _possibleConstructorReturn(this, (FileInput.__proto__ || Object.getPrototypeOf(FileInput)).apply(this, arguments));
+  }
+
+  _createClass(FileInput, [{
+    key: '_setup',
+
+    /**
+     * Creates a new instance of an file-input.
+     * @class
+     * @name FileInput
+     * @fires FileInput#init
+     * @param {Object} element - jQuery object to initialize.
+     * @param {Object} options - Overrides to the default plugin settings.
+     */
+    value: function _setup(element, options) {
+      this.className = 'FileInput'; // ie9 back compat
+      this.$element = element;
+      this.options = _jquery2.default.extend({}, FileInput.defaults, this.$element.data(), options);
+
+      this._init();
+    }
+
+    /**
+     * Initializes the file-input wrapper.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_init',
+    value: function _init() {
+      this.id = this.$element.attr('id');
+      this.template = (0, _jquery2.default)('#' + this.id + '-preview-template').html();
+      this.$item = (0, _jquery2.default)(this.template);
+      this.$preview = (0, _jquery2.default)(this.options.previewsContainer);
+      this.$empty = this.$element.find('.dz-message');
+      this.$input = this.$element.find('input[type="file"]');
+
+      this._events();
+    }
+
+    /**
+     * Adds event handlers to the file-input.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_events',
+    value: function _events() {
+      var input = this.$input.get(0);
+
+      this.$input.on('change', function (event) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            var preview = this.$item.clone();
+            preview.find('[dz-thumbnail]').attr('src', e.target.result);
+
+            this.$empty.hide();
+            this.$preview.html(preview);
+          }.bind(this);
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }.bind(this));
+
+      this.$element.on('click', '[dz-remove]', function (event) {
+        event.preventDefault();
+
+        this.$empty.show();
+        this.$preview.html('');
+      }.bind(this));
+    }
+
+    /**
+     * Destroys the file-input plugin.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_destroy',
+    value: function _destroy() {}
+  }]);
+
+  return FileInput;
+}(_foundation.Plugin);
+
+FileInput.defaults = {};
+
+exports.FileInput = FileInput;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.InlineEditBox = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -31399,7 +31532,7 @@ InlineEditBox.defaults = {};
 exports.InlineEditBox = InlineEditBox;
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31565,7 +31698,7 @@ ListRemove.defaults = {};
 exports.ListRemove = ListRemove;
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31833,7 +31966,7 @@ ListSelect.defaults = {};
 exports.ListSelect = ListSelect;
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32070,7 +32203,7 @@ MediaAttach.defaults = {};
 exports.MediaAttach = MediaAttach;
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32400,7 +32533,7 @@ MediaReveal.defaults = {};
 exports.MediaReveal = MediaReveal;
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32678,7 +32811,7 @@ OffCanvasMenu.defaults = {};
 exports.OffCanvasMenu = OffCanvasMenu;
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32899,7 +33032,7 @@ SelectBox.defaults = {};
 exports.SelectBox = SelectBox;
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33220,7 +33353,7 @@ TableCheckbox.defaults = {};
 exports.TableCheckbox = TableCheckbox;
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33362,31 +33495,33 @@ TinyMceEditor.defaults = {
 exports.TinyMceEditor = TinyMceEditor;
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _offcanvasMenu = __webpack_require__(46);
+var _offcanvasMenu = __webpack_require__(47);
 
-var _tinyMceEditor = __webpack_require__(49);
+var _tinyMceEditor = __webpack_require__(50);
 
-var _tableCheckbox = __webpack_require__(48);
+var _tableCheckbox = __webpack_require__(49);
 
-var _listSelect = __webpack_require__(43);
+var _listSelect = __webpack_require__(44);
 
-var _listRemove = __webpack_require__(42);
+var _listRemove = __webpack_require__(43);
 
-var _mediaReveal = __webpack_require__(45);
+var _mediaReveal = __webpack_require__(46);
 
-var _mediaAttach = __webpack_require__(44);
+var _mediaAttach = __webpack_require__(45);
 
 var _dropzoneUpload = __webpack_require__(40);
 
-var _inlineEditBox = __webpack_require__(41);
+var _inlineEditBox = __webpack_require__(42);
 
-var _selectBox = __webpack_require__(47);
+var _selectBox = __webpack_require__(48);
+
+var _fileInput = __webpack_require__(41);
 
 Foundation.plugin(_offcanvasMenu.OffCanvasMenu, 'OffCanvasMenu');
 Foundation.plugin(_tinyMceEditor.TinyMceEditor, 'TinyMceEditor');
@@ -33398,9 +33533,10 @@ Foundation.plugin(_mediaAttach.MediaAttach, 'MediaAttach');
 Foundation.plugin(_dropzoneUpload.DropzoneUpload, 'DropzoneUpload');
 Foundation.plugin(_inlineEditBox.InlineEditBox, 'InlineEditBox');
 Foundation.plugin(_selectBox.SelectBox, 'SelectBox');
+Foundation.plugin(_fileInput.FileInput, 'FileInput');
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33546,7 +33682,7 @@ _foundation.Foundation.plugin(_foundation22.ResponsiveAccordionTabs, 'Responsive
 module.exports = _foundation.Foundation;
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(22);
