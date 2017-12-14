@@ -32128,23 +32128,12 @@ var MediaReveal = function (_Plugin) {
       this.className = 'MediaReveal'; // ie9 back compat
       this.$element = element;
       this.$dropzone = this.$element.find('[data-dropzone-upload]');
-      this.id = this.$element.attr('id');
       this.options = _jquery2.default.extend({}, MediaReveal.defaults, this.$element.data(), options);
-      this.template = (0, _jquery2.default)('#' + this.id + '-item-template').html();
+      this.reveal = new Foundation.Reveal(element, this.options);
       this.items = [];
       this.selectedItems = [];
-      this.reveal = new Foundation.Reveal(element, this.options);
-      this.mediaUrl = this.options.mediaUrl;
-      this.mediaKey = this.options.mediaKey;
-      this.$insert = this.$element.find('[data-insert]');
-      this.$grid = this.$element.find('[data-list-select]');
-      this.$item = (0, _jquery2.default)(this.template);
-      this.imageKey = this.$item.find('[data-src]').attr('data-src');
-      this.imageUrl = this.$item.find('[data-url]').attr('data-url') || '[src]';
-      this.titleKey = this.$item.find('[data-text]').attr('data-text');
 
       this._init();
-      this._events();
     }
 
     /**
@@ -32156,7 +32145,21 @@ var MediaReveal = function (_Plugin) {
   }, {
     key: '_init',
     value: function _init() {
+      this.id = this.$element.attr('id');
+      this.template = (0, _jquery2.default)('#' + this.id + '-item-template').html();
+      this.mediaUrl = this.options.mediaUrl;
+      this.mediaKey = this.options.mediaKey;
+      this.uniqueKey = this.options.uniqueKey || 'id';
+      this.$insert = this.$element.find('[data-insert]');
+      this.$grid = this.$element.find('[data-list-select]');
+      this.$item = (0, _jquery2.default)(this.template);
+      this.imageKey = this.$item.find('[data-src]').attr('data-src');
+      this.imageUrl = this.$item.find('[data-url]').attr('data-url') || '[src]';
+      this.titleKey = this.$item.find('[data-text]').attr('data-text');
+
       this.$insert.addClass('disabled');
+
+      this._events();
     }
 
     /**
@@ -32229,12 +32232,14 @@ var MediaReveal = function (_Plugin) {
     key: '_buildItem',
     value: function _buildItem(data) {
       var item = this.$item.clone();
+      var key = this._getObjectValue(data, this.uniqueKey);
       var url = this._getObjectValue(data, this.imageKey);
       var title = this._getObjectValue(data, this.titleKey);
 
       item.find('[data-src]').attr('src', this.imageUrl.replace('[src]', url));
       item.find('[data-text]').text(title);
       item.data('imageObject', data);
+      item.data('uniqueKey', key);
 
       return item;
     }
@@ -32271,8 +32276,11 @@ var MediaReveal = function (_Plugin) {
       var tab = this.$grid.parents('.tabs-panel:first');
 
       tabs.foundation('selectTab', tab);
+      this.$grid.empty();
 
-      this.open();
+      this.items = [];
+      this._getItems();
+
       this.$dropzone.foundation('clear');
     }
 
