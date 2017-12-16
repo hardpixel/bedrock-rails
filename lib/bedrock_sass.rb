@@ -40,12 +40,17 @@ module BedrockSass
       @tinymce_path ||= File.join(vendor_path, 'tinymce')
     end
 
+    def yoastseo_path
+      @yoastseo_path ||= File.join(vendor_path, 'yoastseo', 'css')
+    end
+
     private
 
       def configure_sass
         require 'sass'
 
         ::Sass.load_paths << motion_ui_path
+        ::Sass.load_paths << yoastseo_path
         ::Sass.load_paths << foundation_path
         ::Sass.load_paths << stylesheets_path
       end
