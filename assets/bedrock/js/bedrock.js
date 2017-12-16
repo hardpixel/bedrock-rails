@@ -68108,7 +68108,12 @@ var MediaAttach = function (_Plugin) {
         items.push(item);
       }.bind(this));
 
-      this.$grid.append(items);
+      if (this.multiple) {
+        this.$grid.append(items);
+      } else {
+        this.$grid.html(items);
+      }
+
       this._updateActiveItems();
     }
 
@@ -68932,6 +68937,11 @@ var SelectBox = function (_Plugin) {
     value: function _handleEvent(event) {
       this.$element.trigger(event.type.replace('select2:', ''));
       this._keepPlaceholder();
+
+      if (this.options.list) {
+        var item = this.$container.find('.select2-selection__choice__remove');
+        item.text('').addClass(this.options.removeIcon);
+      }
     }
 
     /**
@@ -68989,7 +68999,9 @@ var SelectBox = function (_Plugin) {
   return SelectBox;
 }(_foundation.Plugin);
 
-SelectBox.defaults = {};
+SelectBox.defaults = {
+  removeIcon: 'mdi mdi-close'
+};
 
 exports.SelectBox = SelectBox;
 
@@ -69124,7 +69136,6 @@ var SeoAnalysis = function (_Plugin) {
   }, {
     key: '_setPreviewIcons',
     value: function _setPreviewIcons() {
-      var icons = _jquery2.default.extend({}, this.$preview.data());
       var items = {
         'iconDesktop': '.snippet-editor__view-icon-desktop',
         'iconMobile': '.snippet-editor__view-icon-mobile',
@@ -69132,7 +69143,7 @@ var SeoAnalysis = function (_Plugin) {
       };
 
       _jquery2.default.each(items, function (index, value) {
-        this.$preview.find(value).html('<i class="' + icons[index] + '"></i>');
+        this.$preview.find(value).html('<i class="' + this.options[index] + '"></i>');
       }.bind(this));
     }
 
@@ -69190,7 +69201,11 @@ var SeoAnalysis = function (_Plugin) {
   return SeoAnalysis;
 }(_foundation.Plugin);
 
-SeoAnalysis.defaults = {};
+SeoAnalysis.defaults = {
+  iconDesktop: 'mdi mdi-desktop-mac',
+  iconMobile: 'mdi mdi-cellphone',
+  iconEdit: 'mdi mdi-pencil'
+};
 
 exports.SeoAnalysis = SeoAnalysis;
 
