@@ -69081,14 +69081,28 @@ var SeoAnalysis = function (_Plugin) {
       this.id = this.$element.attr('id');
       this.$preview = this.$element.find('[data-seo-preview]');
       this.$output = this.$element.find('[data-seo-output]');
-      this.$keywordField = this.$element.find('[data-seo-keyword]');
-      this.$contentField = (0, _jquery2.default)('#' + this.options.content);
-      this.outputId = this.id + '-output';
 
+      this.$titleField = (0, _jquery2.default)('#' + this.options.title);
+      this.$metaField = (0, _jquery2.default)('#' + this.options.meta);
+      this.$slugField = (0, _jquery2.default)('#' + this.options.slug);
+
+      this.$keywordField = this.$element.find('[data-seo-keyword]');
+      this.$textField = (0, _jquery2.default)('#' + this.options.text);
+
+      this.defaultValues = {
+        title: this.$titleField.val() || this.$titleField.attr('data-default'),
+        metaDesc: this.$metaField.val() || this.$metaField.attr('data-default'),
+        urlPath: this.$slugField.val() || this.$slugField.attr('data-default')
+      };
+
+      this.outputId = this.id + '-output';
       this.$output.attr('id', this.outputId);
 
       this.seoPreview = new SeoPreview({
-        targetElement: this.$preview.get(0)
+        baseURL: this.options.baseUrl + '/',
+        targetElement: this.$preview.get(0),
+        addTrailingSlash: false,
+        data: this.defaultValues
       });
 
       this.seoApp = new SeoApp({
@@ -69100,6 +69114,14 @@ var SeoAnalysis = function (_Plugin) {
           getData: this._dataCallback.bind(this)
         }
       });
+
+      this.$titleFieldProxy = (0, _jquery2.default)('#snippet-editor-title');
+      this.$metaFieldProxy = (0, _jquery2.default)('#snippet-editor-meta-description');
+      this.$slugFieldProxy = (0, _jquery2.default)('#snippet-editor-slug');
+
+      this.$titleFieldProxy.val(this.defaultValues['title']);
+      this.$metaFieldProxy.val(this.defaultValues['metaDesc']);
+      this.$slugFieldProxy.val(this.defaultValues['urlPath']);
 
       this.seoApp.refresh();
 
@@ -69122,9 +69144,39 @@ var SeoAnalysis = function (_Plugin) {
         'change': this.seoApp.refresh.bind(this.seoApp)
       });
 
-      this.$contentField.off('change').on({
+      this.$textField.off('change').on({
         'change': this.seoApp.refresh.bind(this.seoApp)
       });
+
+      this.$titleField.on('input', function (event) {
+        this.$titleFieldProxy.val(this.$titleField.val());
+        this.seoApp.refresh();
+      }.bind(this));
+
+      this.$slugField.on('input', function (event) {
+        this.$slugFieldProxy.val(this.$slugField.val());
+        this.seoApp.refresh();
+      }.bind(this));
+
+      this.$metaField.on('input', function (event) {
+        this.$metaFieldProxy.val(this.$metaField.val());
+        this.seoApp.refresh();
+      }.bind(this));
+
+      this.$titleFieldProxy.on('input', function (event) {
+        this.$titleField.val(this.$titleFieldProxy.val());
+        this.seoApp.refresh();
+      }.bind(this));
+
+      this.$slugFieldProxy.on('input', function (event) {
+        this.$slugField.val(this.$slugFieldProxy.val());
+        this.seoApp.refresh();
+      }.bind(this));
+
+      this.$metaFieldProxy.on('input', function (event) {
+        this.$metaField.val(this.$metaFieldProxy.val());
+        this.seoApp.refresh();
+      }.bind(this));
     }
 
     /**
@@ -69172,12 +69224,9 @@ var SeoAnalysis = function (_Plugin) {
   }, {
     key: '_dataCallback',
     value: function _dataCallback() {
-      var keyword = this.$keywordField.val();
-      var content = this.$contentField.val();
-
       return {
-        keyword: keyword,
-        text: content
+        keyword: this.$keywordField.val(),
+        text: this.$textField.val()
       };
     }
 
@@ -69194,7 +69243,7 @@ var SeoAnalysis = function (_Plugin) {
       this.$output.html('');
 
       this.$keywordField.off('change');
-      this.$contentField.off('change');
+      this.$textField.off('change');
     }
   }]);
 
@@ -69202,6 +69251,7 @@ var SeoAnalysis = function (_Plugin) {
 }(_foundation.Plugin);
 
 SeoAnalysis.defaults = {
+  baseUrl: 'example.com',
   iconDesktop: 'mdi mdi-desktop-mac',
   iconMobile: 'mdi mdi-cellphone',
   iconEdit: 'mdi mdi-pencil'
