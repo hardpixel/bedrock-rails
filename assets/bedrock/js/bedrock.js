@@ -67329,6 +67329,7 @@ var InlineEditBox = function (_Plugin) {
       this.$input = this.$element.find(':input');
       this.$preview = this.$element.find('[data-preview]');
 
+      this._updatePreview();
       this._events();
     }
 
@@ -67354,6 +67355,7 @@ var InlineEditBox = function (_Plugin) {
       }, ':input');
 
       this.$element.off('.zf.trigger').on({
+        'update.zf.trigger': this._updatePreview.bind(this),
         'edit.zf.trigger': this.edit.bind(this),
         'save.zf.trigger': this.save.bind(this),
         'toggle.zf.trigger': this.toggle.bind(this)
@@ -68863,6 +68865,7 @@ var SelectBox = function (_Plugin) {
 
       this._events();
       this._keepPlaceholder();
+      this._setIcons();
     }
 
     /**
@@ -68904,6 +68907,21 @@ var SelectBox = function (_Plugin) {
     }
 
     /**
+     * Sets custom icons on multi select boxes.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_setIcons',
+    value: function _setIcons() {
+      if (this.options.list) {
+        var item = this.$container.find('.select2-selection__choice__remove');
+        item.text('').addClass(this.options.removeIcon);
+      }
+    }
+
+    /**
      * Updates position on dropdown.
      * @function
      * @private
@@ -68937,11 +68955,7 @@ var SelectBox = function (_Plugin) {
     value: function _handleEvent(event) {
       this.$element.trigger(event.type.replace('select2:', ''));
       this._keepPlaceholder();
-
-      if (this.options.list) {
-        var item = this.$container.find('.select2-selection__choice__remove');
-        item.text('').addClass(this.options.removeIcon);
-      }
+      this._setIcons();
     }
 
     /**
@@ -69171,7 +69185,7 @@ var SeoAnalysis = function (_Plugin) {
       }.bind(this));
 
       this.$slugFieldProxy.on('input', function (event) {
-        this.$slugField.val(this.$slugFieldProxy.val());
+        this.$slugField.val(this.$slugFieldProxy.val()).trigger('update.zf.trigger');
         this.seoApp.refresh();
       }.bind(this));
 
@@ -69673,6 +69687,10 @@ var TinyMceEditor = function (_Plugin) {
       this.$element = element;
       this.options = _jquery2.default.extend({}, TinyMceEditor.defaults, this.$element.data(), options);
       this.editor = null;
+      this.mediaHandler = this.options.mediaHandler;
+      this.mediaSrc = this.options.mediaSrc;
+      this.mediaAlt = this.options.mediaAlt;
+      this.mediaUrl = this.options.mediaUrl;
 
       this._init();
     }
@@ -69698,6 +69716,20 @@ var TinyMceEditor = function (_Plugin) {
       } else {
         console.log('TinyMCE is not available! Please download and install TinyMCE.');
       }
+    }
+
+    /**
+     * Gets value from object by dot notation.
+     * @param {Object} obj - Object to get the key value from.
+     * @param {String} path - Dot notated path to the key.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_getObjectValue',
+    value: function _getObjectValue(obj, path) {
+      return new Function('_', 'return _.' + path)(obj);
     }
 
     /**
@@ -69735,6 +69767,51 @@ var TinyMceEditor = function (_Plugin) {
         tinymce.triggerSave();
         this.$element.trigger('change');
       }.bind(this));
+
+      if (this.mediaHandler) {
+        editor.addButton('image', {
+          icon: 'image',
+          onclick: this._mediaButtonCallback.bind(this)
+        });
+      }
+    }
+
+    /**
+     * Custom media button click callback.
+     * @param {Object} event - Event passed from handler.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_mediaButtonCallback',
+    value: function _mediaButtonCallback(event) {
+      this.$reveal = (0, _jquery2.default)('#' + this.mediaHandler);
+      this.$reveal.foundation('open');
+
+      this.$reveal.off('insert.zf.media.reveal').on({
+        'insert.zf.media.reveal': this._mediaAttach.bind(this)
+      });
+    }
+
+    /**
+     * Inserts media in the editor.
+     * @param {Object} event - Event object passed from listener.
+     * @param {Array} data - Collection of image data objects to build items from.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_mediaAttach',
+    value: function _mediaAttach(event, data) {
+      _jquery2.default.each(data, function (index, data) {
+        var url = this._getObjectValue(data, this.mediaSrc);
+        var alt = this._getObjectValue(data, this.mediaAlt);
+        var item = '<img src="' + this.mediaUrl.replace('[src]', url) + '" alt="' + alt + '" />';
+
+        this.editor.insertContent(item);
+      }.bind(this));
     }
 
     /**
@@ -69758,9 +69835,11 @@ var TinyMceEditor = function (_Plugin) {
   return TinyMceEditor;
 }(_foundation.Plugin);
 
-TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote', 'alignleft aligncenter alignright alignjustify', 'outdent indent', 'link unlink', 'formatselect', 'removeformat pastetext', 'fullscreen'];
+TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote', 'image media', 'alignleft aligncenter alignright alignjustify', 'outdent indent', 'link unlink', 'formatselect', 'removeformat pastetext', 'fullscreen'];
 
-TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'table', 'wordcount', 'fullscreen'];
+TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'table', 'wordcount',
+// 'image',
+'media', 'fullscreen'];
 
 TinyMceEditor.defaults = {
   menubar: false,
@@ -69768,7 +69847,7 @@ TinyMceEditor.defaults = {
   entity_encoding: 'raw',
   max_height: 800,
   min_height: 300,
-  autoresize_bottom_margin: 0,
+  autoresize_bottom_margin: 20,
   autoresize_max_height: 800,
   autoresize_min_height: 300,
   plugins: TinyMceEditor.plugins.join(' '),
