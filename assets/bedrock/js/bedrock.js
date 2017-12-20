@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 572);
+/******/ 	return __webpack_require__(__webpack_require__.s = 573);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9996,7 +9996,7 @@ exports.Plugin = Plugin;
 
 
 var isUndefined = __webpack_require__(7);
-var isNumber = __webpack_require__(118);
+var isNumber = __webpack_require__(119);
 /**
  * A function that only returns an empty that can be used as an empty marker
  *
@@ -10433,7 +10433,7 @@ module.exports = isObject;
 "use strict";
 
 
-var arrayFilter = __webpack_require__(96),
+var arrayFilter = __webpack_require__(97),
     baseFilter = __webpack_require__(157),
     baseIteratee = __webpack_require__(23),
     isArray = __webpack_require__(6);
@@ -10743,7 +10743,7 @@ exports.MediaQuery = MediaQuery;
 /** @module stringProcessing/stripHTMLTags */
 
 var stripSpaces = __webpack_require__(12);
-var blockElements = __webpack_require__(126).blockElements;
+var blockElements = __webpack_require__(127).blockElements;
 var blockElementStartRegex = new RegExp("^<(" + blockElements.join("|") + ")[^>]*?>", "i");
 var blockElementEndRegex = new RegExp("</(" + blockElements.join("|") + ")[^>]*?>$", "i");
 /**
@@ -11026,7 +11026,7 @@ module.exports = root;
 "use strict";
 
 
-var toString = __webpack_require__(121);
+var toString = __webpack_require__(122);
 
 /**
  * Used to match `RegExp`
@@ -11065,7 +11065,7 @@ module.exports = escapeRegExp;
 
 
 var baseKeys = __webpack_require__(162),
-    getTag = __webpack_require__(110),
+    getTag = __webpack_require__(111),
     isArguments = __webpack_require__(54),
     isArray = __webpack_require__(6),
     isArrayLike = __webpack_require__(24),
@@ -11147,8 +11147,8 @@ module.exports = isEmpty;
 "use strict";
 
 
-var baseMerge = __webpack_require__(105),
-    createAssigner = __webpack_require__(107);
+var baseMerge = __webpack_require__(106),
+    createAssigner = __webpack_require__(108);
 
 /**
  * This method is like `_.assign` except that it recursively merges own and
@@ -12215,7 +12215,7 @@ module.exports = baseIteratee;
 
 
 var isFunction = __webpack_require__(82),
-    isLength = __webpack_require__(117);
+    isLength = __webpack_require__(118);
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -12399,7 +12399,7 @@ var isEmpty = __webpack_require__(16);
 var negate = __webpack_require__(189);
 var memoize = __webpack_require__(47);
 var core = __webpack_require__(198);
-var getBlocks = __webpack_require__(126).getBlocks;
+var getBlocks = __webpack_require__(127).getBlocks;
 var normalizeQuotes = __webpack_require__(88).normalize;
 var unifyWhitespace = __webpack_require__(252).unifyNonBreakingSpace;
 // All characters that indicate a sentence delimiter.
@@ -12840,9 +12840,9 @@ module.exports = getNative;
 "use strict";
 
 
-var baseIndexOf = __webpack_require__(104),
+var baseIndexOf = __webpack_require__(105),
     isArrayLike = __webpack_require__(24),
-    isString = __webpack_require__(119),
+    isString = __webpack_require__(120),
     toInteger = __webpack_require__(84),
     values = __webpack_require__(193);
 
@@ -12992,7 +12992,7 @@ util.inherits = __webpack_require__(18);
 /*</replacement>*/
 
 var Readable = __webpack_require__(194);
-var Writable = __webpack_require__(123);
+var Writable = __webpack_require__(124);
 
 util.inherits(Duplex, Readable);
 
@@ -13180,7 +13180,7 @@ module.exports = function (text) {
 
 var stripSomeTags = __webpack_require__(249);
 var unifyWhitespace = __webpack_require__(252).unifyAllSpaces;
-var matchStringWithTransliteration = __webpack_require__(134);
+var matchStringWithTransliteration = __webpack_require__(135);
 /**
  * Returns the number of matches in a given string
  *
@@ -13206,7 +13206,7 @@ module.exports = function (text, wordToMatch, locale, extraBoundary) {
 "use strict";
 
 
-var defaults = __webpack_require__(113);
+var defaults = __webpack_require__(114);
 /**
  * Represents a marked piece of text
  *
@@ -13295,8 +13295,8 @@ module.exports = baseRest;
 "use strict";
 
 
-var assignValue = __webpack_require__(101),
-    baseAssignValue = __webpack_require__(102);
+var assignValue = __webpack_require__(102),
+    baseAssignValue = __webpack_require__(103);
 
 /**
  * Copies properties of `source` to `object`.
@@ -13415,7 +13415,7 @@ module.exports = identity;
 "use strict";
 
 
-var MapCache = __webpack_require__(94);
+var MapCache = __webpack_require__(95);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -14148,7 +14148,7 @@ process.umask = function () {
 "use strict";
 
 
-var Researcher = __webpack_require__(129);
+var Researcher = __webpack_require__(130);
 var MissingArgument = __webpack_require__(87);
 var removeDuplicateMarks = __webpack_require__(468);
 var AssessmentResult = __webpack_require__(2);
@@ -14159,7 +14159,7 @@ var forEach = __webpack_require__(3);
 var filter = __webpack_require__(9);
 var map = __webpack_require__(5);
 var findIndex = __webpack_require__(182);
-var find = __webpack_require__(115);
+var find = __webpack_require__(116);
 var ScoreRating = 9;
 /**
  * Creates the Assessor.
@@ -15217,7 +15217,7 @@ module.exports = ListCache;
 "use strict";
 
 
-var MapCache = __webpack_require__(94),
+var MapCache = __webpack_require__(95),
     setCacheAdd = __webpack_require__(394),
     setCacheHas = __webpack_require__(395);
 
@@ -15316,7 +15316,7 @@ module.exports = assocIndexOf;
 "use strict";
 
 
-var arrayPush = __webpack_require__(99),
+var arrayPush = __webpack_require__(100),
     isFlattenable = __webpack_require__(376);
 
 /**
@@ -15406,9 +15406,9 @@ module.exports = cacheHas;
 
 
 var isArray = __webpack_require__(6),
-    isKey = __webpack_require__(111),
+    isKey = __webpack_require__(112),
     stringToPath = __webpack_require__(403),
-    toString = __webpack_require__(121);
+    toString = __webpack_require__(122);
 
 /**
  * Casts `value` to a path array if it's not one.
@@ -18562,6 +18562,656 @@ exports.DropdownMenu = DropdownMenu;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Reveal = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _foundationUtil = __webpack_require__(13);
+
+var _foundationUtil2 = __webpack_require__(10);
+
+var _foundationUtil3 = __webpack_require__(31);
+
+var _foundation = __webpack_require__(1);
+
+var _foundationUtil4 = __webpack_require__(22);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Reveal module.
+ * @module foundation.reveal
+ * @requires foundation.util.keyboard
+ * @requires foundation.util.triggers
+ * @requires foundation.util.mediaQuery
+ * @requires foundation.util.motion if using animations
+ */
+
+var Reveal = function (_Plugin) {
+  _inherits(Reveal, _Plugin);
+
+  function Reveal() {
+    _classCallCheck(this, Reveal);
+
+    return _possibleConstructorReturn(this, (Reveal.__proto__ || Object.getPrototypeOf(Reveal)).apply(this, arguments));
+  }
+
+  _createClass(Reveal, [{
+    key: '_setup',
+
+    /**
+     * Creates a new instance of Reveal.
+     * @class
+     * @name Reveal
+     * @param {jQuery} element - jQuery object to use for the modal.
+     * @param {Object} options - optional parameters.
+     */
+    value: function _setup(element, options) {
+      this.$element = element;
+      this.options = _jquery2.default.extend({}, Reveal.defaults, this.$element.data(), options);
+      this.className = 'Reveal'; // ie9 back compat
+      this._init();
+
+      // Triggers init is idempotent, just need to make sure it is initialized
+      _foundationUtil4.Triggers.init(_jquery2.default);
+
+      _foundationUtil.Keyboard.register('Reveal', {
+        'ESCAPE': 'close'
+      });
+    }
+
+    /**
+     * Initializes the modal by adding the overlay and close buttons, (if selected).
+     * @private
+     */
+
+  }, {
+    key: '_init',
+    value: function _init() {
+      _foundationUtil2.MediaQuery._init();
+      this.id = this.$element.attr('id');
+      this.isActive = false;
+      this.cached = { mq: _foundationUtil2.MediaQuery.current };
+      this.isMobile = mobileSniff();
+
+      this.$anchor = (0, _jquery2.default)('[data-open="' + this.id + '"]').length ? (0, _jquery2.default)('[data-open="' + this.id + '"]') : (0, _jquery2.default)('[data-toggle="' + this.id + '"]');
+      this.$anchor.attr({
+        'aria-controls': this.id,
+        'aria-haspopup': true,
+        'tabindex': 0
+      });
+
+      if (this.options.fullScreen || this.$element.hasClass('full')) {
+        this.options.fullScreen = true;
+        this.options.overlay = false;
+      }
+      if (this.options.overlay && !this.$overlay) {
+        this.$overlay = this._makeOverlay(this.id);
+      }
+
+      this.$element.attr({
+        'role': 'dialog',
+        'aria-hidden': true,
+        'data-yeti-box': this.id,
+        'data-resize': this.id
+      });
+
+      if (this.$overlay) {
+        this.$element.detach().appendTo(this.$overlay);
+      } else {
+        this.$element.detach().appendTo((0, _jquery2.default)(this.options.appendTo));
+        this.$element.addClass('without-overlay');
+      }
+      this._events();
+      if (this.options.deepLink && window.location.hash === '#' + this.id) {
+        (0, _jquery2.default)(window).one('load.zf.reveal', this.open.bind(this));
+      }
+    }
+
+    /**
+     * Creates an overlay div to display behind the modal.
+     * @private
+     */
+
+  }, {
+    key: '_makeOverlay',
+    value: function _makeOverlay() {
+      var additionalOverlayClasses = '';
+
+      if (this.options.additionalOverlayClasses) {
+        additionalOverlayClasses = ' ' + this.options.additionalOverlayClasses;
+      }
+
+      return (0, _jquery2.default)('<div></div>').addClass('reveal-overlay' + additionalOverlayClasses).appendTo(this.options.appendTo);
+    }
+
+    /**
+     * Updates position of modal
+     * TODO:  Figure out if we actually need to cache these values or if it doesn't matter
+     * @private
+     */
+
+  }, {
+    key: '_updatePosition',
+    value: function _updatePosition() {
+      var width = this.$element.outerWidth();
+      var outerWidth = (0, _jquery2.default)(window).width();
+      var height = this.$element.outerHeight();
+      var outerHeight = (0, _jquery2.default)(window).height();
+      var left, top;
+      if (this.options.hOffset === 'auto') {
+        left = parseInt((outerWidth - width) / 2, 10);
+      } else {
+        left = parseInt(this.options.hOffset, 10);
+      }
+      if (this.options.vOffset === 'auto') {
+        if (height > outerHeight) {
+          top = parseInt(Math.min(100, outerHeight / 10), 10);
+        } else {
+          top = parseInt((outerHeight - height) / 4, 10);
+        }
+      } else {
+        top = parseInt(this.options.vOffset, 10);
+      }
+      this.$element.css({ top: top + 'px' });
+      // only worry about left if we don't have an overlay or we havea  horizontal offset,
+      // otherwise we're perfectly in the middle
+      if (!this.$overlay || this.options.hOffset !== 'auto') {
+        this.$element.css({ left: left + 'px' });
+        this.$element.css({ margin: '0px' });
+      }
+    }
+
+    /**
+     * Adds event handlers for the modal.
+     * @private
+     */
+
+  }, {
+    key: '_events',
+    value: function _events() {
+      var _this3 = this;
+
+      var _this = this;
+
+      this.$element.on({
+        'open.zf.trigger': this.open.bind(this),
+        'close.zf.trigger': function closeZfTrigger(event, $element) {
+          if (event.target === _this.$element[0] || (0, _jquery2.default)(event.target).parents('[data-closable]')[0] === $element) {
+            // only close reveal when it's explicitly called
+            return _this3.close.apply(_this3);
+          }
+        },
+        'toggle.zf.trigger': this.toggle.bind(this),
+        'resizeme.zf.trigger': function resizemeZfTrigger() {
+          _this._updatePosition();
+        }
+      });
+
+      if (this.options.closeOnClick && this.options.overlay) {
+        this.$overlay.off('.zf.reveal').on('click.zf.reveal', function (e) {
+          if (e.target === _this.$element[0] || _jquery2.default.contains(_this.$element[0], e.target) || !_jquery2.default.contains(document, e.target)) {
+            return;
+          }
+          _this.close();
+        });
+      }
+      if (this.options.deepLink) {
+        (0, _jquery2.default)(window).on('popstate.zf.reveal:' + this.id, this._handleState.bind(this));
+      }
+    }
+
+    /**
+     * Handles modal methods on back/forward button clicks or any other event that triggers popstate.
+     * @private
+     */
+
+  }, {
+    key: '_handleState',
+    value: function _handleState(e) {
+      if (window.location.hash === '#' + this.id && !this.isActive) {
+        this.open();
+      } else {
+        this.close();
+      }
+    }
+
+    /**
+     * Opens the modal controlled by `this.$anchor`, and closes all others by default.
+     * @function
+     * @fires Reveal#closeme
+     * @fires Reveal#open
+     */
+
+  }, {
+    key: 'open',
+    value: function open() {
+      var _this4 = this;
+
+      // either update or replace browser history
+      if (this.options.deepLink) {
+        var hash = '#' + this.id;
+
+        if (window.history.pushState) {
+          if (this.options.updateHistory) {
+            window.history.pushState({}, '', hash);
+          } else {
+            window.history.replaceState({}, '', hash);
+          }
+        } else {
+          window.location.hash = hash;
+        }
+      }
+
+      this.isActive = true;
+
+      // Make elements invisible, but remove display: none so we can get size and positioning
+      this.$element.css({ 'visibility': 'hidden' }).show().scrollTop(0);
+      if (this.options.overlay) {
+        this.$overlay.css({ 'visibility': 'hidden' }).show();
+      }
+
+      this._updatePosition();
+
+      this.$element.hide().css({ 'visibility': '' });
+
+      if (this.$overlay) {
+        this.$overlay.css({ 'visibility': '' }).hide();
+        if (this.$element.hasClass('fast')) {
+          this.$overlay.addClass('fast');
+        } else if (this.$element.hasClass('slow')) {
+          this.$overlay.addClass('slow');
+        }
+      }
+
+      if (!this.options.multipleOpened) {
+        /**
+         * Fires immediately before the modal opens.
+         * Closes any other modals that are currently open
+         * @event Reveal#closeme
+         */
+        this.$element.trigger('closeme.zf.reveal', this.id);
+      }
+
+      var _this = this;
+
+      function addRevealOpenClasses() {
+        if (_this.isMobile) {
+          if (!_this.originalScrollPos) {
+            _this.originalScrollPos = window.pageYOffset;
+          }
+          (0, _jquery2.default)('html, body').addClass('is-reveal-open');
+        } else {
+          (0, _jquery2.default)('body').addClass('is-reveal-open');
+        }
+      }
+      // Motion UI method of reveal
+      if (this.options.animationIn) {
+        var afterAnimation = function afterAnimation() {
+          _this.$element.attr({
+            'aria-hidden': false,
+            'tabindex': -1
+          }).focus();
+          addRevealOpenClasses();
+          _foundationUtil.Keyboard.trapFocus(_this.$element);
+        };
+
+        if (this.options.overlay) {
+          _foundationUtil3.Motion.animateIn(this.$overlay, 'fade-in');
+        }
+        _foundationUtil3.Motion.animateIn(this.$element, this.options.animationIn, function () {
+          if (_this4.$element) {
+            // protect against object having been removed
+            _this4.focusableElements = _foundationUtil.Keyboard.findFocusable(_this4.$element);
+            afterAnimation();
+          }
+        });
+      }
+      // jQuery method of reveal
+      else {
+          if (this.options.overlay) {
+            this.$overlay.show(0);
+          }
+          this.$element.show(this.options.showDelay);
+        }
+
+      // handle accessibility
+      this.$element.attr({
+        'aria-hidden': false,
+        'tabindex': -1
+      }).focus();
+      _foundationUtil.Keyboard.trapFocus(this.$element);
+
+      addRevealOpenClasses();
+
+      this._extraHandlers();
+
+      /**
+       * Fires when the modal has successfully opened.
+       * @event Reveal#open
+       */
+      this.$element.trigger('open.zf.reveal');
+    }
+
+    /**
+     * Adds extra event handlers for the body and window if necessary.
+     * @private
+     */
+
+  }, {
+    key: '_extraHandlers',
+    value: function _extraHandlers() {
+      var _this = this;
+      if (!this.$element) {
+        return;
+      } // If we're in the middle of cleanup, don't freak out
+      this.focusableElements = _foundationUtil.Keyboard.findFocusable(this.$element);
+
+      if (!this.options.overlay && this.options.closeOnClick && !this.options.fullScreen) {
+        (0, _jquery2.default)('body').on('click.zf.reveal', function (e) {
+          if (e.target === _this.$element[0] || _jquery2.default.contains(_this.$element[0], e.target) || !_jquery2.default.contains(document, e.target)) {
+            return;
+          }
+          _this.close();
+        });
+      }
+
+      if (this.options.closeOnEsc) {
+        (0, _jquery2.default)(window).on('keydown.zf.reveal', function (e) {
+          _foundationUtil.Keyboard.handleKey(e, 'Reveal', {
+            close: function close() {
+              if (_this.options.closeOnEsc) {
+                _this.close();
+              }
+            }
+          });
+        });
+      }
+    }
+
+    /**
+     * Closes the modal.
+     * @function
+     * @fires Reveal#closed
+     */
+
+  }, {
+    key: 'close',
+    value: function close() {
+      if (!this.isActive || !this.$element.is(':visible')) {
+        return false;
+      }
+      var _this = this;
+
+      // Motion UI method of hiding
+      if (this.options.animationOut) {
+        if (this.options.overlay) {
+          _foundationUtil3.Motion.animateOut(this.$overlay, 'fade-out');
+        }
+
+        _foundationUtil3.Motion.animateOut(this.$element, this.options.animationOut, finishUp);
+      }
+      // jQuery method of hiding
+      else {
+          this.$element.hide(this.options.hideDelay);
+
+          if (this.options.overlay) {
+            this.$overlay.hide(0, finishUp);
+          } else {
+            finishUp();
+          }
+        }
+
+      // Conditionals to remove extra event listeners added on open
+      if (this.options.closeOnEsc) {
+        (0, _jquery2.default)(window).off('keydown.zf.reveal');
+      }
+
+      if (!this.options.overlay && this.options.closeOnClick) {
+        (0, _jquery2.default)('body').off('click.zf.reveal');
+      }
+
+      this.$element.off('keydown.zf.reveal');
+
+      function finishUp() {
+        if (_this.isMobile) {
+          if ((0, _jquery2.default)('.reveal:visible').length === 0) {
+            (0, _jquery2.default)('html, body').removeClass('is-reveal-open');
+          }
+          if (_this.originalScrollPos) {
+            (0, _jquery2.default)('body').scrollTop(_this.originalScrollPos);
+            _this.originalScrollPos = null;
+          }
+        } else {
+          if ((0, _jquery2.default)('.reveal:visible').length === 0) {
+            (0, _jquery2.default)('body').removeClass('is-reveal-open');
+          }
+        }
+
+        _foundationUtil.Keyboard.releaseFocus(_this.$element);
+
+        _this.$element.attr('aria-hidden', true);
+
+        /**
+        * Fires when the modal is done closing.
+        * @event Reveal#closed
+        */
+        _this.$element.trigger('closed.zf.reveal');
+      }
+
+      /**
+      * Resets the modal content
+      * This prevents a running video to keep going in the background
+      */
+      if (this.options.resetOnClose) {
+        this.$element.html(this.$element.html());
+      }
+
+      this.isActive = false;
+      if (_this.options.deepLink) {
+        if (window.history.replaceState) {
+          window.history.replaceState('', document.title, window.location.href.replace('#' + this.id, ''));
+        } else {
+          window.location.hash = '';
+        }
+      }
+
+      this.$anchor.focus();
+    }
+
+    /**
+     * Toggles the open/closed state of a modal.
+     * @function
+     */
+
+  }, {
+    key: 'toggle',
+    value: function toggle() {
+      if (this.isActive) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+  }, {
+    key: '_destroy',
+
+
+    /**
+     * Destroys an instance of a modal.
+     * @function
+     */
+    value: function _destroy() {
+      if (this.options.overlay) {
+        this.$element.appendTo((0, _jquery2.default)(this.options.appendTo)); // move $element outside of $overlay to prevent error unregisterPlugin()
+        this.$overlay.hide().off().remove();
+      }
+      this.$element.hide().off();
+      this.$anchor.off('.zf');
+      (0, _jquery2.default)(window).off('.zf.reveal:' + this.id);
+    }
+  }]);
+
+  return Reveal;
+}(_foundation.Plugin);
+
+Reveal.defaults = {
+  /**
+   * Motion-UI class to use for animated elements. If none used, defaults to simple show/hide.
+   * @option
+   * @type {string}
+   * @default ''
+   */
+  animationIn: '',
+  /**
+   * Motion-UI class to use for animated elements. If none used, defaults to simple show/hide.
+   * @option
+   * @type {string}
+   * @default ''
+   */
+  animationOut: '',
+  /**
+   * Time, in ms, to delay the opening of a modal after a click if no animation used.
+   * @option
+   * @type {number}
+   * @default 0
+   */
+  showDelay: 0,
+  /**
+   * Time, in ms, to delay the closing of a modal after a click if no animation used.
+   * @option
+   * @type {number}
+   * @default 0
+   */
+  hideDelay: 0,
+  /**
+   * Allows a click on the body/overlay to close the modal.
+   * @option
+   * @type {boolean}
+   * @default true
+   */
+  closeOnClick: true,
+  /**
+   * Allows the modal to close if the user presses the `ESCAPE` key.
+   * @option
+   * @type {boolean}
+   * @default true
+   */
+  closeOnEsc: true,
+  /**
+   * If true, allows multiple modals to be displayed at once.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  multipleOpened: false,
+  /**
+   * Distance, in pixels, the modal should push down from the top of the screen.
+   * @option
+   * @type {number|string}
+   * @default auto
+   */
+  vOffset: 'auto',
+  /**
+   * Distance, in pixels, the modal should push in from the side of the screen.
+   * @option
+   * @type {number|string}
+   * @default auto
+   */
+  hOffset: 'auto',
+  /**
+   * Allows the modal to be fullscreen, completely blocking out the rest of the view. JS checks for this as well.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  fullScreen: false,
+  /**
+   * Percentage of screen height the modal should push up from the bottom of the view.
+   * @option
+   * @type {number}
+   * @default 10
+   */
+  btmOffsetPct: 10,
+  /**
+   * Allows the modal to generate an overlay div, which will cover the view when modal opens.
+   * @option
+   * @type {boolean}
+   * @default true
+   */
+  overlay: true,
+  /**
+   * Allows the modal to remove and reinject markup on close. Should be true if using video elements w/o using provider's api, otherwise, videos will continue to play in the background.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  resetOnClose: false,
+  /**
+   * Allows the modal to alter the url on open/close, and allows the use of the `back` button to close modals. ALSO, allows a modal to auto-maniacally open on page load IF the hash === the modal's user-set id.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  deepLink: false,
+  /**
+   * Update the browser history with the open modal
+   * @option
+   * @default false
+   */
+  updateHistory: false,
+  /**
+  * Allows the modal to append to custom div.
+  * @option
+  * @type {string}
+  * @default "body"
+  */
+  appendTo: "body",
+  /**
+   * Allows adding additional class names to the reveal overlay.
+   * @option
+   * @type {string}
+   * @default ''
+   */
+  additionalOverlayClasses: ''
+};
+
+function iPhoneSniff() {
+  return (/iP(ad|hone|od).*OS/.test(window.navigator.userAgent)
+  );
+}
+
+function androidSniff() {
+  return (/Android/.test(window.navigator.userAgent)
+  );
+}
+
+function mobileSniff() {
+  return iPhoneSniff() || androidSniff();
+}
+
+exports.Reveal = Reveal;
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.Touch = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //**************************************************
@@ -18729,7 +19379,7 @@ Touch.init = function ($) {
 exports.Touch = Touch;
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18744,7 +19394,7 @@ var Map = getNative(root, 'Map');
 module.exports = Map;
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18784,7 +19434,7 @@ MapCache.prototype.set = mapCacheSet;
 module.exports = MapCache;
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18817,7 +19467,7 @@ function apply(func, thisArg, args) {
 module.exports = apply;
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18850,13 +19500,13 @@ function arrayFilter(array, predicate) {
 module.exports = arrayFilter;
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var baseIndexOf = __webpack_require__(104);
+var baseIndexOf = __webpack_require__(105);
 
 /**
  * A specialized version of `_.includes` for arrays without support for
@@ -18875,7 +19525,7 @@ function arrayIncludes(array, value) {
 module.exports = arrayIncludes;
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18905,7 +19555,7 @@ function arrayIncludesWith(array, value, comparator) {
 module.exports = arrayIncludesWith;
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18933,7 +19583,7 @@ function arrayPush(array, values) {
 module.exports = arrayPush;
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18967,13 +19617,13 @@ function arrayReduce(array, iteratee, accumulator, initAccum) {
 module.exports = arrayReduce;
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var baseAssignValue = __webpack_require__(102),
+var baseAssignValue = __webpack_require__(103),
     eq = __webpack_require__(45);
 
 /** Used for built-in method references. */
@@ -19002,7 +19652,7 @@ function assignValue(object, key, value) {
 module.exports = assignValue;
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19035,7 +19685,7 @@ function baseAssignValue(object, key, value) {
 module.exports = baseAssignValue;
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19067,7 +19717,7 @@ function baseGet(object, path) {
 module.exports = baseGet;
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19093,7 +19743,7 @@ function baseIndexOf(array, value, fromIndex) {
 module.exports = baseIndexOf;
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19139,7 +19789,7 @@ function baseMerge(object, source, srcIndex, customizer, stack) {
 module.exports = baseMerge;
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19163,7 +19813,7 @@ function cloneArrayBuffer(arrayBuffer) {
 module.exports = cloneArrayBuffer;
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19206,7 +19856,7 @@ function createAssigner(assigner) {
 module.exports = createAssigner;
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19220,13 +19870,13 @@ var getPrototype = overArg(Object.getPrototypeOf, Object);
 module.exports = getPrototype;
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var arrayFilter = __webpack_require__(96),
+var arrayFilter = __webpack_require__(97),
     stubArray = __webpack_require__(190);
 
 /** Used for built-in method references. */
@@ -19258,14 +19908,14 @@ var getSymbols = !nativeGetSymbols ? stubArray : function (object) {
 module.exports = getSymbols;
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var DataView = __webpack_require__(297),
-    Map = __webpack_require__(93),
+    Map = __webpack_require__(94),
     Promise = __webpack_require__(299),
     Set = __webpack_require__(152),
     WeakMap = __webpack_require__(300),
@@ -19325,7 +19975,7 @@ if (DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag || Map &
 module.exports = getTag;
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19362,7 +20012,7 @@ function isKey(value, object) {
 module.exports = isKey;
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19370,7 +20020,7 @@ module.exports = isKey;
 
 var isObject = __webpack_require__(8),
     now = __webpack_require__(415),
-    toNumber = __webpack_require__(120);
+    toNumber = __webpack_require__(121);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -19557,13 +20207,13 @@ function debounce(func, wait, options) {
 module.exports = debounce;
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var apply = __webpack_require__(95),
+var apply = __webpack_require__(96),
     assignInWith = __webpack_require__(404),
     baseRest = __webpack_require__(43),
     customDefaultsAssignIn = __webpack_require__(359);
@@ -19597,13 +20247,13 @@ var defaults = baseRest(function (args) {
 module.exports = defaults;
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var apply = __webpack_require__(95),
+var apply = __webpack_require__(96),
     baseRest = __webpack_require__(43),
     customDefaultsMerge = __webpack_require__(360),
     mergeWith = __webpack_require__(413);
@@ -19635,7 +20285,7 @@ var defaultsDeep = baseRest(function (args) {
 module.exports = defaultsDeep;
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19685,7 +20335,7 @@ var find = createFind(findIndex);
 module.exports = find;
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19726,7 +20376,7 @@ function isArrayLikeObject(value) {
 module.exports = isArrayLikeObject;
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19768,7 +20418,7 @@ function isLength(value) {
 module.exports = isLength;
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19813,7 +20463,7 @@ function isNumber(value) {
 module.exports = isNumber;
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19850,7 +20500,7 @@ function isString(value) {
 module.exports = isString;
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19922,7 +20572,7 @@ function toNumber(value) {
 module.exports = toNumber;
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19958,7 +20608,7 @@ function toString(value) {
 module.exports = toString;
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20236,7 +20886,7 @@ function simpleEnd(buf) {
 }
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20907,7 +21557,7 @@ Writable.prototype._destroy = function (err, cb) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(58), __webpack_require__(441).setImmediate, __webpack_require__(25)))
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20916,13 +21566,13 @@ Writable.prototype._destroy = function (err, cb) {
 exports = module.exports = __webpack_require__(194);
 exports.Stream = exports;
 exports.Readable = exports;
-exports.Writable = __webpack_require__(123);
+exports.Writable = __webpack_require__(124);
 exports.Duplex = __webpack_require__(36);
 exports.Transform = __webpack_require__(195);
 exports.PassThrough = __webpack_require__(432);
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20944,7 +21594,7 @@ var contentConfiguration = __webpack_require__(225);
     var wordComplexity = require( "./assessments/wordComplexityAssessment.js" );
     var sentenceLengthInDescription = require( "./assessments/sentenceLengthInDescriptionAssessment.js" );
  */
-var scoreToRating = __webpack_require__(128);
+var scoreToRating = __webpack_require__(129);
 var map = __webpack_require__(5);
 var sum = __webpack_require__(191);
 /**
@@ -21081,7 +21731,7 @@ module.exports = ContentAssessor;
 //# sourceMappingURL=contentAssessor.js.map
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21226,7 +21876,7 @@ module.exports = {
 //# sourceMappingURL=html.js.map
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21246,7 +21896,7 @@ module.exports = function (recommendedValue, valueLength) {
 //# sourceMappingURL=isValueTooLong.js.map
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21281,7 +21931,7 @@ module.exports = ScoreToRating;
 //# sourceMappingURL=scoreToRating.js.map
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21433,14 +22083,14 @@ module.exports = Researcher;
 //# sourceMappingURL=researcher.js.map
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var filteredPassiveAuxiliaries = __webpack_require__(131)().filteredAuxiliaries;
-var notFilteredPassiveAuxiliaries = __webpack_require__(131)().notFilteredAuxiliaries;
+var filteredPassiveAuxiliaries = __webpack_require__(132)().filteredAuxiliaries;
+var notFilteredPassiveAuxiliaries = __webpack_require__(132)().notFilteredAuxiliaries;
 var transitionWords = __webpack_require__(232)().singleWords;
 /**
  * Returns an object with exceptions for the prominent words researcher
@@ -21522,7 +22172,7 @@ module.exports = function () {
 //# sourceMappingURL=functionWords.js.map
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21543,7 +22193,7 @@ module.exports = function () {
 //# sourceMappingURL=auxiliaries.js.map
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21586,7 +22236,7 @@ module.exports = SEOAssessor;
 //# sourceMappingURL=seoAssessor.js.map
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21595,8 +22245,8 @@ module.exports = SEOAssessor;
 var isUndefined = __webpack_require__(7);
 var forEach = __webpack_require__(3);
 var stripSpaces = __webpack_require__(12);
-var matchWordInSentence = __webpack_require__(135).isWordInSentence;
-var characterInBoundary = __webpack_require__(135).characterInBoundary;
+var matchWordInSentence = __webpack_require__(136).isWordInSentence;
+var characterInBoundary = __webpack_require__(136).characterInBoundary;
 /**
  * Returns the indices of a string in a text. If it is found multiple times, it will return multiple indices.
  *
@@ -21685,7 +22335,7 @@ module.exports = {
 //# sourceMappingURL=indices.js.map
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21727,7 +22377,7 @@ module.exports = function (text, keyword, locale) {
 //# sourceMappingURL=matchTextWithTransliteration.js.map
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21785,7 +22435,7 @@ module.exports = {
 //# sourceMappingURL=matchWordInSentence.js.map
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21876,19 +22526,19 @@ module.exports = {
 //# sourceMappingURL=url.js.map
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports) {
 
 module.exports = {"Aacute":"Á","aacute":"á","Abreve":"Ă","abreve":"ă","ac":"∾","acd":"∿","acE":"∾̳","Acirc":"Â","acirc":"â","acute":"´","Acy":"А","acy":"а","AElig":"Æ","aelig":"æ","af":"⁡","Afr":"𝔄","afr":"𝔞","Agrave":"À","agrave":"à","alefsym":"ℵ","aleph":"ℵ","Alpha":"Α","alpha":"α","Amacr":"Ā","amacr":"ā","amalg":"⨿","amp":"&","AMP":"&","andand":"⩕","And":"⩓","and":"∧","andd":"⩜","andslope":"⩘","andv":"⩚","ang":"∠","ange":"⦤","angle":"∠","angmsdaa":"⦨","angmsdab":"⦩","angmsdac":"⦪","angmsdad":"⦫","angmsdae":"⦬","angmsdaf":"⦭","angmsdag":"⦮","angmsdah":"⦯","angmsd":"∡","angrt":"∟","angrtvb":"⊾","angrtvbd":"⦝","angsph":"∢","angst":"Å","angzarr":"⍼","Aogon":"Ą","aogon":"ą","Aopf":"𝔸","aopf":"𝕒","apacir":"⩯","ap":"≈","apE":"⩰","ape":"≊","apid":"≋","apos":"'","ApplyFunction":"⁡","approx":"≈","approxeq":"≊","Aring":"Å","aring":"å","Ascr":"𝒜","ascr":"𝒶","Assign":"≔","ast":"*","asymp":"≈","asympeq":"≍","Atilde":"Ã","atilde":"ã","Auml":"Ä","auml":"ä","awconint":"∳","awint":"⨑","backcong":"≌","backepsilon":"϶","backprime":"‵","backsim":"∽","backsimeq":"⋍","Backslash":"∖","Barv":"⫧","barvee":"⊽","barwed":"⌅","Barwed":"⌆","barwedge":"⌅","bbrk":"⎵","bbrktbrk":"⎶","bcong":"≌","Bcy":"Б","bcy":"б","bdquo":"„","becaus":"∵","because":"∵","Because":"∵","bemptyv":"⦰","bepsi":"϶","bernou":"ℬ","Bernoullis":"ℬ","Beta":"Β","beta":"β","beth":"ℶ","between":"≬","Bfr":"𝔅","bfr":"𝔟","bigcap":"⋂","bigcirc":"◯","bigcup":"⋃","bigodot":"⨀","bigoplus":"⨁","bigotimes":"⨂","bigsqcup":"⨆","bigstar":"★","bigtriangledown":"▽","bigtriangleup":"△","biguplus":"⨄","bigvee":"⋁","bigwedge":"⋀","bkarow":"⤍","blacklozenge":"⧫","blacksquare":"▪","blacktriangle":"▴","blacktriangledown":"▾","blacktriangleleft":"◂","blacktriangleright":"▸","blank":"␣","blk12":"▒","blk14":"░","blk34":"▓","block":"█","bne":"=⃥","bnequiv":"≡⃥","bNot":"⫭","bnot":"⌐","Bopf":"𝔹","bopf":"𝕓","bot":"⊥","bottom":"⊥","bowtie":"⋈","boxbox":"⧉","boxdl":"┐","boxdL":"╕","boxDl":"╖","boxDL":"╗","boxdr":"┌","boxdR":"╒","boxDr":"╓","boxDR":"╔","boxh":"─","boxH":"═","boxhd":"┬","boxHd":"╤","boxhD":"╥","boxHD":"╦","boxhu":"┴","boxHu":"╧","boxhU":"╨","boxHU":"╩","boxminus":"⊟","boxplus":"⊞","boxtimes":"⊠","boxul":"┘","boxuL":"╛","boxUl":"╜","boxUL":"╝","boxur":"└","boxuR":"╘","boxUr":"╙","boxUR":"╚","boxv":"│","boxV":"║","boxvh":"┼","boxvH":"╪","boxVh":"╫","boxVH":"╬","boxvl":"┤","boxvL":"╡","boxVl":"╢","boxVL":"╣","boxvr":"├","boxvR":"╞","boxVr":"╟","boxVR":"╠","bprime":"‵","breve":"˘","Breve":"˘","brvbar":"¦","bscr":"𝒷","Bscr":"ℬ","bsemi":"⁏","bsim":"∽","bsime":"⋍","bsolb":"⧅","bsol":"\\","bsolhsub":"⟈","bull":"•","bullet":"•","bump":"≎","bumpE":"⪮","bumpe":"≏","Bumpeq":"≎","bumpeq":"≏","Cacute":"Ć","cacute":"ć","capand":"⩄","capbrcup":"⩉","capcap":"⩋","cap":"∩","Cap":"⋒","capcup":"⩇","capdot":"⩀","CapitalDifferentialD":"ⅅ","caps":"∩︀","caret":"⁁","caron":"ˇ","Cayleys":"ℭ","ccaps":"⩍","Ccaron":"Č","ccaron":"č","Ccedil":"Ç","ccedil":"ç","Ccirc":"Ĉ","ccirc":"ĉ","Cconint":"∰","ccups":"⩌","ccupssm":"⩐","Cdot":"Ċ","cdot":"ċ","cedil":"¸","Cedilla":"¸","cemptyv":"⦲","cent":"¢","centerdot":"·","CenterDot":"·","cfr":"𝔠","Cfr":"ℭ","CHcy":"Ч","chcy":"ч","check":"✓","checkmark":"✓","Chi":"Χ","chi":"χ","circ":"ˆ","circeq":"≗","circlearrowleft":"↺","circlearrowright":"↻","circledast":"⊛","circledcirc":"⊚","circleddash":"⊝","CircleDot":"⊙","circledR":"®","circledS":"Ⓢ","CircleMinus":"⊖","CirclePlus":"⊕","CircleTimes":"⊗","cir":"○","cirE":"⧃","cire":"≗","cirfnint":"⨐","cirmid":"⫯","cirscir":"⧂","ClockwiseContourIntegral":"∲","CloseCurlyDoubleQuote":"”","CloseCurlyQuote":"’","clubs":"♣","clubsuit":"♣","colon":":","Colon":"∷","Colone":"⩴","colone":"≔","coloneq":"≔","comma":",","commat":"@","comp":"∁","compfn":"∘","complement":"∁","complexes":"ℂ","cong":"≅","congdot":"⩭","Congruent":"≡","conint":"∮","Conint":"∯","ContourIntegral":"∮","copf":"𝕔","Copf":"ℂ","coprod":"∐","Coproduct":"∐","copy":"©","COPY":"©","copysr":"℗","CounterClockwiseContourIntegral":"∳","crarr":"↵","cross":"✗","Cross":"⨯","Cscr":"𝒞","cscr":"𝒸","csub":"⫏","csube":"⫑","csup":"⫐","csupe":"⫒","ctdot":"⋯","cudarrl":"⤸","cudarrr":"⤵","cuepr":"⋞","cuesc":"⋟","cularr":"↶","cularrp":"⤽","cupbrcap":"⩈","cupcap":"⩆","CupCap":"≍","cup":"∪","Cup":"⋓","cupcup":"⩊","cupdot":"⊍","cupor":"⩅","cups":"∪︀","curarr":"↷","curarrm":"⤼","curlyeqprec":"⋞","curlyeqsucc":"⋟","curlyvee":"⋎","curlywedge":"⋏","curren":"¤","curvearrowleft":"↶","curvearrowright":"↷","cuvee":"⋎","cuwed":"⋏","cwconint":"∲","cwint":"∱","cylcty":"⌭","dagger":"†","Dagger":"‡","daleth":"ℸ","darr":"↓","Darr":"↡","dArr":"⇓","dash":"‐","Dashv":"⫤","dashv":"⊣","dbkarow":"⤏","dblac":"˝","Dcaron":"Ď","dcaron":"ď","Dcy":"Д","dcy":"д","ddagger":"‡","ddarr":"⇊","DD":"ⅅ","dd":"ⅆ","DDotrahd":"⤑","ddotseq":"⩷","deg":"°","Del":"∇","Delta":"Δ","delta":"δ","demptyv":"⦱","dfisht":"⥿","Dfr":"𝔇","dfr":"𝔡","dHar":"⥥","dharl":"⇃","dharr":"⇂","DiacriticalAcute":"´","DiacriticalDot":"˙","DiacriticalDoubleAcute":"˝","DiacriticalGrave":"`","DiacriticalTilde":"˜","diam":"⋄","diamond":"⋄","Diamond":"⋄","diamondsuit":"♦","diams":"♦","die":"¨","DifferentialD":"ⅆ","digamma":"ϝ","disin":"⋲","div":"÷","divide":"÷","divideontimes":"⋇","divonx":"⋇","DJcy":"Ђ","djcy":"ђ","dlcorn":"⌞","dlcrop":"⌍","dollar":"$","Dopf":"𝔻","dopf":"𝕕","Dot":"¨","dot":"˙","DotDot":"⃜","doteq":"≐","doteqdot":"≑","DotEqual":"≐","dotminus":"∸","dotplus":"∔","dotsquare":"⊡","doublebarwedge":"⌆","DoubleContourIntegral":"∯","DoubleDot":"¨","DoubleDownArrow":"⇓","DoubleLeftArrow":"⇐","DoubleLeftRightArrow":"⇔","DoubleLeftTee":"⫤","DoubleLongLeftArrow":"⟸","DoubleLongLeftRightArrow":"⟺","DoubleLongRightArrow":"⟹","DoubleRightArrow":"⇒","DoubleRightTee":"⊨","DoubleUpArrow":"⇑","DoubleUpDownArrow":"⇕","DoubleVerticalBar":"∥","DownArrowBar":"⤓","downarrow":"↓","DownArrow":"↓","Downarrow":"⇓","DownArrowUpArrow":"⇵","DownBreve":"̑","downdownarrows":"⇊","downharpoonleft":"⇃","downharpoonright":"⇂","DownLeftRightVector":"⥐","DownLeftTeeVector":"⥞","DownLeftVectorBar":"⥖","DownLeftVector":"↽","DownRightTeeVector":"⥟","DownRightVectorBar":"⥗","DownRightVector":"⇁","DownTeeArrow":"↧","DownTee":"⊤","drbkarow":"⤐","drcorn":"⌟","drcrop":"⌌","Dscr":"𝒟","dscr":"𝒹","DScy":"Ѕ","dscy":"ѕ","dsol":"⧶","Dstrok":"Đ","dstrok":"đ","dtdot":"⋱","dtri":"▿","dtrif":"▾","duarr":"⇵","duhar":"⥯","dwangle":"⦦","DZcy":"Џ","dzcy":"џ","dzigrarr":"⟿","Eacute":"É","eacute":"é","easter":"⩮","Ecaron":"Ě","ecaron":"ě","Ecirc":"Ê","ecirc":"ê","ecir":"≖","ecolon":"≕","Ecy":"Э","ecy":"э","eDDot":"⩷","Edot":"Ė","edot":"ė","eDot":"≑","ee":"ⅇ","efDot":"≒","Efr":"𝔈","efr":"𝔢","eg":"⪚","Egrave":"È","egrave":"è","egs":"⪖","egsdot":"⪘","el":"⪙","Element":"∈","elinters":"⏧","ell":"ℓ","els":"⪕","elsdot":"⪗","Emacr":"Ē","emacr":"ē","empty":"∅","emptyset":"∅","EmptySmallSquare":"◻","emptyv":"∅","EmptyVerySmallSquare":"▫","emsp13":" ","emsp14":" ","emsp":" ","ENG":"Ŋ","eng":"ŋ","ensp":" ","Eogon":"Ę","eogon":"ę","Eopf":"𝔼","eopf":"𝕖","epar":"⋕","eparsl":"⧣","eplus":"⩱","epsi":"ε","Epsilon":"Ε","epsilon":"ε","epsiv":"ϵ","eqcirc":"≖","eqcolon":"≕","eqsim":"≂","eqslantgtr":"⪖","eqslantless":"⪕","Equal":"⩵","equals":"=","EqualTilde":"≂","equest":"≟","Equilibrium":"⇌","equiv":"≡","equivDD":"⩸","eqvparsl":"⧥","erarr":"⥱","erDot":"≓","escr":"ℯ","Escr":"ℰ","esdot":"≐","Esim":"⩳","esim":"≂","Eta":"Η","eta":"η","ETH":"Ð","eth":"ð","Euml":"Ë","euml":"ë","euro":"€","excl":"!","exist":"∃","Exists":"∃","expectation":"ℰ","exponentiale":"ⅇ","ExponentialE":"ⅇ","fallingdotseq":"≒","Fcy":"Ф","fcy":"ф","female":"♀","ffilig":"ﬃ","fflig":"ﬀ","ffllig":"ﬄ","Ffr":"𝔉","ffr":"𝔣","filig":"ﬁ","FilledSmallSquare":"◼","FilledVerySmallSquare":"▪","fjlig":"fj","flat":"♭","fllig":"ﬂ","fltns":"▱","fnof":"ƒ","Fopf":"𝔽","fopf":"𝕗","forall":"∀","ForAll":"∀","fork":"⋔","forkv":"⫙","Fouriertrf":"ℱ","fpartint":"⨍","frac12":"½","frac13":"⅓","frac14":"¼","frac15":"⅕","frac16":"⅙","frac18":"⅛","frac23":"⅔","frac25":"⅖","frac34":"¾","frac35":"⅗","frac38":"⅜","frac45":"⅘","frac56":"⅚","frac58":"⅝","frac78":"⅞","frasl":"⁄","frown":"⌢","fscr":"𝒻","Fscr":"ℱ","gacute":"ǵ","Gamma":"Γ","gamma":"γ","Gammad":"Ϝ","gammad":"ϝ","gap":"⪆","Gbreve":"Ğ","gbreve":"ğ","Gcedil":"Ģ","Gcirc":"Ĝ","gcirc":"ĝ","Gcy":"Г","gcy":"г","Gdot":"Ġ","gdot":"ġ","ge":"≥","gE":"≧","gEl":"⪌","gel":"⋛","geq":"≥","geqq":"≧","geqslant":"⩾","gescc":"⪩","ges":"⩾","gesdot":"⪀","gesdoto":"⪂","gesdotol":"⪄","gesl":"⋛︀","gesles":"⪔","Gfr":"𝔊","gfr":"𝔤","gg":"≫","Gg":"⋙","ggg":"⋙","gimel":"ℷ","GJcy":"Ѓ","gjcy":"ѓ","gla":"⪥","gl":"≷","glE":"⪒","glj":"⪤","gnap":"⪊","gnapprox":"⪊","gne":"⪈","gnE":"≩","gneq":"⪈","gneqq":"≩","gnsim":"⋧","Gopf":"𝔾","gopf":"𝕘","grave":"`","GreaterEqual":"≥","GreaterEqualLess":"⋛","GreaterFullEqual":"≧","GreaterGreater":"⪢","GreaterLess":"≷","GreaterSlantEqual":"⩾","GreaterTilde":"≳","Gscr":"𝒢","gscr":"ℊ","gsim":"≳","gsime":"⪎","gsiml":"⪐","gtcc":"⪧","gtcir":"⩺","gt":">","GT":">","Gt":"≫","gtdot":"⋗","gtlPar":"⦕","gtquest":"⩼","gtrapprox":"⪆","gtrarr":"⥸","gtrdot":"⋗","gtreqless":"⋛","gtreqqless":"⪌","gtrless":"≷","gtrsim":"≳","gvertneqq":"≩︀","gvnE":"≩︀","Hacek":"ˇ","hairsp":" ","half":"½","hamilt":"ℋ","HARDcy":"Ъ","hardcy":"ъ","harrcir":"⥈","harr":"↔","hArr":"⇔","harrw":"↭","Hat":"^","hbar":"ℏ","Hcirc":"Ĥ","hcirc":"ĥ","hearts":"♥","heartsuit":"♥","hellip":"…","hercon":"⊹","hfr":"𝔥","Hfr":"ℌ","HilbertSpace":"ℋ","hksearow":"⤥","hkswarow":"⤦","hoarr":"⇿","homtht":"∻","hookleftarrow":"↩","hookrightarrow":"↪","hopf":"𝕙","Hopf":"ℍ","horbar":"―","HorizontalLine":"─","hscr":"𝒽","Hscr":"ℋ","hslash":"ℏ","Hstrok":"Ħ","hstrok":"ħ","HumpDownHump":"≎","HumpEqual":"≏","hybull":"⁃","hyphen":"‐","Iacute":"Í","iacute":"í","ic":"⁣","Icirc":"Î","icirc":"î","Icy":"И","icy":"и","Idot":"İ","IEcy":"Е","iecy":"е","iexcl":"¡","iff":"⇔","ifr":"𝔦","Ifr":"ℑ","Igrave":"Ì","igrave":"ì","ii":"ⅈ","iiiint":"⨌","iiint":"∭","iinfin":"⧜","iiota":"℩","IJlig":"Ĳ","ijlig":"ĳ","Imacr":"Ī","imacr":"ī","image":"ℑ","ImaginaryI":"ⅈ","imagline":"ℐ","imagpart":"ℑ","imath":"ı","Im":"ℑ","imof":"⊷","imped":"Ƶ","Implies":"⇒","incare":"℅","in":"∈","infin":"∞","infintie":"⧝","inodot":"ı","intcal":"⊺","int":"∫","Int":"∬","integers":"ℤ","Integral":"∫","intercal":"⊺","Intersection":"⋂","intlarhk":"⨗","intprod":"⨼","InvisibleComma":"⁣","InvisibleTimes":"⁢","IOcy":"Ё","iocy":"ё","Iogon":"Į","iogon":"į","Iopf":"𝕀","iopf":"𝕚","Iota":"Ι","iota":"ι","iprod":"⨼","iquest":"¿","iscr":"𝒾","Iscr":"ℐ","isin":"∈","isindot":"⋵","isinE":"⋹","isins":"⋴","isinsv":"⋳","isinv":"∈","it":"⁢","Itilde":"Ĩ","itilde":"ĩ","Iukcy":"І","iukcy":"і","Iuml":"Ï","iuml":"ï","Jcirc":"Ĵ","jcirc":"ĵ","Jcy":"Й","jcy":"й","Jfr":"𝔍","jfr":"𝔧","jmath":"ȷ","Jopf":"𝕁","jopf":"𝕛","Jscr":"𝒥","jscr":"𝒿","Jsercy":"Ј","jsercy":"ј","Jukcy":"Є","jukcy":"є","Kappa":"Κ","kappa":"κ","kappav":"ϰ","Kcedil":"Ķ","kcedil":"ķ","Kcy":"К","kcy":"к","Kfr":"𝔎","kfr":"𝔨","kgreen":"ĸ","KHcy":"Х","khcy":"х","KJcy":"Ќ","kjcy":"ќ","Kopf":"𝕂","kopf":"𝕜","Kscr":"𝒦","kscr":"𝓀","lAarr":"⇚","Lacute":"Ĺ","lacute":"ĺ","laemptyv":"⦴","lagran":"ℒ","Lambda":"Λ","lambda":"λ","lang":"⟨","Lang":"⟪","langd":"⦑","langle":"⟨","lap":"⪅","Laplacetrf":"ℒ","laquo":"«","larrb":"⇤","larrbfs":"⤟","larr":"←","Larr":"↞","lArr":"⇐","larrfs":"⤝","larrhk":"↩","larrlp":"↫","larrpl":"⤹","larrsim":"⥳","larrtl":"↢","latail":"⤙","lAtail":"⤛","lat":"⪫","late":"⪭","lates":"⪭︀","lbarr":"⤌","lBarr":"⤎","lbbrk":"❲","lbrace":"{","lbrack":"[","lbrke":"⦋","lbrksld":"⦏","lbrkslu":"⦍","Lcaron":"Ľ","lcaron":"ľ","Lcedil":"Ļ","lcedil":"ļ","lceil":"⌈","lcub":"{","Lcy":"Л","lcy":"л","ldca":"⤶","ldquo":"“","ldquor":"„","ldrdhar":"⥧","ldrushar":"⥋","ldsh":"↲","le":"≤","lE":"≦","LeftAngleBracket":"⟨","LeftArrowBar":"⇤","leftarrow":"←","LeftArrow":"←","Leftarrow":"⇐","LeftArrowRightArrow":"⇆","leftarrowtail":"↢","LeftCeiling":"⌈","LeftDoubleBracket":"⟦","LeftDownTeeVector":"⥡","LeftDownVectorBar":"⥙","LeftDownVector":"⇃","LeftFloor":"⌊","leftharpoondown":"↽","leftharpoonup":"↼","leftleftarrows":"⇇","leftrightarrow":"↔","LeftRightArrow":"↔","Leftrightarrow":"⇔","leftrightarrows":"⇆","leftrightharpoons":"⇋","leftrightsquigarrow":"↭","LeftRightVector":"⥎","LeftTeeArrow":"↤","LeftTee":"⊣","LeftTeeVector":"⥚","leftthreetimes":"⋋","LeftTriangleBar":"⧏","LeftTriangle":"⊲","LeftTriangleEqual":"⊴","LeftUpDownVector":"⥑","LeftUpTeeVector":"⥠","LeftUpVectorBar":"⥘","LeftUpVector":"↿","LeftVectorBar":"⥒","LeftVector":"↼","lEg":"⪋","leg":"⋚","leq":"≤","leqq":"≦","leqslant":"⩽","lescc":"⪨","les":"⩽","lesdot":"⩿","lesdoto":"⪁","lesdotor":"⪃","lesg":"⋚︀","lesges":"⪓","lessapprox":"⪅","lessdot":"⋖","lesseqgtr":"⋚","lesseqqgtr":"⪋","LessEqualGreater":"⋚","LessFullEqual":"≦","LessGreater":"≶","lessgtr":"≶","LessLess":"⪡","lesssim":"≲","LessSlantEqual":"⩽","LessTilde":"≲","lfisht":"⥼","lfloor":"⌊","Lfr":"𝔏","lfr":"𝔩","lg":"≶","lgE":"⪑","lHar":"⥢","lhard":"↽","lharu":"↼","lharul":"⥪","lhblk":"▄","LJcy":"Љ","ljcy":"љ","llarr":"⇇","ll":"≪","Ll":"⋘","llcorner":"⌞","Lleftarrow":"⇚","llhard":"⥫","lltri":"◺","Lmidot":"Ŀ","lmidot":"ŀ","lmoustache":"⎰","lmoust":"⎰","lnap":"⪉","lnapprox":"⪉","lne":"⪇","lnE":"≨","lneq":"⪇","lneqq":"≨","lnsim":"⋦","loang":"⟬","loarr":"⇽","lobrk":"⟦","longleftarrow":"⟵","LongLeftArrow":"⟵","Longleftarrow":"⟸","longleftrightarrow":"⟷","LongLeftRightArrow":"⟷","Longleftrightarrow":"⟺","longmapsto":"⟼","longrightarrow":"⟶","LongRightArrow":"⟶","Longrightarrow":"⟹","looparrowleft":"↫","looparrowright":"↬","lopar":"⦅","Lopf":"𝕃","lopf":"𝕝","loplus":"⨭","lotimes":"⨴","lowast":"∗","lowbar":"_","LowerLeftArrow":"↙","LowerRightArrow":"↘","loz":"◊","lozenge":"◊","lozf":"⧫","lpar":"(","lparlt":"⦓","lrarr":"⇆","lrcorner":"⌟","lrhar":"⇋","lrhard":"⥭","lrm":"‎","lrtri":"⊿","lsaquo":"‹","lscr":"𝓁","Lscr":"ℒ","lsh":"↰","Lsh":"↰","lsim":"≲","lsime":"⪍","lsimg":"⪏","lsqb":"[","lsquo":"‘","lsquor":"‚","Lstrok":"Ł","lstrok":"ł","ltcc":"⪦","ltcir":"⩹","lt":"<","LT":"<","Lt":"≪","ltdot":"⋖","lthree":"⋋","ltimes":"⋉","ltlarr":"⥶","ltquest":"⩻","ltri":"◃","ltrie":"⊴","ltrif":"◂","ltrPar":"⦖","lurdshar":"⥊","luruhar":"⥦","lvertneqq":"≨︀","lvnE":"≨︀","macr":"¯","male":"♂","malt":"✠","maltese":"✠","Map":"⤅","map":"↦","mapsto":"↦","mapstodown":"↧","mapstoleft":"↤","mapstoup":"↥","marker":"▮","mcomma":"⨩","Mcy":"М","mcy":"м","mdash":"—","mDDot":"∺","measuredangle":"∡","MediumSpace":" ","Mellintrf":"ℳ","Mfr":"𝔐","mfr":"𝔪","mho":"℧","micro":"µ","midast":"*","midcir":"⫰","mid":"∣","middot":"·","minusb":"⊟","minus":"−","minusd":"∸","minusdu":"⨪","MinusPlus":"∓","mlcp":"⫛","mldr":"…","mnplus":"∓","models":"⊧","Mopf":"𝕄","mopf":"𝕞","mp":"∓","mscr":"𝓂","Mscr":"ℳ","mstpos":"∾","Mu":"Μ","mu":"μ","multimap":"⊸","mumap":"⊸","nabla":"∇","Nacute":"Ń","nacute":"ń","nang":"∠⃒","nap":"≉","napE":"⩰̸","napid":"≋̸","napos":"ŉ","napprox":"≉","natural":"♮","naturals":"ℕ","natur":"♮","nbsp":" ","nbump":"≎̸","nbumpe":"≏̸","ncap":"⩃","Ncaron":"Ň","ncaron":"ň","Ncedil":"Ņ","ncedil":"ņ","ncong":"≇","ncongdot":"⩭̸","ncup":"⩂","Ncy":"Н","ncy":"н","ndash":"–","nearhk":"⤤","nearr":"↗","neArr":"⇗","nearrow":"↗","ne":"≠","nedot":"≐̸","NegativeMediumSpace":"​","NegativeThickSpace":"​","NegativeThinSpace":"​","NegativeVeryThinSpace":"​","nequiv":"≢","nesear":"⤨","nesim":"≂̸","NestedGreaterGreater":"≫","NestedLessLess":"≪","NewLine":"\n","nexist":"∄","nexists":"∄","Nfr":"𝔑","nfr":"𝔫","ngE":"≧̸","nge":"≱","ngeq":"≱","ngeqq":"≧̸","ngeqslant":"⩾̸","nges":"⩾̸","nGg":"⋙̸","ngsim":"≵","nGt":"≫⃒","ngt":"≯","ngtr":"≯","nGtv":"≫̸","nharr":"↮","nhArr":"⇎","nhpar":"⫲","ni":"∋","nis":"⋼","nisd":"⋺","niv":"∋","NJcy":"Њ","njcy":"њ","nlarr":"↚","nlArr":"⇍","nldr":"‥","nlE":"≦̸","nle":"≰","nleftarrow":"↚","nLeftarrow":"⇍","nleftrightarrow":"↮","nLeftrightarrow":"⇎","nleq":"≰","nleqq":"≦̸","nleqslant":"⩽̸","nles":"⩽̸","nless":"≮","nLl":"⋘̸","nlsim":"≴","nLt":"≪⃒","nlt":"≮","nltri":"⋪","nltrie":"⋬","nLtv":"≪̸","nmid":"∤","NoBreak":"⁠","NonBreakingSpace":" ","nopf":"𝕟","Nopf":"ℕ","Not":"⫬","not":"¬","NotCongruent":"≢","NotCupCap":"≭","NotDoubleVerticalBar":"∦","NotElement":"∉","NotEqual":"≠","NotEqualTilde":"≂̸","NotExists":"∄","NotGreater":"≯","NotGreaterEqual":"≱","NotGreaterFullEqual":"≧̸","NotGreaterGreater":"≫̸","NotGreaterLess":"≹","NotGreaterSlantEqual":"⩾̸","NotGreaterTilde":"≵","NotHumpDownHump":"≎̸","NotHumpEqual":"≏̸","notin":"∉","notindot":"⋵̸","notinE":"⋹̸","notinva":"∉","notinvb":"⋷","notinvc":"⋶","NotLeftTriangleBar":"⧏̸","NotLeftTriangle":"⋪","NotLeftTriangleEqual":"⋬","NotLess":"≮","NotLessEqual":"≰","NotLessGreater":"≸","NotLessLess":"≪̸","NotLessSlantEqual":"⩽̸","NotLessTilde":"≴","NotNestedGreaterGreater":"⪢̸","NotNestedLessLess":"⪡̸","notni":"∌","notniva":"∌","notnivb":"⋾","notnivc":"⋽","NotPrecedes":"⊀","NotPrecedesEqual":"⪯̸","NotPrecedesSlantEqual":"⋠","NotReverseElement":"∌","NotRightTriangleBar":"⧐̸","NotRightTriangle":"⋫","NotRightTriangleEqual":"⋭","NotSquareSubset":"⊏̸","NotSquareSubsetEqual":"⋢","NotSquareSuperset":"⊐̸","NotSquareSupersetEqual":"⋣","NotSubset":"⊂⃒","NotSubsetEqual":"⊈","NotSucceeds":"⊁","NotSucceedsEqual":"⪰̸","NotSucceedsSlantEqual":"⋡","NotSucceedsTilde":"≿̸","NotSuperset":"⊃⃒","NotSupersetEqual":"⊉","NotTilde":"≁","NotTildeEqual":"≄","NotTildeFullEqual":"≇","NotTildeTilde":"≉","NotVerticalBar":"∤","nparallel":"∦","npar":"∦","nparsl":"⫽⃥","npart":"∂̸","npolint":"⨔","npr":"⊀","nprcue":"⋠","nprec":"⊀","npreceq":"⪯̸","npre":"⪯̸","nrarrc":"⤳̸","nrarr":"↛","nrArr":"⇏","nrarrw":"↝̸","nrightarrow":"↛","nRightarrow":"⇏","nrtri":"⋫","nrtrie":"⋭","nsc":"⊁","nsccue":"⋡","nsce":"⪰̸","Nscr":"𝒩","nscr":"𝓃","nshortmid":"∤","nshortparallel":"∦","nsim":"≁","nsime":"≄","nsimeq":"≄","nsmid":"∤","nspar":"∦","nsqsube":"⋢","nsqsupe":"⋣","nsub":"⊄","nsubE":"⫅̸","nsube":"⊈","nsubset":"⊂⃒","nsubseteq":"⊈","nsubseteqq":"⫅̸","nsucc":"⊁","nsucceq":"⪰̸","nsup":"⊅","nsupE":"⫆̸","nsupe":"⊉","nsupset":"⊃⃒","nsupseteq":"⊉","nsupseteqq":"⫆̸","ntgl":"≹","Ntilde":"Ñ","ntilde":"ñ","ntlg":"≸","ntriangleleft":"⋪","ntrianglelefteq":"⋬","ntriangleright":"⋫","ntrianglerighteq":"⋭","Nu":"Ν","nu":"ν","num":"#","numero":"№","numsp":" ","nvap":"≍⃒","nvdash":"⊬","nvDash":"⊭","nVdash":"⊮","nVDash":"⊯","nvge":"≥⃒","nvgt":">⃒","nvHarr":"⤄","nvinfin":"⧞","nvlArr":"⤂","nvle":"≤⃒","nvlt":"<⃒","nvltrie":"⊴⃒","nvrArr":"⤃","nvrtrie":"⊵⃒","nvsim":"∼⃒","nwarhk":"⤣","nwarr":"↖","nwArr":"⇖","nwarrow":"↖","nwnear":"⤧","Oacute":"Ó","oacute":"ó","oast":"⊛","Ocirc":"Ô","ocirc":"ô","ocir":"⊚","Ocy":"О","ocy":"о","odash":"⊝","Odblac":"Ő","odblac":"ő","odiv":"⨸","odot":"⊙","odsold":"⦼","OElig":"Œ","oelig":"œ","ofcir":"⦿","Ofr":"𝔒","ofr":"𝔬","ogon":"˛","Ograve":"Ò","ograve":"ò","ogt":"⧁","ohbar":"⦵","ohm":"Ω","oint":"∮","olarr":"↺","olcir":"⦾","olcross":"⦻","oline":"‾","olt":"⧀","Omacr":"Ō","omacr":"ō","Omega":"Ω","omega":"ω","Omicron":"Ο","omicron":"ο","omid":"⦶","ominus":"⊖","Oopf":"𝕆","oopf":"𝕠","opar":"⦷","OpenCurlyDoubleQuote":"“","OpenCurlyQuote":"‘","operp":"⦹","oplus":"⊕","orarr":"↻","Or":"⩔","or":"∨","ord":"⩝","order":"ℴ","orderof":"ℴ","ordf":"ª","ordm":"º","origof":"⊶","oror":"⩖","orslope":"⩗","orv":"⩛","oS":"Ⓢ","Oscr":"𝒪","oscr":"ℴ","Oslash":"Ø","oslash":"ø","osol":"⊘","Otilde":"Õ","otilde":"õ","otimesas":"⨶","Otimes":"⨷","otimes":"⊗","Ouml":"Ö","ouml":"ö","ovbar":"⌽","OverBar":"‾","OverBrace":"⏞","OverBracket":"⎴","OverParenthesis":"⏜","para":"¶","parallel":"∥","par":"∥","parsim":"⫳","parsl":"⫽","part":"∂","PartialD":"∂","Pcy":"П","pcy":"п","percnt":"%","period":".","permil":"‰","perp":"⊥","pertenk":"‱","Pfr":"𝔓","pfr":"𝔭","Phi":"Φ","phi":"φ","phiv":"ϕ","phmmat":"ℳ","phone":"☎","Pi":"Π","pi":"π","pitchfork":"⋔","piv":"ϖ","planck":"ℏ","planckh":"ℎ","plankv":"ℏ","plusacir":"⨣","plusb":"⊞","pluscir":"⨢","plus":"+","plusdo":"∔","plusdu":"⨥","pluse":"⩲","PlusMinus":"±","plusmn":"±","plussim":"⨦","plustwo":"⨧","pm":"±","Poincareplane":"ℌ","pointint":"⨕","popf":"𝕡","Popf":"ℙ","pound":"£","prap":"⪷","Pr":"⪻","pr":"≺","prcue":"≼","precapprox":"⪷","prec":"≺","preccurlyeq":"≼","Precedes":"≺","PrecedesEqual":"⪯","PrecedesSlantEqual":"≼","PrecedesTilde":"≾","preceq":"⪯","precnapprox":"⪹","precneqq":"⪵","precnsim":"⋨","pre":"⪯","prE":"⪳","precsim":"≾","prime":"′","Prime":"″","primes":"ℙ","prnap":"⪹","prnE":"⪵","prnsim":"⋨","prod":"∏","Product":"∏","profalar":"⌮","profline":"⌒","profsurf":"⌓","prop":"∝","Proportional":"∝","Proportion":"∷","propto":"∝","prsim":"≾","prurel":"⊰","Pscr":"𝒫","pscr":"𝓅","Psi":"Ψ","psi":"ψ","puncsp":" ","Qfr":"𝔔","qfr":"𝔮","qint":"⨌","qopf":"𝕢","Qopf":"ℚ","qprime":"⁗","Qscr":"𝒬","qscr":"𝓆","quaternions":"ℍ","quatint":"⨖","quest":"?","questeq":"≟","quot":"\"","QUOT":"\"","rAarr":"⇛","race":"∽̱","Racute":"Ŕ","racute":"ŕ","radic":"√","raemptyv":"⦳","rang":"⟩","Rang":"⟫","rangd":"⦒","range":"⦥","rangle":"⟩","raquo":"»","rarrap":"⥵","rarrb":"⇥","rarrbfs":"⤠","rarrc":"⤳","rarr":"→","Rarr":"↠","rArr":"⇒","rarrfs":"⤞","rarrhk":"↪","rarrlp":"↬","rarrpl":"⥅","rarrsim":"⥴","Rarrtl":"⤖","rarrtl":"↣","rarrw":"↝","ratail":"⤚","rAtail":"⤜","ratio":"∶","rationals":"ℚ","rbarr":"⤍","rBarr":"⤏","RBarr":"⤐","rbbrk":"❳","rbrace":"}","rbrack":"]","rbrke":"⦌","rbrksld":"⦎","rbrkslu":"⦐","Rcaron":"Ř","rcaron":"ř","Rcedil":"Ŗ","rcedil":"ŗ","rceil":"⌉","rcub":"}","Rcy":"Р","rcy":"р","rdca":"⤷","rdldhar":"⥩","rdquo":"”","rdquor":"”","rdsh":"↳","real":"ℜ","realine":"ℛ","realpart":"ℜ","reals":"ℝ","Re":"ℜ","rect":"▭","reg":"®","REG":"®","ReverseElement":"∋","ReverseEquilibrium":"⇋","ReverseUpEquilibrium":"⥯","rfisht":"⥽","rfloor":"⌋","rfr":"𝔯","Rfr":"ℜ","rHar":"⥤","rhard":"⇁","rharu":"⇀","rharul":"⥬","Rho":"Ρ","rho":"ρ","rhov":"ϱ","RightAngleBracket":"⟩","RightArrowBar":"⇥","rightarrow":"→","RightArrow":"→","Rightarrow":"⇒","RightArrowLeftArrow":"⇄","rightarrowtail":"↣","RightCeiling":"⌉","RightDoubleBracket":"⟧","RightDownTeeVector":"⥝","RightDownVectorBar":"⥕","RightDownVector":"⇂","RightFloor":"⌋","rightharpoondown":"⇁","rightharpoonup":"⇀","rightleftarrows":"⇄","rightleftharpoons":"⇌","rightrightarrows":"⇉","rightsquigarrow":"↝","RightTeeArrow":"↦","RightTee":"⊢","RightTeeVector":"⥛","rightthreetimes":"⋌","RightTriangleBar":"⧐","RightTriangle":"⊳","RightTriangleEqual":"⊵","RightUpDownVector":"⥏","RightUpTeeVector":"⥜","RightUpVectorBar":"⥔","RightUpVector":"↾","RightVectorBar":"⥓","RightVector":"⇀","ring":"˚","risingdotseq":"≓","rlarr":"⇄","rlhar":"⇌","rlm":"‏","rmoustache":"⎱","rmoust":"⎱","rnmid":"⫮","roang":"⟭","roarr":"⇾","robrk":"⟧","ropar":"⦆","ropf":"𝕣","Ropf":"ℝ","roplus":"⨮","rotimes":"⨵","RoundImplies":"⥰","rpar":")","rpargt":"⦔","rppolint":"⨒","rrarr":"⇉","Rrightarrow":"⇛","rsaquo":"›","rscr":"𝓇","Rscr":"ℛ","rsh":"↱","Rsh":"↱","rsqb":"]","rsquo":"’","rsquor":"’","rthree":"⋌","rtimes":"⋊","rtri":"▹","rtrie":"⊵","rtrif":"▸","rtriltri":"⧎","RuleDelayed":"⧴","ruluhar":"⥨","rx":"℞","Sacute":"Ś","sacute":"ś","sbquo":"‚","scap":"⪸","Scaron":"Š","scaron":"š","Sc":"⪼","sc":"≻","sccue":"≽","sce":"⪰","scE":"⪴","Scedil":"Ş","scedil":"ş","Scirc":"Ŝ","scirc":"ŝ","scnap":"⪺","scnE":"⪶","scnsim":"⋩","scpolint":"⨓","scsim":"≿","Scy":"С","scy":"с","sdotb":"⊡","sdot":"⋅","sdote":"⩦","searhk":"⤥","searr":"↘","seArr":"⇘","searrow":"↘","sect":"§","semi":";","seswar":"⤩","setminus":"∖","setmn":"∖","sext":"✶","Sfr":"𝔖","sfr":"𝔰","sfrown":"⌢","sharp":"♯","SHCHcy":"Щ","shchcy":"щ","SHcy":"Ш","shcy":"ш","ShortDownArrow":"↓","ShortLeftArrow":"←","shortmid":"∣","shortparallel":"∥","ShortRightArrow":"→","ShortUpArrow":"↑","shy":"­","Sigma":"Σ","sigma":"σ","sigmaf":"ς","sigmav":"ς","sim":"∼","simdot":"⩪","sime":"≃","simeq":"≃","simg":"⪞","simgE":"⪠","siml":"⪝","simlE":"⪟","simne":"≆","simplus":"⨤","simrarr":"⥲","slarr":"←","SmallCircle":"∘","smallsetminus":"∖","smashp":"⨳","smeparsl":"⧤","smid":"∣","smile":"⌣","smt":"⪪","smte":"⪬","smtes":"⪬︀","SOFTcy":"Ь","softcy":"ь","solbar":"⌿","solb":"⧄","sol":"/","Sopf":"𝕊","sopf":"𝕤","spades":"♠","spadesuit":"♠","spar":"∥","sqcap":"⊓","sqcaps":"⊓︀","sqcup":"⊔","sqcups":"⊔︀","Sqrt":"√","sqsub":"⊏","sqsube":"⊑","sqsubset":"⊏","sqsubseteq":"⊑","sqsup":"⊐","sqsupe":"⊒","sqsupset":"⊐","sqsupseteq":"⊒","square":"□","Square":"□","SquareIntersection":"⊓","SquareSubset":"⊏","SquareSubsetEqual":"⊑","SquareSuperset":"⊐","SquareSupersetEqual":"⊒","SquareUnion":"⊔","squarf":"▪","squ":"□","squf":"▪","srarr":"→","Sscr":"𝒮","sscr":"𝓈","ssetmn":"∖","ssmile":"⌣","sstarf":"⋆","Star":"⋆","star":"☆","starf":"★","straightepsilon":"ϵ","straightphi":"ϕ","strns":"¯","sub":"⊂","Sub":"⋐","subdot":"⪽","subE":"⫅","sube":"⊆","subedot":"⫃","submult":"⫁","subnE":"⫋","subne":"⊊","subplus":"⪿","subrarr":"⥹","subset":"⊂","Subset":"⋐","subseteq":"⊆","subseteqq":"⫅","SubsetEqual":"⊆","subsetneq":"⊊","subsetneqq":"⫋","subsim":"⫇","subsub":"⫕","subsup":"⫓","succapprox":"⪸","succ":"≻","succcurlyeq":"≽","Succeeds":"≻","SucceedsEqual":"⪰","SucceedsSlantEqual":"≽","SucceedsTilde":"≿","succeq":"⪰","succnapprox":"⪺","succneqq":"⪶","succnsim":"⋩","succsim":"≿","SuchThat":"∋","sum":"∑","Sum":"∑","sung":"♪","sup1":"¹","sup2":"²","sup3":"³","sup":"⊃","Sup":"⋑","supdot":"⪾","supdsub":"⫘","supE":"⫆","supe":"⊇","supedot":"⫄","Superset":"⊃","SupersetEqual":"⊇","suphsol":"⟉","suphsub":"⫗","suplarr":"⥻","supmult":"⫂","supnE":"⫌","supne":"⊋","supplus":"⫀","supset":"⊃","Supset":"⋑","supseteq":"⊇","supseteqq":"⫆","supsetneq":"⊋","supsetneqq":"⫌","supsim":"⫈","supsub":"⫔","supsup":"⫖","swarhk":"⤦","swarr":"↙","swArr":"⇙","swarrow":"↙","swnwar":"⤪","szlig":"ß","Tab":"\t","target":"⌖","Tau":"Τ","tau":"τ","tbrk":"⎴","Tcaron":"Ť","tcaron":"ť","Tcedil":"Ţ","tcedil":"ţ","Tcy":"Т","tcy":"т","tdot":"⃛","telrec":"⌕","Tfr":"𝔗","tfr":"𝔱","there4":"∴","therefore":"∴","Therefore":"∴","Theta":"Θ","theta":"θ","thetasym":"ϑ","thetav":"ϑ","thickapprox":"≈","thicksim":"∼","ThickSpace":"  ","ThinSpace":" ","thinsp":" ","thkap":"≈","thksim":"∼","THORN":"Þ","thorn":"þ","tilde":"˜","Tilde":"∼","TildeEqual":"≃","TildeFullEqual":"≅","TildeTilde":"≈","timesbar":"⨱","timesb":"⊠","times":"×","timesd":"⨰","tint":"∭","toea":"⤨","topbot":"⌶","topcir":"⫱","top":"⊤","Topf":"𝕋","topf":"𝕥","topfork":"⫚","tosa":"⤩","tprime":"‴","trade":"™","TRADE":"™","triangle":"▵","triangledown":"▿","triangleleft":"◃","trianglelefteq":"⊴","triangleq":"≜","triangleright":"▹","trianglerighteq":"⊵","tridot":"◬","trie":"≜","triminus":"⨺","TripleDot":"⃛","triplus":"⨹","trisb":"⧍","tritime":"⨻","trpezium":"⏢","Tscr":"𝒯","tscr":"𝓉","TScy":"Ц","tscy":"ц","TSHcy":"Ћ","tshcy":"ћ","Tstrok":"Ŧ","tstrok":"ŧ","twixt":"≬","twoheadleftarrow":"↞","twoheadrightarrow":"↠","Uacute":"Ú","uacute":"ú","uarr":"↑","Uarr":"↟","uArr":"⇑","Uarrocir":"⥉","Ubrcy":"Ў","ubrcy":"ў","Ubreve":"Ŭ","ubreve":"ŭ","Ucirc":"Û","ucirc":"û","Ucy":"У","ucy":"у","udarr":"⇅","Udblac":"Ű","udblac":"ű","udhar":"⥮","ufisht":"⥾","Ufr":"𝔘","ufr":"𝔲","Ugrave":"Ù","ugrave":"ù","uHar":"⥣","uharl":"↿","uharr":"↾","uhblk":"▀","ulcorn":"⌜","ulcorner":"⌜","ulcrop":"⌏","ultri":"◸","Umacr":"Ū","umacr":"ū","uml":"¨","UnderBar":"_","UnderBrace":"⏟","UnderBracket":"⎵","UnderParenthesis":"⏝","Union":"⋃","UnionPlus":"⊎","Uogon":"Ų","uogon":"ų","Uopf":"𝕌","uopf":"𝕦","UpArrowBar":"⤒","uparrow":"↑","UpArrow":"↑","Uparrow":"⇑","UpArrowDownArrow":"⇅","updownarrow":"↕","UpDownArrow":"↕","Updownarrow":"⇕","UpEquilibrium":"⥮","upharpoonleft":"↿","upharpoonright":"↾","uplus":"⊎","UpperLeftArrow":"↖","UpperRightArrow":"↗","upsi":"υ","Upsi":"ϒ","upsih":"ϒ","Upsilon":"Υ","upsilon":"υ","UpTeeArrow":"↥","UpTee":"⊥","upuparrows":"⇈","urcorn":"⌝","urcorner":"⌝","urcrop":"⌎","Uring":"Ů","uring":"ů","urtri":"◹","Uscr":"𝒰","uscr":"𝓊","utdot":"⋰","Utilde":"Ũ","utilde":"ũ","utri":"▵","utrif":"▴","uuarr":"⇈","Uuml":"Ü","uuml":"ü","uwangle":"⦧","vangrt":"⦜","varepsilon":"ϵ","varkappa":"ϰ","varnothing":"∅","varphi":"ϕ","varpi":"ϖ","varpropto":"∝","varr":"↕","vArr":"⇕","varrho":"ϱ","varsigma":"ς","varsubsetneq":"⊊︀","varsubsetneqq":"⫋︀","varsupsetneq":"⊋︀","varsupsetneqq":"⫌︀","vartheta":"ϑ","vartriangleleft":"⊲","vartriangleright":"⊳","vBar":"⫨","Vbar":"⫫","vBarv":"⫩","Vcy":"В","vcy":"в","vdash":"⊢","vDash":"⊨","Vdash":"⊩","VDash":"⊫","Vdashl":"⫦","veebar":"⊻","vee":"∨","Vee":"⋁","veeeq":"≚","vellip":"⋮","verbar":"|","Verbar":"‖","vert":"|","Vert":"‖","VerticalBar":"∣","VerticalLine":"|","VerticalSeparator":"❘","VerticalTilde":"≀","VeryThinSpace":" ","Vfr":"𝔙","vfr":"𝔳","vltri":"⊲","vnsub":"⊂⃒","vnsup":"⊃⃒","Vopf":"𝕍","vopf":"𝕧","vprop":"∝","vrtri":"⊳","Vscr":"𝒱","vscr":"𝓋","vsubnE":"⫋︀","vsubne":"⊊︀","vsupnE":"⫌︀","vsupne":"⊋︀","Vvdash":"⊪","vzigzag":"⦚","Wcirc":"Ŵ","wcirc":"ŵ","wedbar":"⩟","wedge":"∧","Wedge":"⋀","wedgeq":"≙","weierp":"℘","Wfr":"𝔚","wfr":"𝔴","Wopf":"𝕎","wopf":"𝕨","wp":"℘","wr":"≀","wreath":"≀","Wscr":"𝒲","wscr":"𝓌","xcap":"⋂","xcirc":"◯","xcup":"⋃","xdtri":"▽","Xfr":"𝔛","xfr":"𝔵","xharr":"⟷","xhArr":"⟺","Xi":"Ξ","xi":"ξ","xlarr":"⟵","xlArr":"⟸","xmap":"⟼","xnis":"⋻","xodot":"⨀","Xopf":"𝕏","xopf":"𝕩","xoplus":"⨁","xotime":"⨂","xrarr":"⟶","xrArr":"⟹","Xscr":"𝒳","xscr":"𝓍","xsqcup":"⨆","xuplus":"⨄","xutri":"△","xvee":"⋁","xwedge":"⋀","Yacute":"Ý","yacute":"ý","YAcy":"Я","yacy":"я","Ycirc":"Ŷ","ycirc":"ŷ","Ycy":"Ы","ycy":"ы","yen":"¥","Yfr":"𝔜","yfr":"𝔶","YIcy":"Ї","yicy":"ї","Yopf":"𝕐","yopf":"𝕪","Yscr":"𝒴","yscr":"𝓎","YUcy":"Ю","yucy":"ю","yuml":"ÿ","Yuml":"Ÿ","Zacute":"Ź","zacute":"ź","Zcaron":"Ž","zcaron":"ž","Zcy":"З","zcy":"з","Zdot":"Ż","zdot":"ż","zeetrf":"ℨ","ZeroWidthSpace":"​","Zeta":"Ζ","zeta":"ζ","zfr":"𝔷","Zfr":"ℨ","ZHcy":"Ж","zhcy":"ж","zigrarr":"⇝","zopf":"𝕫","Zopf":"ℤ","Zscr":"𝒵","zscr":"𝓏","zwj":"‍","zwnj":"‌"}
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 module.exports = {"amp":"&","apos":"'","gt":">","lt":"<","quot":"\""}
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21940,13 +22590,13 @@ Object.keys(domLvl1).forEach(function (key) {
 });
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var decodeMap = __webpack_require__(565);
+var decodeMap = __webpack_require__(566);
 
 module.exports = decodeCodePoint;
 
@@ -21974,7 +22624,7 @@ function decodeCodePoint(codePoint) {
 }
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22358,7 +23008,7 @@ Accordion.defaults = {
 exports.Accordion = Accordion;
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22974,7 +23624,7 @@ Drilldown.defaults = {
 exports.Drilldown = Drilldown;
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23605,7 +24255,7 @@ OffCanvas.defaults = {
 exports.OffCanvas = OffCanvas;
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23857,656 +24507,6 @@ Positionable.defaults = {
 };
 
 exports.Positionable = Positionable;
-
-/***/ }),
-/* 145 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Reveal = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _foundationUtil = __webpack_require__(13);
-
-var _foundationUtil2 = __webpack_require__(10);
-
-var _foundationUtil3 = __webpack_require__(31);
-
-var _foundation = __webpack_require__(1);
-
-var _foundationUtil4 = __webpack_require__(22);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-/**
- * Reveal module.
- * @module foundation.reveal
- * @requires foundation.util.keyboard
- * @requires foundation.util.triggers
- * @requires foundation.util.mediaQuery
- * @requires foundation.util.motion if using animations
- */
-
-var Reveal = function (_Plugin) {
-  _inherits(Reveal, _Plugin);
-
-  function Reveal() {
-    _classCallCheck(this, Reveal);
-
-    return _possibleConstructorReturn(this, (Reveal.__proto__ || Object.getPrototypeOf(Reveal)).apply(this, arguments));
-  }
-
-  _createClass(Reveal, [{
-    key: '_setup',
-
-    /**
-     * Creates a new instance of Reveal.
-     * @class
-     * @name Reveal
-     * @param {jQuery} element - jQuery object to use for the modal.
-     * @param {Object} options - optional parameters.
-     */
-    value: function _setup(element, options) {
-      this.$element = element;
-      this.options = _jquery2.default.extend({}, Reveal.defaults, this.$element.data(), options);
-      this.className = 'Reveal'; // ie9 back compat
-      this._init();
-
-      // Triggers init is idempotent, just need to make sure it is initialized
-      _foundationUtil4.Triggers.init(_jquery2.default);
-
-      _foundationUtil.Keyboard.register('Reveal', {
-        'ESCAPE': 'close'
-      });
-    }
-
-    /**
-     * Initializes the modal by adding the overlay and close buttons, (if selected).
-     * @private
-     */
-
-  }, {
-    key: '_init',
-    value: function _init() {
-      _foundationUtil2.MediaQuery._init();
-      this.id = this.$element.attr('id');
-      this.isActive = false;
-      this.cached = { mq: _foundationUtil2.MediaQuery.current };
-      this.isMobile = mobileSniff();
-
-      this.$anchor = (0, _jquery2.default)('[data-open="' + this.id + '"]').length ? (0, _jquery2.default)('[data-open="' + this.id + '"]') : (0, _jquery2.default)('[data-toggle="' + this.id + '"]');
-      this.$anchor.attr({
-        'aria-controls': this.id,
-        'aria-haspopup': true,
-        'tabindex': 0
-      });
-
-      if (this.options.fullScreen || this.$element.hasClass('full')) {
-        this.options.fullScreen = true;
-        this.options.overlay = false;
-      }
-      if (this.options.overlay && !this.$overlay) {
-        this.$overlay = this._makeOverlay(this.id);
-      }
-
-      this.$element.attr({
-        'role': 'dialog',
-        'aria-hidden': true,
-        'data-yeti-box': this.id,
-        'data-resize': this.id
-      });
-
-      if (this.$overlay) {
-        this.$element.detach().appendTo(this.$overlay);
-      } else {
-        this.$element.detach().appendTo((0, _jquery2.default)(this.options.appendTo));
-        this.$element.addClass('without-overlay');
-      }
-      this._events();
-      if (this.options.deepLink && window.location.hash === '#' + this.id) {
-        (0, _jquery2.default)(window).one('load.zf.reveal', this.open.bind(this));
-      }
-    }
-
-    /**
-     * Creates an overlay div to display behind the modal.
-     * @private
-     */
-
-  }, {
-    key: '_makeOverlay',
-    value: function _makeOverlay() {
-      var additionalOverlayClasses = '';
-
-      if (this.options.additionalOverlayClasses) {
-        additionalOverlayClasses = ' ' + this.options.additionalOverlayClasses;
-      }
-
-      return (0, _jquery2.default)('<div></div>').addClass('reveal-overlay' + additionalOverlayClasses).appendTo(this.options.appendTo);
-    }
-
-    /**
-     * Updates position of modal
-     * TODO:  Figure out if we actually need to cache these values or if it doesn't matter
-     * @private
-     */
-
-  }, {
-    key: '_updatePosition',
-    value: function _updatePosition() {
-      var width = this.$element.outerWidth();
-      var outerWidth = (0, _jquery2.default)(window).width();
-      var height = this.$element.outerHeight();
-      var outerHeight = (0, _jquery2.default)(window).height();
-      var left, top;
-      if (this.options.hOffset === 'auto') {
-        left = parseInt((outerWidth - width) / 2, 10);
-      } else {
-        left = parseInt(this.options.hOffset, 10);
-      }
-      if (this.options.vOffset === 'auto') {
-        if (height > outerHeight) {
-          top = parseInt(Math.min(100, outerHeight / 10), 10);
-        } else {
-          top = parseInt((outerHeight - height) / 4, 10);
-        }
-      } else {
-        top = parseInt(this.options.vOffset, 10);
-      }
-      this.$element.css({ top: top + 'px' });
-      // only worry about left if we don't have an overlay or we havea  horizontal offset,
-      // otherwise we're perfectly in the middle
-      if (!this.$overlay || this.options.hOffset !== 'auto') {
-        this.$element.css({ left: left + 'px' });
-        this.$element.css({ margin: '0px' });
-      }
-    }
-
-    /**
-     * Adds event handlers for the modal.
-     * @private
-     */
-
-  }, {
-    key: '_events',
-    value: function _events() {
-      var _this3 = this;
-
-      var _this = this;
-
-      this.$element.on({
-        'open.zf.trigger': this.open.bind(this),
-        'close.zf.trigger': function closeZfTrigger(event, $element) {
-          if (event.target === _this.$element[0] || (0, _jquery2.default)(event.target).parents('[data-closable]')[0] === $element) {
-            // only close reveal when it's explicitly called
-            return _this3.close.apply(_this3);
-          }
-        },
-        'toggle.zf.trigger': this.toggle.bind(this),
-        'resizeme.zf.trigger': function resizemeZfTrigger() {
-          _this._updatePosition();
-        }
-      });
-
-      if (this.options.closeOnClick && this.options.overlay) {
-        this.$overlay.off('.zf.reveal').on('click.zf.reveal', function (e) {
-          if (e.target === _this.$element[0] || _jquery2.default.contains(_this.$element[0], e.target) || !_jquery2.default.contains(document, e.target)) {
-            return;
-          }
-          _this.close();
-        });
-      }
-      if (this.options.deepLink) {
-        (0, _jquery2.default)(window).on('popstate.zf.reveal:' + this.id, this._handleState.bind(this));
-      }
-    }
-
-    /**
-     * Handles modal methods on back/forward button clicks or any other event that triggers popstate.
-     * @private
-     */
-
-  }, {
-    key: '_handleState',
-    value: function _handleState(e) {
-      if (window.location.hash === '#' + this.id && !this.isActive) {
-        this.open();
-      } else {
-        this.close();
-      }
-    }
-
-    /**
-     * Opens the modal controlled by `this.$anchor`, and closes all others by default.
-     * @function
-     * @fires Reveal#closeme
-     * @fires Reveal#open
-     */
-
-  }, {
-    key: 'open',
-    value: function open() {
-      var _this4 = this;
-
-      // either update or replace browser history
-      if (this.options.deepLink) {
-        var hash = '#' + this.id;
-
-        if (window.history.pushState) {
-          if (this.options.updateHistory) {
-            window.history.pushState({}, '', hash);
-          } else {
-            window.history.replaceState({}, '', hash);
-          }
-        } else {
-          window.location.hash = hash;
-        }
-      }
-
-      this.isActive = true;
-
-      // Make elements invisible, but remove display: none so we can get size and positioning
-      this.$element.css({ 'visibility': 'hidden' }).show().scrollTop(0);
-      if (this.options.overlay) {
-        this.$overlay.css({ 'visibility': 'hidden' }).show();
-      }
-
-      this._updatePosition();
-
-      this.$element.hide().css({ 'visibility': '' });
-
-      if (this.$overlay) {
-        this.$overlay.css({ 'visibility': '' }).hide();
-        if (this.$element.hasClass('fast')) {
-          this.$overlay.addClass('fast');
-        } else if (this.$element.hasClass('slow')) {
-          this.$overlay.addClass('slow');
-        }
-      }
-
-      if (!this.options.multipleOpened) {
-        /**
-         * Fires immediately before the modal opens.
-         * Closes any other modals that are currently open
-         * @event Reveal#closeme
-         */
-        this.$element.trigger('closeme.zf.reveal', this.id);
-      }
-
-      var _this = this;
-
-      function addRevealOpenClasses() {
-        if (_this.isMobile) {
-          if (!_this.originalScrollPos) {
-            _this.originalScrollPos = window.pageYOffset;
-          }
-          (0, _jquery2.default)('html, body').addClass('is-reveal-open');
-        } else {
-          (0, _jquery2.default)('body').addClass('is-reveal-open');
-        }
-      }
-      // Motion UI method of reveal
-      if (this.options.animationIn) {
-        var afterAnimation = function afterAnimation() {
-          _this.$element.attr({
-            'aria-hidden': false,
-            'tabindex': -1
-          }).focus();
-          addRevealOpenClasses();
-          _foundationUtil.Keyboard.trapFocus(_this.$element);
-        };
-
-        if (this.options.overlay) {
-          _foundationUtil3.Motion.animateIn(this.$overlay, 'fade-in');
-        }
-        _foundationUtil3.Motion.animateIn(this.$element, this.options.animationIn, function () {
-          if (_this4.$element) {
-            // protect against object having been removed
-            _this4.focusableElements = _foundationUtil.Keyboard.findFocusable(_this4.$element);
-            afterAnimation();
-          }
-        });
-      }
-      // jQuery method of reveal
-      else {
-          if (this.options.overlay) {
-            this.$overlay.show(0);
-          }
-          this.$element.show(this.options.showDelay);
-        }
-
-      // handle accessibility
-      this.$element.attr({
-        'aria-hidden': false,
-        'tabindex': -1
-      }).focus();
-      _foundationUtil.Keyboard.trapFocus(this.$element);
-
-      addRevealOpenClasses();
-
-      this._extraHandlers();
-
-      /**
-       * Fires when the modal has successfully opened.
-       * @event Reveal#open
-       */
-      this.$element.trigger('open.zf.reveal');
-    }
-
-    /**
-     * Adds extra event handlers for the body and window if necessary.
-     * @private
-     */
-
-  }, {
-    key: '_extraHandlers',
-    value: function _extraHandlers() {
-      var _this = this;
-      if (!this.$element) {
-        return;
-      } // If we're in the middle of cleanup, don't freak out
-      this.focusableElements = _foundationUtil.Keyboard.findFocusable(this.$element);
-
-      if (!this.options.overlay && this.options.closeOnClick && !this.options.fullScreen) {
-        (0, _jquery2.default)('body').on('click.zf.reveal', function (e) {
-          if (e.target === _this.$element[0] || _jquery2.default.contains(_this.$element[0], e.target) || !_jquery2.default.contains(document, e.target)) {
-            return;
-          }
-          _this.close();
-        });
-      }
-
-      if (this.options.closeOnEsc) {
-        (0, _jquery2.default)(window).on('keydown.zf.reveal', function (e) {
-          _foundationUtil.Keyboard.handleKey(e, 'Reveal', {
-            close: function close() {
-              if (_this.options.closeOnEsc) {
-                _this.close();
-              }
-            }
-          });
-        });
-      }
-    }
-
-    /**
-     * Closes the modal.
-     * @function
-     * @fires Reveal#closed
-     */
-
-  }, {
-    key: 'close',
-    value: function close() {
-      if (!this.isActive || !this.$element.is(':visible')) {
-        return false;
-      }
-      var _this = this;
-
-      // Motion UI method of hiding
-      if (this.options.animationOut) {
-        if (this.options.overlay) {
-          _foundationUtil3.Motion.animateOut(this.$overlay, 'fade-out');
-        }
-
-        _foundationUtil3.Motion.animateOut(this.$element, this.options.animationOut, finishUp);
-      }
-      // jQuery method of hiding
-      else {
-          this.$element.hide(this.options.hideDelay);
-
-          if (this.options.overlay) {
-            this.$overlay.hide(0, finishUp);
-          } else {
-            finishUp();
-          }
-        }
-
-      // Conditionals to remove extra event listeners added on open
-      if (this.options.closeOnEsc) {
-        (0, _jquery2.default)(window).off('keydown.zf.reveal');
-      }
-
-      if (!this.options.overlay && this.options.closeOnClick) {
-        (0, _jquery2.default)('body').off('click.zf.reveal');
-      }
-
-      this.$element.off('keydown.zf.reveal');
-
-      function finishUp() {
-        if (_this.isMobile) {
-          if ((0, _jquery2.default)('.reveal:visible').length === 0) {
-            (0, _jquery2.default)('html, body').removeClass('is-reveal-open');
-          }
-          if (_this.originalScrollPos) {
-            (0, _jquery2.default)('body').scrollTop(_this.originalScrollPos);
-            _this.originalScrollPos = null;
-          }
-        } else {
-          if ((0, _jquery2.default)('.reveal:visible').length === 0) {
-            (0, _jquery2.default)('body').removeClass('is-reveal-open');
-          }
-        }
-
-        _foundationUtil.Keyboard.releaseFocus(_this.$element);
-
-        _this.$element.attr('aria-hidden', true);
-
-        /**
-        * Fires when the modal is done closing.
-        * @event Reveal#closed
-        */
-        _this.$element.trigger('closed.zf.reveal');
-      }
-
-      /**
-      * Resets the modal content
-      * This prevents a running video to keep going in the background
-      */
-      if (this.options.resetOnClose) {
-        this.$element.html(this.$element.html());
-      }
-
-      this.isActive = false;
-      if (_this.options.deepLink) {
-        if (window.history.replaceState) {
-          window.history.replaceState('', document.title, window.location.href.replace('#' + this.id, ''));
-        } else {
-          window.location.hash = '';
-        }
-      }
-
-      this.$anchor.focus();
-    }
-
-    /**
-     * Toggles the open/closed state of a modal.
-     * @function
-     */
-
-  }, {
-    key: 'toggle',
-    value: function toggle() {
-      if (this.isActive) {
-        this.close();
-      } else {
-        this.open();
-      }
-    }
-  }, {
-    key: '_destroy',
-
-
-    /**
-     * Destroys an instance of a modal.
-     * @function
-     */
-    value: function _destroy() {
-      if (this.options.overlay) {
-        this.$element.appendTo((0, _jquery2.default)(this.options.appendTo)); // move $element outside of $overlay to prevent error unregisterPlugin()
-        this.$overlay.hide().off().remove();
-      }
-      this.$element.hide().off();
-      this.$anchor.off('.zf');
-      (0, _jquery2.default)(window).off('.zf.reveal:' + this.id);
-    }
-  }]);
-
-  return Reveal;
-}(_foundation.Plugin);
-
-Reveal.defaults = {
-  /**
-   * Motion-UI class to use for animated elements. If none used, defaults to simple show/hide.
-   * @option
-   * @type {string}
-   * @default ''
-   */
-  animationIn: '',
-  /**
-   * Motion-UI class to use for animated elements. If none used, defaults to simple show/hide.
-   * @option
-   * @type {string}
-   * @default ''
-   */
-  animationOut: '',
-  /**
-   * Time, in ms, to delay the opening of a modal after a click if no animation used.
-   * @option
-   * @type {number}
-   * @default 0
-   */
-  showDelay: 0,
-  /**
-   * Time, in ms, to delay the closing of a modal after a click if no animation used.
-   * @option
-   * @type {number}
-   * @default 0
-   */
-  hideDelay: 0,
-  /**
-   * Allows a click on the body/overlay to close the modal.
-   * @option
-   * @type {boolean}
-   * @default true
-   */
-  closeOnClick: true,
-  /**
-   * Allows the modal to close if the user presses the `ESCAPE` key.
-   * @option
-   * @type {boolean}
-   * @default true
-   */
-  closeOnEsc: true,
-  /**
-   * If true, allows multiple modals to be displayed at once.
-   * @option
-   * @type {boolean}
-   * @default false
-   */
-  multipleOpened: false,
-  /**
-   * Distance, in pixels, the modal should push down from the top of the screen.
-   * @option
-   * @type {number|string}
-   * @default auto
-   */
-  vOffset: 'auto',
-  /**
-   * Distance, in pixels, the modal should push in from the side of the screen.
-   * @option
-   * @type {number|string}
-   * @default auto
-   */
-  hOffset: 'auto',
-  /**
-   * Allows the modal to be fullscreen, completely blocking out the rest of the view. JS checks for this as well.
-   * @option
-   * @type {boolean}
-   * @default false
-   */
-  fullScreen: false,
-  /**
-   * Percentage of screen height the modal should push up from the bottom of the view.
-   * @option
-   * @type {number}
-   * @default 10
-   */
-  btmOffsetPct: 10,
-  /**
-   * Allows the modal to generate an overlay div, which will cover the view when modal opens.
-   * @option
-   * @type {boolean}
-   * @default true
-   */
-  overlay: true,
-  /**
-   * Allows the modal to remove and reinject markup on close. Should be true if using video elements w/o using provider's api, otherwise, videos will continue to play in the background.
-   * @option
-   * @type {boolean}
-   * @default false
-   */
-  resetOnClose: false,
-  /**
-   * Allows the modal to alter the url on open/close, and allows the use of the `back` button to close modals. ALSO, allows a modal to auto-maniacally open on page load IF the hash === the modal's user-set id.
-   * @option
-   * @type {boolean}
-   * @default false
-   */
-  deepLink: false,
-  /**
-   * Update the browser history with the open modal
-   * @option
-   * @default false
-   */
-  updateHistory: false,
-  /**
-  * Allows the modal to append to custom div.
-  * @option
-  * @type {string}
-  * @default "body"
-  */
-  appendTo: "body",
-  /**
-   * Allows adding additional class names to the reveal overlay.
-   * @option
-   * @type {string}
-   * @default ''
-   */
-  additionalOverlayClasses: ''
-};
-
-function iPhoneSniff() {
-  return (/iP(ad|hone|od).*OS/.test(window.navigator.userAgent)
-  );
-}
-
-function androidSniff() {
-  return (/Android/.test(window.navigator.userAgent)
-  );
-}
-
-function mobileSniff() {
-  return iPhoneSniff() || androidSniff();
-}
-
-exports.Reveal = Reveal;
 
 /***/ }),
 /* 146 */
@@ -25665,10 +25665,10 @@ module.exports = Parser;
 
 module.exports = Tokenizer;
 
-var decodeCodePoint = __webpack_require__(140),
-    entityMap = __webpack_require__(137),
+var decodeCodePoint = __webpack_require__(141),
+    entityMap = __webpack_require__(138),
     legacyMap = __webpack_require__(257),
-    xmlMap = __webpack_require__(138),
+    xmlMap = __webpack_require__(139),
     i = 0,
     TEXT = i++,
     BEFORE_TAG_NAME = i++,
@@ -26593,8 +26593,8 @@ Tokenizer.prototype._emitPartial = function (value) {
 module.exports = Stream;
 
 var Parser = __webpack_require__(149),
-    WritableStream = __webpack_require__(440).Writable || __webpack_require__(570).Writable,
-    StringDecoder = __webpack_require__(122).StringDecoder,
+    WritableStream = __webpack_require__(440).Writable || __webpack_require__(571).Writable,
+    StringDecoder = __webpack_require__(123).StringDecoder,
     Buffer = __webpack_require__(89).Buffer;
 
 function Stream(cbs, options) {
@@ -26737,7 +26737,7 @@ module.exports = arrayLikeKeys;
 "use strict";
 
 
-var baseAssignValue = __webpack_require__(102),
+var baseAssignValue = __webpack_require__(103),
     eq = __webpack_require__(45);
 
 /**
@@ -26849,7 +26849,7 @@ module.exports = baseFor;
 "use strict";
 
 
-var arrayPush = __webpack_require__(99),
+var arrayPush = __webpack_require__(100),
     isArray = __webpack_require__(6);
 
 /**
@@ -27027,7 +27027,7 @@ module.exports = cloneBuffer;
 "use strict";
 
 
-var cloneArrayBuffer = __webpack_require__(106);
+var cloneArrayBuffer = __webpack_require__(107);
 
 /**
  * Creates a clone of `typedArray`.
@@ -27199,7 +27199,7 @@ module.exports = freeGlobal;
 
 
 var baseGetAllKeys = __webpack_require__(160),
-    getSymbols = __webpack_require__(109),
+    getSymbols = __webpack_require__(110),
     keys = __webpack_require__(35);
 
 /**
@@ -27222,9 +27222,9 @@ module.exports = getAllKeys;
 "use strict";
 
 
-var arrayPush = __webpack_require__(99),
-    getPrototype = __webpack_require__(108),
-    getSymbols = __webpack_require__(109),
+var arrayPush = __webpack_require__(100),
+    getPrototype = __webpack_require__(109),
+    getSymbols = __webpack_require__(110),
     stubArray = __webpack_require__(190);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -27259,7 +27259,7 @@ var castPath = __webpack_require__(75),
     isArguments = __webpack_require__(54),
     isArray = __webpack_require__(6),
     isIndex = __webpack_require__(77),
-    isLength = __webpack_require__(117),
+    isLength = __webpack_require__(118),
     toKey = __webpack_require__(53);
 
 /**
@@ -27302,7 +27302,7 @@ module.exports = hasPath;
 
 
 var baseCreate = __webpack_require__(309),
-    getPrototype = __webpack_require__(108),
+    getPrototype = __webpack_require__(109),
     isPrototype = __webpack_require__(78);
 
 /**
@@ -27461,7 +27461,7 @@ module.exports = overArg;
 "use strict";
 
 
-var apply = __webpack_require__(95);
+var apply = __webpack_require__(96);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -27741,7 +27741,7 @@ module.exports = hasIn;
 
 var baseInRange = __webpack_require__(314),
     toFinite = __webpack_require__(192),
-    toNumber = __webpack_require__(120);
+    toNumber = __webpack_require__(121);
 
 /**
  * Checks if `n` is between `start` and up to, but not including, `end`. If
@@ -27839,7 +27839,7 @@ module.exports = intersection;
 
 
 var baseGetTag = __webpack_require__(27),
-    getPrototype = __webpack_require__(108),
+    getPrototype = __webpack_require__(109),
     isObjectLike = __webpack_require__(19);
 
 /** `Object#toString` result references. */
@@ -28020,7 +28020,7 @@ module.exports = sum;
 "use strict";
 
 
-var toNumber = __webpack_require__(120);
+var toNumber = __webpack_require__(121);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0,
@@ -28181,7 +28181,7 @@ util.inherits = __webpack_require__(18);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(571);
+var debugUtil = __webpack_require__(572);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -28274,7 +28274,7 @@ function ReadableState(options, stream) {
   this.decoder = null;
   this.encoding = null;
   if (options.encoding) {
-    if (!StringDecoder) StringDecoder = __webpack_require__(122).StringDecoder;
+    if (!StringDecoder) StringDecoder = __webpack_require__(123).StringDecoder;
     this.decoder = new StringDecoder(options.encoding);
     this.encoding = options.encoding;
   }
@@ -28430,7 +28430,7 @@ Readable.prototype.isPaused = function () {
 
 // backwards compatibility.
 Readable.prototype.setEncoding = function (enc) {
-  if (!StringDecoder) StringDecoder = __webpack_require__(122).StringDecoder;
+  if (!StringDecoder) StringDecoder = __webpack_require__(123).StringDecoder;
   this._readableState.decoder = new StringDecoder(enc);
   this._readableState.encoding = enc;
   return this;
@@ -29514,16 +29514,16 @@ var plugins = {
 };
 
 var helpers = {
-	scoreToRating: __webpack_require__(128)
+	scoreToRating: __webpack_require__(129)
 };
 
 module.exports = {
 	Assessor: __webpack_require__(59),
-	SEOAssessor: __webpack_require__(132),
-	ContentAssessor: __webpack_require__(125),
+	SEOAssessor: __webpack_require__(133),
+	ContentAssessor: __webpack_require__(126),
 	App: __webpack_require__(448),
 	Pluggable: __webpack_require__(229),
-	Researcher: __webpack_require__(129),
+	Researcher: __webpack_require__(130),
 	SnippetPreview: __webpack_require__(241),
 
 	Paper: __webpack_require__(254),
@@ -29649,7 +29649,7 @@ module.exports = {
 
 var AssessmentResult = __webpack_require__(2);
 var stripHTMLTags = __webpack_require__(11).stripBlockTagsAtStartEnd;
-var isParagraphTooLong = __webpack_require__(127);
+var isParagraphTooLong = __webpack_require__(128);
 var Mark = __webpack_require__(41);
 var marker = __webpack_require__(38);
 var inRange = __webpack_require__(37).inRangeEndInclusive;
@@ -30251,7 +30251,7 @@ function _inherits(subClass, superClass) {
 
 var AssessmentResult = __webpack_require__(2);
 var Assessment = __webpack_require__(21);
-var isTextTooLong = __webpack_require__(127);
+var isTextTooLong = __webpack_require__(128);
 var filter = __webpack_require__(9);
 var map = __webpack_require__(5);
 var merge = __webpack_require__(17);
@@ -32388,7 +32388,7 @@ module.exports = {
 "use strict";
 
 
-var defaultsDeep = __webpack_require__(114);
+var defaultsDeep = __webpack_require__(115);
 var getLanguage = __webpack_require__(26);
 var defaultConfig = __webpack_require__(452);
 var it = __webpack_require__(453);
@@ -32555,7 +32555,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
 var isUndefined = __webpack_require__(7);
 var forEach = __webpack_require__(3);
 var reduce = __webpack_require__(419);
-var isString = __webpack_require__(119);
+var isString = __webpack_require__(120);
 var isObject = __webpack_require__(8);
 var InvalidTypeError = __webpack_require__(226);
 /**
@@ -33089,7 +33089,7 @@ module.exports = function () {
 
 var getAnchors = __webpack_require__(243);
 var map = __webpack_require__(5);
-var url = __webpack_require__(136);
+var url = __webpack_require__(137);
 /**
  * Checks a text for anchors and returns the number found.
  *
@@ -33217,9 +33217,9 @@ var isEmpty = __webpack_require__(16);
 var isElement = __webpack_require__(411);
 var isUndefined = __webpack_require__(7);
 var clone = __webpack_require__(405);
-var defaultsDeep = __webpack_require__(114);
+var defaultsDeep = __webpack_require__(115);
 var forEach = __webpack_require__(3);
-var debounce = __webpack_require__(112);
+var debounce = __webpack_require__(113);
 var createWordRegex = __webpack_require__(242);
 var stripHTMLTags = __webpack_require__(11).stripFullTags;
 var stripSpaces = __webpack_require__(12);
@@ -34385,7 +34385,7 @@ module.exports = function (text) {
 var map = __webpack_require__(5);
 var flatMap = __webpack_require__(81);
 var filter = __webpack_require__(9);
-var getBlocks = __webpack_require__(126).getBlocks;
+var getBlocks = __webpack_require__(127).getBlocks;
 /**
  * Matches the paragraphs in <p>-tags and returns the text in them.
  * @param {string} text The text to match paragraph in.
@@ -34550,7 +34550,7 @@ var syllableMatchers = __webpack_require__(458);
 var getWords = __webpack_require__(39);
 var forEach = __webpack_require__(3);
 var filter = __webpack_require__(9);
-var find = __webpack_require__(115);
+var find = __webpack_require__(116);
 var isUndefined = __webpack_require__(7);
 var map = __webpack_require__(5);
 var sum = __webpack_require__(191);
@@ -35263,7 +35263,7 @@ var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "sym
 "use strict";
 
 
-var defaults = __webpack_require__(113);
+var defaults = __webpack_require__(114);
 /**
  * Default attributes to be used by the Paper if they are left undefined.
  * @type {{keyword: string, description: string, title: string, url: string}}
@@ -35417,7 +35417,7 @@ module.exports = Paper;
 
 var getType = __webpack_require__(228).getType;
 var isSameType = __webpack_require__(228).isSameType;
-var defaults = __webpack_require__(113);
+var defaults = __webpack_require__(114);
 var forEach = __webpack_require__(3);
 /**
  * Default attributes to be used by the Participle if they are left undefined.
@@ -35628,9 +35628,9 @@ var _whatInput = __webpack_require__(447);
 
 var _whatInput2 = _interopRequireDefault(_whatInput);
 
-__webpack_require__(564);
+__webpack_require__(565);
 
-__webpack_require__(563);
+__webpack_require__(564);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35976,7 +35976,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var ElementType = __webpack_require__(50);
 
 var re_whitespace = /\s+/g;
-var NodePrototype = __webpack_require__(139);
+var NodePrototype = __webpack_require__(140);
 var ElementPrototype = __webpack_require__(265);
 
 function DomHandler(callback, options, elementCB) {
@@ -36193,7 +36193,7 @@ module.exports = DomHandler;
 
 
 // DOM-Level-1-compliant structure
-var NodePrototype = __webpack_require__(139);
+var NodePrototype = __webpack_require__(140);
 var ElementPrototype = module.exports = Object.create(NodePrototype);
 
 var domLvl1 = {
@@ -40291,10 +40291,10 @@ exports.escape = encode.escape;
 "use strict";
 
 
-var entityMap = __webpack_require__(137),
+var entityMap = __webpack_require__(138),
     legacyMap = __webpack_require__(257),
-    xmlMap = __webpack_require__(138),
-    decodeCodePoint = __webpack_require__(140);
+    xmlMap = __webpack_require__(139),
+    decodeCodePoint = __webpack_require__(141);
 
 var decodeXMLStrict = getStrictDecoder(xmlMap),
     decodeHTMLStrict = getStrictDecoder(entityMap);
@@ -40369,12 +40369,12 @@ module.exports = {
 "use strict";
 
 
-var inverseXML = getInverseObj(__webpack_require__(138)),
+var inverseXML = getInverseObj(__webpack_require__(139)),
     xmlReplacer = getInverseReplacer(inverseXML);
 
 exports.XML = getInverse(inverseXML, xmlReplacer);
 
-var inverseHTML = getInverseObj(__webpack_require__(137)),
+var inverseHTML = getInverseObj(__webpack_require__(138)),
     htmlReplacer = getInverseReplacer(inverseHTML);
 
 exports.HTML = getInverse(inverseHTML, htmlReplacer);
@@ -41496,7 +41496,7 @@ var _foundationUtil = __webpack_require__(13);
 
 var _foundationUtil2 = __webpack_require__(4);
 
-var _foundation = __webpack_require__(144);
+var _foundation = __webpack_require__(145);
 
 var _foundationUtil3 = __webpack_require__(22);
 
@@ -42977,7 +42977,7 @@ var _foundationUtil5 = __webpack_require__(4);
 
 var _foundation = __webpack_require__(1);
 
-var _foundationUtil6 = __webpack_require__(92);
+var _foundationUtil6 = __webpack_require__(93);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43579,7 +43579,7 @@ var _foundationUtil2 = __webpack_require__(4);
 
 var _foundation = __webpack_require__(1);
 
-var _foundation2 = __webpack_require__(141);
+var _foundation2 = __webpack_require__(142);
 
 var _foundation3 = __webpack_require__(147);
 
@@ -43877,7 +43877,7 @@ var _foundation = __webpack_require__(1);
 
 var _foundation2 = __webpack_require__(91);
 
-var _foundation3 = __webpack_require__(142);
+var _foundation3 = __webpack_require__(143);
 
 var _foundation4 = __webpack_require__(90);
 
@@ -44294,7 +44294,7 @@ var _foundationUtil3 = __webpack_require__(4);
 
 var _foundation = __webpack_require__(1);
 
-var _foundationUtil4 = __webpack_require__(92);
+var _foundationUtil4 = __webpack_require__(93);
 
 var _foundationUtil5 = __webpack_require__(22);
 
@@ -45892,7 +45892,7 @@ var _foundationUtil2 = __webpack_require__(10);
 
 var _foundationUtil3 = __webpack_require__(22);
 
-var _foundation = __webpack_require__(144);
+var _foundation = __webpack_require__(145);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48077,7 +48077,7 @@ module.exports = baseAssignIn;
 
 var Stack = __webpack_require__(70),
     arrayEach = __webpack_require__(154),
-    assignValue = __webpack_require__(101),
+    assignValue = __webpack_require__(102),
     baseAssign = __webpack_require__(306),
     baseAssignIn = __webpack_require__(307),
     cloneBuffer = __webpack_require__(164),
@@ -48086,7 +48086,7 @@ var Stack = __webpack_require__(70),
     copySymbolsIn = __webpack_require__(352),
     getAllKeys = __webpack_require__(170),
     getAllKeysIn = __webpack_require__(365),
-    getTag = __webpack_require__(110),
+    getTag = __webpack_require__(111),
     initCloneArray = __webpack_require__(374),
     initCloneByTag = __webpack_require__(375),
     initCloneObject = __webpack_require__(173),
@@ -48260,8 +48260,8 @@ module.exports = baseCreate;
 
 
 var SetCache = __webpack_require__(69),
-    arrayIncludes = __webpack_require__(97),
-    arrayIncludesWith = __webpack_require__(98),
+    arrayIncludes = __webpack_require__(98),
+    arrayIncludesWith = __webpack_require__(99),
     arrayMap = __webpack_require__(32),
     baseUnary = __webpack_require__(73),
     cacheHas = __webpack_require__(74);
@@ -48430,8 +48430,8 @@ module.exports = baseInRange;
 
 
 var SetCache = __webpack_require__(69),
-    arrayIncludes = __webpack_require__(97),
-    arrayIncludesWith = __webpack_require__(98),
+    arrayIncludes = __webpack_require__(98),
+    arrayIncludesWith = __webpack_require__(99),
     arrayMap = __webpack_require__(32),
     baseUnary = __webpack_require__(73),
     cacheHas = __webpack_require__(74);
@@ -48532,7 +48532,7 @@ var Stack = __webpack_require__(70),
     equalArrays = __webpack_require__(168),
     equalByTag = __webpack_require__(361),
     equalObjects = __webpack_require__(362),
-    getTag = __webpack_require__(110),
+    getTag = __webpack_require__(111),
     isArray = __webpack_require__(6),
     isBuffer = __webpack_require__(55),
     isTypedArray = __webpack_require__(83);
@@ -48754,7 +48754,7 @@ module.exports = baseIsNative;
 
 
 var baseGetTag = __webpack_require__(27),
-    isLength = __webpack_require__(117),
+    isLength = __webpack_require__(118),
     isObjectLike = __webpack_require__(19);
 
 /** `Object#toString` result references. */
@@ -48883,7 +48883,7 @@ module.exports = baseMatches;
 var baseIsEqual = __webpack_require__(161),
     get = __webpack_require__(409),
     hasIn = __webpack_require__(185),
-    isKey = __webpack_require__(111),
+    isKey = __webpack_require__(112),
     isStrictComparable = __webpack_require__(175),
     matchesStrictComparable = __webpack_require__(177),
     toKey = __webpack_require__(53);
@@ -48926,7 +48926,7 @@ var assignMergeValue = __webpack_require__(156),
     initCloneObject = __webpack_require__(173),
     isArguments = __webpack_require__(54),
     isArray = __webpack_require__(6),
-    isArrayLikeObject = __webpack_require__(116),
+    isArrayLikeObject = __webpack_require__(117),
     isBuffer = __webpack_require__(55),
     isFunction = __webpack_require__(82),
     isObject = __webpack_require__(8),
@@ -49080,7 +49080,7 @@ module.exports = basePick;
 "use strict";
 
 
-var baseGet = __webpack_require__(103),
+var baseGet = __webpack_require__(104),
     baseSet = __webpack_require__(333),
     castPath = __webpack_require__(75);
 
@@ -49140,7 +49140,7 @@ module.exports = baseProperty;
 "use strict";
 
 
-var baseGet = __webpack_require__(103);
+var baseGet = __webpack_require__(104);
 
 /**
  * A specialized version of `baseProperty` which supports deep paths.
@@ -49215,7 +49215,7 @@ module.exports = baseReduce;
 "use strict";
 
 
-var assignValue = __webpack_require__(101),
+var assignValue = __webpack_require__(102),
     castPath = __webpack_require__(75),
     isIndex = __webpack_require__(77),
     isObject = __webpack_require__(8),
@@ -49472,8 +49472,8 @@ module.exports = baseToString;
 
 
 var SetCache = __webpack_require__(69),
-    arrayIncludes = __webpack_require__(97),
-    arrayIncludesWith = __webpack_require__(98),
+    arrayIncludes = __webpack_require__(98),
+    arrayIncludesWith = __webpack_require__(99),
     cacheHas = __webpack_require__(74),
     createSet = __webpack_require__(358),
     setToArray = __webpack_require__(80);
@@ -49574,7 +49574,7 @@ module.exports = baseValues;
 "use strict";
 
 
-var isArrayLikeObject = __webpack_require__(116);
+var isArrayLikeObject = __webpack_require__(117);
 
 /**
  * Casts `value` to an empty array if it's not an array like object.
@@ -49618,7 +49618,7 @@ module.exports = castFunction;
 "use strict";
 
 
-var cloneArrayBuffer = __webpack_require__(106);
+var cloneArrayBuffer = __webpack_require__(107);
 
 /**
  * Creates a clone of `dataView`.
@@ -49643,7 +49643,7 @@ module.exports = cloneDataView;
 
 
 var addMapEntry = __webpack_require__(301),
-    arrayReduce = __webpack_require__(100),
+    arrayReduce = __webpack_require__(101),
     mapToArray = __webpack_require__(176);
 
 /** Used to compose bitmasks for cloning. */
@@ -49698,7 +49698,7 @@ module.exports = cloneRegExp;
 
 
 var addSetEntry = __webpack_require__(302),
-    arrayReduce = __webpack_require__(100),
+    arrayReduce = __webpack_require__(101),
     setToArray = __webpack_require__(80);
 
 /** Used to compose bitmasks for cloning. */
@@ -49847,7 +49847,7 @@ module.exports = compareMultiple;
 
 
 var copyObject = __webpack_require__(44),
-    getSymbols = __webpack_require__(109);
+    getSymbols = __webpack_require__(110);
 
 /**
  * Copies own symbols of `source` to `object`.
@@ -50110,7 +50110,7 @@ module.exports = customDefaultsAssignIn;
 "use strict";
 
 
-var baseMerge = __webpack_require__(105),
+var baseMerge = __webpack_require__(106),
     isObject = __webpack_require__(8);
 
 /**
@@ -50720,7 +50720,7 @@ module.exports = initCloneArray;
 "use strict";
 
 
-var cloneArrayBuffer = __webpack_require__(106),
+var cloneArrayBuffer = __webpack_require__(107),
     cloneDataView = __webpack_require__(344),
     cloneMap = __webpack_require__(345),
     cloneRegExp = __webpack_require__(346),
@@ -51037,7 +51037,7 @@ module.exports = listCacheSet;
 
 var Hash = __webpack_require__(298),
     ListCache = __webpack_require__(68),
-    Map = __webpack_require__(93);
+    Map = __webpack_require__(94);
 
 /**
  * Removes all key-value entries from the map.
@@ -51495,8 +51495,8 @@ module.exports = stackHas;
 
 
 var ListCache = __webpack_require__(68),
-    Map = __webpack_require__(93),
-    MapCache = __webpack_require__(94);
+    Map = __webpack_require__(94),
+    MapCache = __webpack_require__(95);
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -51604,7 +51604,7 @@ module.exports = stringToPath;
 
 
 var copyObject = __webpack_require__(44),
-    createAssigner = __webpack_require__(107),
+    createAssigner = __webpack_require__(108),
     keysIn = __webpack_require__(57);
 
 /**
@@ -51730,7 +51730,7 @@ module.exports = constant;
 var baseDifference = __webpack_require__(310),
     baseFlatten = __webpack_require__(72),
     baseRest = __webpack_require__(43),
-    isArrayLikeObject = __webpack_require__(116);
+    isArrayLikeObject = __webpack_require__(117);
 
 /**
  * Creates an array of `array` values not included in the other given arrays
@@ -51767,7 +51767,7 @@ module.exports = difference;
 
 
 var escapeHtmlChar = __webpack_require__(363),
-    toString = __webpack_require__(121);
+    toString = __webpack_require__(122);
 
 /** Used to match HTML entities and HTML characters. */
 var reUnescapedHtml = /[&<>"']/g,
@@ -51815,7 +51815,7 @@ module.exports = escape;
 "use strict";
 
 
-var baseGet = __webpack_require__(103);
+var baseGet = __webpack_require__(104);
 
 /**
  * Gets the value at `path` of `object`. If the resolved value is
@@ -51856,7 +51856,7 @@ module.exports = get;
 "use strict";
 
 
-var baseIndexOf = __webpack_require__(104),
+var baseIndexOf = __webpack_require__(105),
     toInteger = __webpack_require__(84);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
@@ -51939,7 +51939,7 @@ module.exports = isElement;
 "use strict";
 
 
-var isNumber = __webpack_require__(118);
+var isNumber = __webpack_require__(119);
 
 /**
  * Checks if `value` is `NaN`.
@@ -51985,8 +51985,8 @@ module.exports = isNaN;
 "use strict";
 
 
-var baseMerge = __webpack_require__(105),
-    createAssigner = __webpack_require__(107);
+var baseMerge = __webpack_require__(106),
+    createAssigner = __webpack_require__(108);
 
 /**
  * This method is like `_.merge` except that it accepts `customizer` which
@@ -52176,7 +52176,7 @@ module.exports = pick;
 
 var baseProperty = __webpack_require__(329),
     basePropertyDeep = __webpack_require__(330),
-    isKey = __webpack_require__(111),
+    isKey = __webpack_require__(112),
     toKey = __webpack_require__(53);
 
 /**
@@ -52214,7 +52214,7 @@ module.exports = property;
 "use strict";
 
 
-var arrayReduce = __webpack_require__(100),
+var arrayReduce = __webpack_require__(101),
     baseEach = __webpack_require__(52),
     baseIteratee = __webpack_require__(23),
     baseReduce = __webpack_require__(332),
@@ -52273,7 +52273,7 @@ module.exports = reduce;
 "use strict";
 
 
-var arrayFilter = __webpack_require__(96),
+var arrayFilter = __webpack_require__(97),
     baseFilter = __webpack_require__(157),
     baseIteratee = __webpack_require__(23),
     isArray = __webpack_require__(6),
@@ -52454,7 +52454,7 @@ module.exports = take;
 "use strict";
 
 
-var debounce = __webpack_require__(112),
+var debounce = __webpack_require__(113),
     isObject = __webpack_require__(8);
 
 /** Error message constants. */
@@ -53501,7 +53501,7 @@ module.exports = Array.isArray || function (arr) {
 "use strict";
 
 
-module.exports = __webpack_require__(124).PassThrough;
+module.exports = __webpack_require__(125).PassThrough;
 
 /***/ }),
 /* 436 */
@@ -53510,7 +53510,7 @@ module.exports = __webpack_require__(124).PassThrough;
 "use strict";
 
 
-module.exports = __webpack_require__(124).Transform;
+module.exports = __webpack_require__(125).Transform;
 
 /***/ }),
 /* 437 */
@@ -53519,7 +53519,7 @@ module.exports = __webpack_require__(124).Transform;
 "use strict";
 
 
-module.exports = __webpack_require__(123);
+module.exports = __webpack_require__(124);
 
 /***/ }),
 /* 438 */
@@ -59131,7 +59131,7 @@ var EE = __webpack_require__(64).EventEmitter;
 var inherits = __webpack_require__(18);
 
 inherits(Stream, EE);
-Stream.Readable = __webpack_require__(124);
+Stream.Readable = __webpack_require__(125);
 Stream.Writable = __webpack_require__(437);
 Stream.Duplex = __webpack_require__(431);
 Stream.Transform = __webpack_require__(436);
@@ -60546,21 +60546,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 __webpack_require__(451);
 var SnippetPreview = __webpack_require__(241);
-var defaultsDeep = __webpack_require__(114);
+var defaultsDeep = __webpack_require__(115);
 var isObject = __webpack_require__(8);
-var isString = __webpack_require__(119);
+var isString = __webpack_require__(120);
 var MissingArgument = __webpack_require__(87);
 var isUndefined = __webpack_require__(7);
 var isEmpty = __webpack_require__(16);
 var forEach = __webpack_require__(3);
-var debounce = __webpack_require__(112);
+var debounce = __webpack_require__(113);
 var throttle = __webpack_require__(424);
 var Jed = __webpack_require__(296);
-var SEOAssessor = __webpack_require__(132);
-var ContentAssessor = __webpack_require__(125);
+var SEOAssessor = __webpack_require__(133);
+var ContentAssessor = __webpack_require__(126);
 var CornerstoneSEOAssessor = __webpack_require__(462);
 var CornerstoneContentAssessor = __webpack_require__(461);
-var Researcher = __webpack_require__(129);
+var Researcher = __webpack_require__(130);
 var AssessorPresenter = __webpack_require__(469);
 var Pluggable = __webpack_require__(229);
 var Paper = __webpack_require__(254);
@@ -61340,7 +61340,7 @@ module.exports = App;
 
 
 var filter = __webpack_require__(9);
-var isSentenceTooLong = __webpack_require__(127);
+var isSentenceTooLong = __webpack_require__(128);
 /**
  * Checks for too long sentences.
  * @param {array} sentences The array with objects containing sentences and their lengths.
@@ -61702,10 +61702,10 @@ module.exports = function () {
 
 var getLanguage = __webpack_require__(26);
 var isUndefined = __webpack_require__(7);
-var de = __webpack_require__(566);
-var en = __webpack_require__(567);
-var nl = __webpack_require__(569);
-var it = __webpack_require__(568);
+var de = __webpack_require__(567);
+var en = __webpack_require__(568);
+var nl = __webpack_require__(570);
+var it = __webpack_require__(569);
 var languages = { de: de, nl: nl, en: en, it: it };
 module.exports = function () {
     var locale = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "en_US";
@@ -62169,7 +62169,7 @@ module.exports = function () {
 
 
 var Assessor = __webpack_require__(59);
-var ContentAssessor = __webpack_require__(125);
+var ContentAssessor = __webpack_require__(126);
 var fleschReadingEase = __webpack_require__(200);
 var paragraphTooLong = __webpack_require__(201);
 var SentenceLengthInText = __webpack_require__(204);
@@ -62223,7 +62223,7 @@ module.exports = CornerStoneContentAssessor;
 
 
 var Assessor = __webpack_require__(59);
-var SEOAssessor = __webpack_require__(132);
+var SEOAssessor = __webpack_require__(133);
 var introductionKeyword = __webpack_require__(209);
 var keyphraseLength = __webpack_require__(210);
 var keywordDensity = __webpack_require__(211);
@@ -62580,12 +62580,12 @@ module.exports = removeDuplicateMarks;
 
 
 var forEach = __webpack_require__(3);
-var isNumber = __webpack_require__(118);
+var isNumber = __webpack_require__(119);
 var isObject = __webpack_require__(8);
 var isUndefined = __webpack_require__(7);
 var difference = __webpack_require__(407);
 var template = __webpack_require__(253).assessmentPresenterResult;
-var scoreToRating = __webpack_require__(128);
+var scoreToRating = __webpack_require__(129);
 var createConfig = __webpack_require__(455);
 /**
  * Constructs the AssessorPresenter.
@@ -63180,8 +63180,8 @@ var Participle = __webpack_require__(255);
 var nonVerbsEndingEd = __webpack_require__(485)();
 var getWordIndices = __webpack_require__(482);
 var arrayToRegex = __webpack_require__(63);
-var cannotDirectlyPrecedePassiveParticiple = __webpack_require__(130)().cannotDirectlyPrecedePassiveParticiple;
-var cannotBeBetweenAuxiliaryAndParticiple = __webpack_require__(130)().cannotBeBetweenPassiveAuxiliaryAndParticiple;
+var cannotDirectlyPrecedePassiveParticiple = __webpack_require__(131)().cannotDirectlyPrecedePassiveParticiple;
+var cannotBeBetweenAuxiliaryAndParticiple = __webpack_require__(131)().cannotBeBetweenPassiveAuxiliaryAndParticiple;
 var forEach = __webpack_require__(3);
 var includes = __webpack_require__(34);
 var isEmpty = __webpack_require__(16);
@@ -63424,14 +63424,14 @@ module.exports = function () {
 var verbEndingInIngRegex = /\w+ing(?=$|[ \n\r\t\.,'\(\)\"\+\-;!?:\/»«‹›<>])/ig;
 var stopCharacterRegex = /(?!([a-zA-Z]))([:,]|('ll)|('ve))(?=[ \n\r\t\'\"\+\-»«‹›<>])/ig;
 var ingExclusionArray = ["king", "cling", "ring", "being", "thing", "something", "anything"];
-var indices = __webpack_require__(133);
+var indices = __webpack_require__(134);
 var getIndicesOfList = indices.getIndicesByWordList;
 var filterIndices = indices.filterIndices;
 var sortIndices = indices.sortIndices;
 var stripSpaces = __webpack_require__(12);
 var normalizeSingleQuotes = __webpack_require__(88).normalizeSingle;
 var arrayToRegex = __webpack_require__(63);
-var auxiliaries = __webpack_require__(131)().all;
+var auxiliaries = __webpack_require__(132)().all;
 var SentencePart = __webpack_require__(478);
 var auxiliaryRegex = arrayToRegex(auxiliaries);
 var stopwords = __webpack_require__(486)();
@@ -63597,7 +63597,7 @@ module.exports = function () {
 "use strict";
 
 
-var find = __webpack_require__(115);
+var find = __webpack_require__(116);
 var irregulars = __webpack_require__(483)();
 /**
  * Returns words that have been determined to be a regular participle.
@@ -63750,7 +63750,7 @@ var createRegexFromDoubleArray = __webpack_require__(535);
 var getSentences = __webpack_require__(30);
 var normalizeSingleQuotes = __webpack_require__(88).normalizeSingle;
 var getTransitionWords = __webpack_require__(465);
-var matchWordInSentence = __webpack_require__(135).isWordInSentence;
+var matchWordInSentence = __webpack_require__(136).isWordInSentence;
 var forEach = __webpack_require__(3);
 var filter = __webpack_require__(9);
 var memoize = __webpack_require__(47);
@@ -63989,8 +63989,8 @@ module.exports = function () {
 
 
 var Participle = __webpack_require__(255);
-var getIndices = __webpack_require__(133).getIndicesByWord;
-var getIndicesOfList = __webpack_require__(133).getIndicesByWordList;
+var getIndices = __webpack_require__(134).getIndicesByWord;
+var getIndicesOfList = __webpack_require__(134).getIndicesByWordList;
 var exceptionsParticiplesActive = __webpack_require__(500)();
 var auxiliaries = __webpack_require__(61)().participleLike;
 var exceptionsRegex = /\S+(apparat|arbeit|dienst|haft|halt|keit|kraft|not|pflicht|schaft|schrift|tät|wert|zeit)($|[ \n\r\t\.,'\(\)\"\+\-;!?:\/»«‹›<>])/ig;
@@ -64510,7 +64510,7 @@ var getAnchors = __webpack_require__(243);
 var findKeywordInUrl = __webpack_require__(536);
 var getLinkType = __webpack_require__(538);
 var checkNofollow = __webpack_require__(533);
-var urlHelper = __webpack_require__(136);
+var urlHelper = __webpack_require__(137);
 var escapeRegExp = __webpack_require__(15);
 /**
  * Checks whether or not an anchor contains the passed keyword.
@@ -65863,7 +65863,7 @@ module.exports = function (array) {
 
 /** @module stringProcessing/findKeywordInUrl */
 
-var matchTextWithTransliteration = __webpack_require__(134);
+var matchTextWithTransliteration = __webpack_require__(135);
 var escapeRegExp = __webpack_require__(15);
 /**
  * Matches the keyword in the URL.
@@ -65922,7 +65922,7 @@ module.exports = function (text) {
 
 /** @module stringProcess/getLinkType */
 
-var urlHelper = __webpack_require__(136);
+var urlHelper = __webpack_require__(137);
 /**
  * Determines the type of link.
  *
@@ -66143,7 +66143,7 @@ var getSentences = __webpack_require__(30);
 var WordCombination = __webpack_require__(550);
 var normalizeQuotes = __webpack_require__(88).normalize;
 var germanFunctionWords = __webpack_require__(498);
-var englishFunctionWords = __webpack_require__(130);
+var englishFunctionWords = __webpack_require__(131);
 var dutchFunctionWords = __webpack_require__(475);
 var spanishFunctionWords = __webpack_require__(526);
 var italianFunctionWords = __webpack_require__(515);
@@ -66498,7 +66498,7 @@ module.exports = function (text) {
 
 var replaceString = __webpack_require__(545);
 var removalWords = __webpack_require__(456)();
-var matchTextWithTransliteration = __webpack_require__(134);
+var matchTextWithTransliteration = __webpack_require__(135);
 /**
  * Matches the keyword in an array of strings
  *
@@ -68191,7 +68191,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _foundation = __webpack_require__(1);
 
-var _foundation2 = __webpack_require__(145);
+var _foundation2 = __webpack_require__(92);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68356,12 +68356,14 @@ var MediaReveal = function (_Plugin) {
   }, {
     key: '_appendItems',
     value: function _appendItems(data) {
+      this.clear();
+
       _jquery2.default.each(data, function (index, data) {
         var item = this._buildItem(data);
         this.items.push(item);
       }.bind(this));
 
-      this.$grid.append(this.items);
+      this.$grid.html(this.items);
     }
 
     /**
@@ -68399,6 +68401,21 @@ var MediaReveal = function (_Plugin) {
     }
 
     /**
+     * Clears media modal items and selected items.
+     * @function
+     */
+
+  }, {
+    key: 'clear',
+    value: function clear() {
+      this.items = [];
+      this.selectedItems = [];
+
+      this.$grid.empty();
+      this.$grid.foundation('unselectAll');
+    }
+
+    /**
      * Opens media reveal.
      * @param {Object} event - Event object passed from listener.
      * @private
@@ -68425,17 +68442,12 @@ var MediaReveal = function (_Plugin) {
   }, {
     key: 'close',
     value: function close(event) {
-      this.items = [];
-      this.selectedItems = [];
-
       if (this.reveal.isActive) {
         this.reveal.close();
       }
 
-      this.$grid.empty();
-      this.$grid.foundation('unselectAll');
-
       this.$element.trigger('closed.zf.media.reveal');
+      this.clear();
     }
 
     /**
@@ -68521,7 +68533,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _foundation = __webpack_require__(1);
 
-var _foundation2 = __webpack_require__(143);
+var _foundation2 = __webpack_require__(144);
 
 var _foundation3 = __webpack_require__(90);
 
@@ -69318,6 +69330,313 @@ exports.SeoAnalysis = SeoAnalysis;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ShortcodeReveal = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _foundation = __webpack_require__(1);
+
+var _foundation2 = __webpack_require__(92);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * ShortcodeReveal module.
+ * @module shortcodeReveal
+ */
+
+var ShortcodeReveal = function (_Plugin) {
+  _inherits(ShortcodeReveal, _Plugin);
+
+  function ShortcodeReveal() {
+    _classCallCheck(this, ShortcodeReveal);
+
+    return _possibleConstructorReturn(this, (ShortcodeReveal.__proto__ || Object.getPrototypeOf(ShortcodeReveal)).apply(this, arguments));
+  }
+
+  _createClass(ShortcodeReveal, [{
+    key: '_setup',
+
+    /**
+     * Creates a new instance of an shortcode-reveal.
+     * @class
+     * @name ShortcodeReveal
+     * @fires ShortcodeReveal#init
+     * @param {Object} element - jQuery object to initialize.
+     * @param {Object} options - Overrides to the default plugin settings.
+     */
+    value: function _setup(element, options) {
+      this.className = 'ShortcodeReveal'; // ie9 back compat
+      this.$element = element;
+      this.options = _jquery2.default.extend({}, ShortcodeReveal.defaults, this.$element.data(), options);
+      this.reveal = new Foundation.Reveal(element, this.options);
+      this.shortcodes = [];
+      this.items = [];
+      this.activeShortcode = null;
+
+      this._init();
+    }
+
+    /**
+     * Initializes the shortcode-reveal wrapper.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_init',
+    value: function _init() {
+      this.id = this.$element.attr('id');
+      this.$menu = this.$element.find('[data-menu]');
+      this.$form = this.$element.find('[data-form]');
+      this.$preview = this.$element.find('[data-preview]');
+      this.$insert = this.$element.find('[data-insert]');
+      this.shortcodesUrl = this.options.shortcodesUrl;
+      this.formUrl = this.options.formUrl;
+      this.previewUrl = this.options.previewUrl;
+
+      // this.$insert.addClass('disabled');
+
+      this._events();
+    }
+
+    /**
+     * Adds event handlers to the shortcode-reveal.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_events',
+    value: function _events() {
+      this.$element.off('.zf.reveal').on({
+        'open.zf.reveal': this.open.bind(this),
+        'closed.zf.reveal': this.close.bind(this)
+      });
+
+      this.$insert.off('click').on({
+        'click': this.insert.bind(this)
+      });
+
+      this.$element.off('click', 'a[data-name]').on({
+        'click': this._loadShortcode.bind(this)
+      }, 'a[data-name]');
+    }
+
+    /**
+     * Gets shortcodes items JSON from url.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_getItems',
+    value: function _getItems() {
+      _jquery2.default.ajax(this.shortcodesUrl).done(function (response) {
+        this.shortcodes = response;
+
+        this._appendMenuItems(response);
+        this._loadShortcode();
+      }.bind(this));
+    }
+
+    /**
+     * Gets shortcodes items JSON from url.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_loadShortcode',
+    value: function _loadShortcode(event) {
+      if (event) {
+        this.activeShortcode = (0, _jquery2.default)(event.currentTarget).attr('data-name');
+      } else {
+        this.activeShortcode = this.$menu.find('a[data-name]:first').attr('data-name');
+      }
+
+      this._getForm(this.activeShortcode);
+      this._getPreview(this.activeShortcode);
+    }
+
+    /**
+     * Gets shortcode form from url.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_getForm',
+    value: function _getForm(shortcode) {
+      var url = this.formUrl.replace('[name]', shortcode);
+
+      _jquery2.default.ajax(url).done(function (response) {
+        this.$form.html(response);
+        this.$form.foundation();
+      }.bind(this));
+    }
+
+    /**
+     * Gets shortcode preview from url.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_getPreview',
+    value: function _getPreview(shortcode) {
+      var url = this.previewUrl.replace('[name]', shortcode);
+      var frame = (0, _jquery2.default)('<iframe frameborder="0"></iframe>');
+
+      _jquery2.default.ajax(url).done(function (response) {
+        this.$preview.html(frame);
+
+        frame.on('load', function (event) {
+          (0, _jquery2.default)(this).contents().find('html').html(response);
+        });
+      }.bind(this));
+    }
+
+    /**
+     * Gets value from object by dot notation.
+     * @param {Object} obj - Object to get the key value from.
+     * @param {String} path - Dot notated path to the key.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_getObjectValue',
+    value: function _getObjectValue(obj, path) {
+      return new Function('_', 'return _.' + path)(obj);
+    }
+
+    /**
+     * Appends all menu items to menu container.
+     * @param {Array} data - Collection of image data objects to build items from.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_appendMenuItems',
+    value: function _appendMenuItems(data) {
+      this.clear();
+
+      _jquery2.default.each(data, function (index, data) {
+        var item = (0, _jquery2.default)('<li><a data-name="' + data.name + '"><i class="' + data.icon + '"></i><span>' + data.label + '</span></a></li>');
+        this.items.push(item);
+      }.bind(this));
+
+      var menu = (0, _jquery2.default)('<ul class="menu vertical icons icon-left"></ul>');
+      menu.html(this.items);
+
+      this.$menu.html(menu);
+    }
+
+    /**
+     * Clears shortcode reveal state.
+     * @function
+     */
+
+  }, {
+    key: 'clear',
+    value: function clear() {
+      this.items = [];
+    }
+
+    /**
+     * Opens shortcode reveal.
+     * @param {Object} event - Event object passed from listener.
+     * @private
+     */
+
+  }, {
+    key: 'open',
+    value: function open(event) {
+      this._getItems();
+
+      if (!this.reveal.isActive) {
+        this.reveal.open();
+      }
+
+      // this.$element.trigger('open.zf.shortcode.reveal');
+    }
+
+    /**
+     * Closes shortcode reveal.
+     * @param {Object} event - Event object passed from listener.
+     * @private
+     */
+
+  }, {
+    key: 'close',
+    value: function close(event) {
+      if (this.reveal.isActive) {
+        this.reveal.close();
+      }
+
+      this.$element.trigger('closed.zf.shortcode.reveal');
+      this.clear();
+    }
+
+    /**
+     * Closes reveal and passes selected items objects.
+     * @param {Object} event - Event object passed from listener.
+     * @private
+     */
+
+  }, {
+    key: 'insert',
+    value: function insert(event) {
+      var items = [];
+
+      this.reveal.close();
+      this.$element.trigger('insert.zf.shortcode.reveal', [items]);
+    }
+
+    /**
+     * Destroys the shortcode-reveal plugin.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_destroy',
+    value: function _destroy() {
+      this.reveal.destroy();
+      this.$element.off('.zf.reveal');
+      this.$insert.off('click');
+    }
+  }]);
+
+  return ShortcodeReveal;
+}(_foundation.Plugin);
+
+ShortcodeReveal.defaults = {};
+
+exports.ShortcodeReveal = ShortcodeReveal;
+
+/***/ }),
+/* 562 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.TableCheckbox = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -69630,7 +69949,7 @@ TableCheckbox.defaults = {};
 exports.TableCheckbox = TableCheckbox;
 
 /***/ }),
-/* 562 */
+/* 563 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69691,6 +70010,7 @@ var TinyMceEditor = function (_Plugin) {
       this.mediaSrc = this.options.mediaSrc;
       this.mediaAlt = this.options.mediaAlt;
       this.mediaUrl = this.options.mediaUrl;
+      this.shortcodeHandler = this.options.shortcodeHandler;
 
       this._init();
     }
@@ -69771,7 +70091,16 @@ var TinyMceEditor = function (_Plugin) {
       if (this.mediaHandler) {
         editor.addButton('image', {
           icon: 'image',
+          tooltip: 'Insert/edit media',
           onclick: this._mediaButtonCallback.bind(this)
+        });
+      }
+
+      if (this.shortcodeHandler) {
+        editor.addButton('shortcode', {
+          icon: 'template',
+          tooltip: 'Insert/edit shortcodes',
+          onclick: this._shortcodeButtonCallback.bind(this)
         });
       }
     }
@@ -69790,7 +70119,7 @@ var TinyMceEditor = function (_Plugin) {
       this.$reveal.foundation('open');
 
       this.$reveal.off('insert.zf.media.reveal').on({
-        'insert.zf.media.reveal': this._mediaAttach.bind(this)
+        'insert.zf.media.reveal': this._mediaInsert.bind(this)
       });
     }
 
@@ -69803,8 +70132,8 @@ var TinyMceEditor = function (_Plugin) {
      */
 
   }, {
-    key: '_mediaAttach',
-    value: function _mediaAttach(event, data) {
+    key: '_mediaInsert',
+    value: function _mediaInsert(event, data) {
       _jquery2.default.each(data, function (index, data) {
         var url = this._getObjectValue(data, this.mediaSrc);
         var alt = this._getObjectValue(data, this.mediaAlt);
@@ -69812,6 +70141,41 @@ var TinyMceEditor = function (_Plugin) {
 
         this.editor.insertContent(item);
       }.bind(this));
+    }
+
+    /**
+     * Custom shortcode button click callback.
+     * @param {Object} event - Event passed from handler.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_shortcodeButtonCallback',
+    value: function _shortcodeButtonCallback(event) {
+      this.$shortcode = (0, _jquery2.default)('#' + this.shortcodeHandler);
+      this.$shortcode.foundation('open');
+
+      this.$shortcode.off('insert.zf.shortcode.reveal').on({
+        'insert.zf.shortcode.reveal': this._shortcodeInsert.bind(this)
+      });
+    }
+
+    /**
+     * Inserts shortcode in the editor.
+     * @param {Object} event - Event object passed from listener.
+     * @param {Array} data - Shortcode configuration data.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_shortcodeInsert',
+    value: function _shortcodeInsert(event, data) {
+      var item = '[]';
+
+      console.log(data);
+      this.editor.insertContent(item);
     }
 
     /**
@@ -69835,7 +70199,7 @@ var TinyMceEditor = function (_Plugin) {
   return TinyMceEditor;
 }(_foundation.Plugin);
 
-TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote', 'image media', 'alignleft aligncenter alignright alignjustify', 'outdent indent', 'link unlink', 'formatselect', 'removeformat pastetext', 'fullscreen'];
+TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote', 'image media shortcode', 'alignleft aligncenter alignright alignjustify', 'outdent indent', 'link unlink', 'formatselect', 'removeformat pastetext', 'fullscreen'];
 
 TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'table', 'wordcount',
 // 'image',
@@ -69858,7 +70222,7 @@ TinyMceEditor.defaults = {
 exports.TinyMceEditor = TinyMceEditor;
 
 /***/ }),
-/* 563 */
+/* 564 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69866,15 +70230,17 @@ exports.TinyMceEditor = TinyMceEditor;
 
 var _offcanvasMenu = __webpack_require__(558);
 
-var _tinyMceEditor = __webpack_require__(562);
+var _tinyMceEditor = __webpack_require__(563);
 
-var _tableCheckbox = __webpack_require__(561);
+var _tableCheckbox = __webpack_require__(562);
 
 var _listSelect = __webpack_require__(555);
 
 var _listRemove = __webpack_require__(554);
 
 var _mediaReveal = __webpack_require__(557);
+
+var _shortcodeReveal = __webpack_require__(561);
 
 var _mediaAttach = __webpack_require__(556);
 
@@ -69894,6 +70260,7 @@ Foundation.plugin(_tableCheckbox.TableCheckbox, 'TableCheckbox');
 Foundation.plugin(_listSelect.ListSelect, 'ListSelect');
 Foundation.plugin(_listRemove.ListRemove, 'ListRemove');
 Foundation.plugin(_mediaReveal.MediaReveal, 'MediaReveal');
+Foundation.plugin(_shortcodeReveal.ShortcodeReveal, 'ShortcodeReveal');
 Foundation.plugin(_mediaAttach.MediaAttach, 'MediaAttach');
 Foundation.plugin(_dropzoneUpload.DropzoneUpload, 'DropzoneUpload');
 Foundation.plugin(_inlineEditBox.InlineEditBox, 'InlineEditBox');
@@ -69902,7 +70269,7 @@ Foundation.plugin(_fileInput.FileInput, 'FileInput');
 Foundation.plugin(_seoAnalysis.SeoAnalysis, 'SeoAnalysis');
 
 /***/ }),
-/* 564 */
+/* 565 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69930,17 +70297,17 @@ var _foundationUtil7 = __webpack_require__(67);
 
 var _foundationUtil8 = __webpack_require__(148);
 
-var _foundationUtil9 = __webpack_require__(92);
+var _foundationUtil9 = __webpack_require__(93);
 
 var _foundationUtil10 = __webpack_require__(22);
 
 var _foundation2 = __webpack_require__(277);
 
-var _foundation3 = __webpack_require__(141);
+var _foundation3 = __webpack_require__(142);
 
 var _foundation4 = __webpack_require__(90);
 
-var _foundation5 = __webpack_require__(142);
+var _foundation5 = __webpack_require__(143);
 
 var _foundation6 = __webpack_require__(279);
 
@@ -69952,7 +70319,7 @@ var _foundation9 = __webpack_require__(281);
 
 var _foundation10 = __webpack_require__(282);
 
-var _foundation11 = __webpack_require__(143);
+var _foundation11 = __webpack_require__(144);
 
 var _foundation12 = __webpack_require__(283);
 
@@ -69960,7 +70327,7 @@ var _foundation13 = __webpack_require__(285);
 
 var _foundation14 = __webpack_require__(286);
 
-var _foundation15 = __webpack_require__(145);
+var _foundation15 = __webpack_require__(92);
 
 var _foundation16 = __webpack_require__(287);
 
@@ -70048,40 +70415,34 @@ _foundation.Foundation.plugin(_foundation22.ResponsiveAccordionTabs, 'Responsive
 module.exports = _foundation.Foundation;
 
 /***/ }),
-/* 565 */
+/* 566 */
 /***/ (function(module, exports) {
 
 module.exports = {"0":65533,"128":8364,"130":8218,"131":402,"132":8222,"133":8230,"134":8224,"135":8225,"136":710,"137":8240,"138":352,"139":8249,"140":338,"142":381,"145":8216,"146":8217,"147":8220,"148":8221,"149":8226,"150":8211,"151":8212,"152":732,"153":8482,"154":353,"155":8250,"156":339,"158":382,"159":376}
 
 /***/ }),
-/* 566 */
+/* 567 */
 /***/ (function(module, exports) {
 
 module.exports = {"vowels":"aeiouyäöüáéâàèîêâûôœ","deviations":{"vowels":[{"fragments":["ouil","deaux","deau$","oard","äthiop","euil","veau","eau$","ueue","lienisch","ance$","ence$","time$","once$","ziat","guette","ête","ôte$","[hp]omme$","[qdscn]ue$","aire$","ture$","êpe$","[^q]ui$","tiche$","vice$","oile$","zial","cruis","leas","coa[ct]","[^i]deal","[fw]eat","[lsx]ed$"],"countModifier":-1},{"fragments":["aau","a[äöüo]","äue","äeu","aei","aue","aeu","ael","ai[aeo]","saik","aismus","ä[aeoi]","auä","éa","e[äaoö]","ei[eo]","ee[aeiou]","eu[aäe]","eum$","eü","o[aäöü]","poet","oo[eo]","oie","oei[^l]","oeu[^f]","öa","[fgrz]ieu","mieun","tieur","ieum","i[aiuü]","[^l]iä","[^s]chien","io[bcdfhjkmpqtuvwx]","[bdhmprv]ion","[lr]ior","[^g]io[gs]","[dr]ioz","elioz","zioni","bio[lnorz]","iö[^s]","ie[ei]","rier$","öi[eg]","[^r]öisch","[^gqv]u[aeéioöuü]","quie$","quie[^s]","uäu","^us-","^it-","üe","naiv","aisch$","aische$","aische[nrs]$","[lst]ien","dien$","gois","[^g]rient","[aeiou]y[aeiou]","byi","yä","[a-z]y[ao]","yau","koor","scient","eriel","[dg]oing"],"countModifier":1},{"fragments":["eauü","ioi","ioo","ioa","iii","oai","eueu"],"countModifier":1}],"words":{"full":[{"word":"beach","syllables":1},{"word":"beat","syllables":1},{"word":"beau","syllables":1},{"word":"beaune","syllables":1},{"word":"belle","syllables":1},{"word":"bouche","syllables":1},{"word":"brake","syllables":1},{"word":"cache","syllables":1},{"word":"chaiselongue","syllables":2},{"word":"choke","syllables":1},{"word":"cordiale","syllables":3},{"word":"core","syllables":1},{"word":"dope","syllables":1},{"word":"eat","syllables":1},{"word":"eye","syllables":1},{"word":"fake","syllables":1},{"word":"fame","syllables":1},{"word":"fatigue","syllables":2},{"word":"femme","syllables":1},{"word":"force","syllables":1},{"word":"game","syllables":1},{"word":"games","syllables":1},{"word":"gate","syllables":1},{"word":"grande","syllables":1},{"word":"ice","syllables":1},{"word":"ion","syllables":2},{"word":"joke","syllables":1},{"word":"jupe","syllables":1},{"word":"maisch","syllables":1},{"word":"maische","syllables":2},{"word":"move","syllables":1},{"word":"native","syllables":2},{"word":"nice","syllables":1},{"word":"one","syllables":1},{"word":"pipe","syllables":1},{"word":"prime","syllables":1},{"word":"rate","syllables":1},{"word":"rhythm","syllables":2},{"word":"ride","syllables":1},{"word":"rides","syllables":1},{"word":"rien","syllables":2},{"word":"save","syllables":1},{"word":"science","syllables":2},{"word":"siècle","syllables":1},{"word":"site","syllables":1},{"word":"suite","syllables":1},{"word":"take","syllables":1},{"word":"taupe","syllables":1},{"word":"universe","syllables":3},{"word":"vogue","syllables":1},{"word":"wave","syllables":1},{"word":"zion","syllables":2}],"fragments":{"global":[{"word":"abreaktion","syllables":4},{"word":"adware","syllables":2},{"word":"affaire","syllables":3},{"word":"aiguière","syllables":2},{"word":"anisette","syllables":3},{"word":"appeal","syllables":2},{"word":"backstage","syllables":2},{"word":"bankrate","syllables":2},{"word":"baseball","syllables":2},{"word":"basejump","syllables":2},{"word":"beachcomber","syllables":3},{"word":"beachvolleyball","syllables":4},{"word":"beagle","syllables":2},{"word":"beamer","syllables":2},{"word":"beamer","syllables":2},{"word":"béarnaise","syllables":3},{"word":"beaufort","syllables":2},{"word":"beaujolais","syllables":3},{"word":"beauté","syllables":2},{"word":"beauty","syllables":2},{"word":"belgier","syllables":3},{"word":"bestien","syllables":2},{"word":"biskuit","syllables":2},{"word":"bleach","syllables":1},{"word":"blue","syllables":1},{"word":"board","syllables":1},{"word":"boat","syllables":1},{"word":"bodysuit","syllables":3},{"word":"bordelaise","syllables":3},{"word":"break","syllables":1},{"word":"build","syllables":1},{"word":"bureau","syllables":2},{"word":"business","syllables":2},{"word":"cabrio","syllables":3},{"word":"cabriolet","syllables":4},{"word":"cachesexe","syllables":2},{"word":"camaieu","syllables":3},{"word":"canyon","syllables":2},{"word":"case","syllables":1},{"word":"catsuit","syllables":2},{"word":"centime","syllables":3},{"word":"chaise","syllables":2},{"word":"champion","syllables":2},{"word":"championat","syllables":3},{"word":"chapiteau","syllables":3},{"word":"chateau","syllables":2},{"word":"château","syllables":2},{"word":"cheat","syllables":1},{"word":"cheese","syllables":1},{"word":"chihuahua","syllables":3},{"word":"choice","syllables":1},{"word":"circonflexe","syllables":3},{"word":"clean","syllables":1},{"word":"cloche","syllables":1},{"word":"close","syllables":1},{"word":"clothes","syllables":1},{"word":"commerce","syllables":2},{"word":"crime","syllables":1},{"word":"crossrate","syllables":2},{"word":"cuisine","syllables":2},{"word":"culotte","syllables":2},{"word":"death","syllables":1},{"word":"defense","syllables":2},{"word":"détente","syllables":2},{"word":"dread","syllables":1},{"word":"dream","syllables":1},{"word":"dresscode","syllables":2},{"word":"dungeon","syllables":2},{"word":"easy","syllables":2},{"word":"engagement","syllables":3},{"word":"entente","syllables":2},{"word":"eye-catcher","syllables":3},{"word":"eyecatcher","syllables":3},{"word":"eyeliner","syllables":3},{"word":"eyeword","syllables":2},{"word":"fashion","syllables":2},{"word":"feature","syllables":2},{"word":"ferien","syllables":3},{"word":"fineliner","syllables":3},{"word":"fisheye","syllables":2},{"word":"flake","syllables":1},{"word":"flambeau","syllables":2},{"word":"flatrate","syllables":2},{"word":"fleece","syllables":1},{"word":"fraîche","syllables":1},{"word":"freak","syllables":1},{"word":"frites","syllables":1},{"word":"future","syllables":2},{"word":"gaelic","syllables":2},{"word":"game-show","syllables":2},{"word":"gameboy","syllables":2},{"word":"gamepad","syllables":2},{"word":"gameplay","syllables":2},{"word":"gameport","syllables":2},{"word":"gameshow","syllables":2},{"word":"garigue","syllables":2},{"word":"garrigue","syllables":2},{"word":"gatefold","syllables":2},{"word":"gateway","syllables":2},{"word":"geflashed","syllables":2},{"word":"georgier","syllables":4},{"word":"goal","syllables":1},{"word":"grapefruit","syllables":2},{"word":"great","syllables":1},{"word":"groupware","syllables":2},{"word":"gueule","syllables":1},{"word":"guide","syllables":1},{"word":"guilloche","syllables":2},{"word":"gynäzeen","syllables":4},{"word":"gynözeen","syllables":4},{"word":"haircare","syllables":2},{"word":"hardcore","syllables":2},{"word":"hardware","syllables":2},{"word":"head","syllables":1},{"word":"hearing","syllables":2},{"word":"heart","syllables":1},{"word":"heavy","syllables":2},{"word":"hedge","syllables":1},{"word":"heroin","syllables":3},{"word":"inclusive","syllables":3},{"word":"initiative","syllables":4},{"word":"inside","syllables":2},{"word":"jaguar","syllables":3},{"word":"jalousette","syllables":3},{"word":"jeans","syllables":1},{"word":"jeunesse","syllables":2},{"word":"juice","syllables":1},{"word":"jukebox","syllables":2},{"word":"jumpsuit","syllables":2},{"word":"kanarien","syllables":4},{"word":"kapriole","syllables":4},{"word":"karosserielinie","syllables":6},{"word":"konopeen","syllables":4},{"word":"lacrosse","syllables":2},{"word":"laplace","syllables":2},{"word":"late-","syllables":1},{"word":"lead","syllables":1},{"word":"league","syllables":1},{"word":"learn","syllables":1},{"word":"légière","syllables":2},{"word":"lizenziat","syllables":4},{"word":"load","syllables":1},{"word":"lotterielos","syllables":4},{"word":"lounge","syllables":1},{"word":"lyzeen","syllables":3},{"word":"madame","syllables":2},{"word":"mademoiselle","syllables":3},{"word":"magier","syllables":3},{"word":"make-up","syllables":2},{"word":"malware","syllables":2},{"word":"management","syllables":3},{"word":"manteau","syllables":2},{"word":"mausoleen","syllables":4},{"word":"mauve","syllables":1},{"word":"medien","syllables":3},{"word":"mesdames","syllables":2},{"word":"mesopotamien","syllables":6},{"word":"milliarde","syllables":3},{"word":"missile","syllables":2},{"word":"miszellaneen","syllables":5},{"word":"mousse","syllables":1},{"word":"mousseline","syllables":3},{"word":"museen","syllables":3},{"word":"musette","syllables":2},{"word":"nahuatl","syllables":2},{"word":"noisette","syllables":2},{"word":"notebook","syllables":2},{"word":"nuance","syllables":3},{"word":"nuklease","syllables":4},{"word":"odeen","syllables":3},{"word":"offline","syllables":2},{"word":"offside","syllables":2},{"word":"oleaster","syllables":4},{"word":"on-stage","syllables":2},{"word":"online","syllables":2},{"word":"orpheen","syllables":3},{"word":"parforceritt","syllables":3},{"word":"patiens","syllables":2},{"word":"patient","syllables":2},{"word":"peace","syllables":1},{"word":"peace","syllables":1},{"word":"peanuts","syllables":2},{"word":"people","syllables":2},{"word":"perineen","syllables":4},{"word":"peritoneen","syllables":5},{"word":"picture","syllables":2},{"word":"piece","syllables":1},{"word":"pipeline","syllables":2},{"word":"plateau","syllables":2},{"word":"poesie","syllables":3},{"word":"poleposition","syllables":4},{"word":"portemanteau","syllables":3},{"word":"portemonnaie","syllables":3},{"word":"primerate","syllables":2},{"word":"primerate","syllables":2},{"word":"primetime","syllables":2},{"word":"protease","syllables":4},{"word":"protein","syllables":3},{"word":"prytaneen","syllables":4},{"word":"quotient","syllables":2},{"word":"radio","syllables":3},{"word":"reader","syllables":2},{"word":"ready","syllables":2},{"word":"reallife","syllables":2},{"word":"repeat","syllables":2},{"word":"retake","syllables":2},{"word":"rigole","syllables":2},{"word":"risolle","syllables":2},{"word":"road","syllables":1},{"word":"roaming","syllables":2},{"word":"roquefort","syllables":2},{"word":"safe","syllables":1},{"word":"savonette","syllables":3},{"word":"sciencefiction","syllables":3},{"word":"search","syllables":1},{"word":"selfmade","syllables":2},{"word":"septime","syllables":3},{"word":"serapeen","syllables":4},{"word":"service","syllables":2},{"word":"serviette","syllables":2},{"word":"share","syllables":1},{"word":"shave","syllables":1},{"word":"shore","syllables":1},{"word":"sidebar","syllables":2},{"word":"sideboard","syllables":2},{"word":"sidekick","syllables":2},{"word":"silhouette","syllables":3},{"word":"sitemap","syllables":2},{"word":"slide","syllables":1},{"word":"sneak","syllables":1},{"word":"soap","syllables":1},{"word":"softcore","syllables":2},{"word":"software","syllables":2},{"word":"soutanelle","syllables":3},{"word":"speak","syllables":1},{"word":"special","syllables":2},{"word":"spracheinstellung","syllables":5},{"word":"spyware","syllables":2},{"word":"square","syllables":1},{"word":"stagediving","syllables":3},{"word":"stakeholder","syllables":3},{"word":"statement","syllables":2},{"word":"steady","syllables":2},{"word":"steak","syllables":1},{"word":"stealth","syllables":1},{"word":"steam","syllables":1},{"word":"stoned","syllables":1},{"word":"stracciatella","syllables":4},{"word":"stream","syllables":1},{"word":"stride","syllables":1},{"word":"strike","syllables":1},{"word":"suitcase","syllables":2},{"word":"sweepstake","syllables":2},{"word":"t-bone","syllables":2},{"word":"t-shirt","syllables":1},{"word":"tailgate","syllables":2},{"word":"take-off","syllables":2},{"word":"take-over","syllables":3},{"word":"takeaway","syllables":3},{"word":"takeoff","syllables":2},{"word":"takeover","syllables":3},{"word":"throat","syllables":1},{"word":"time-out","syllables":2},{"word":"timelag","syllables":2},{"word":"timeline","syllables":2},{"word":"timesharing","syllables":3},{"word":"toast","syllables":1},{"word":"traubenmaische","syllables":4},{"word":"tristesse","syllables":2},{"word":"usenet","syllables":2},{"word":"varietät","syllables":4},{"word":"varieté","syllables":4},{"word":"vinaigrette","syllables":3},{"word":"vintage","syllables":2},{"word":"violett","syllables":3},{"word":"voice","syllables":1},{"word":"wakeboard","syllables":2},{"word":"washed","syllables":1},{"word":"waveboard","syllables":2},{"word":"wear","syllables":1},{"word":"wear","syllables":1},{"word":"website","syllables":2},{"word":"white","syllables":1},{"word":"widescreen","syllables":2},{"word":"wire","syllables":1},{"word":"yacht","syllables":1},{"word":"yorkshire","syllables":2},{"word":"éprouvette","syllables":3,"notFollowedBy":["n"]},{"word":"galette","syllables":2,"notFollowedBy":["n"]},{"word":"gigue","syllables":1,"notFollowedBy":["n"]},{"word":"groove","syllables":1,"notFollowedBy":["n"]},{"word":"morgue","syllables":1,"notFollowedBy":["n"]},{"word":"paillette","syllables":2,"notFollowedBy":["n"]},{"word":"raclette","syllables":2,"notFollowedBy":["n"]},{"word":"roulette","syllables":2,"notFollowedBy":["n"]},{"word":"spike","syllables":1,"notFollowedBy":["n"]},{"word":"style","syllables":1,"notFollowedBy":["n"]},{"word":"tablette","syllables":2,"notFollowedBy":["n"]},{"word":"grunge","syllables":1,"notFollowedBy":["r"]},{"word":"size","syllables":1,"notFollowedBy":["r"]},{"word":"value","syllables":1,"notFollowedBy":["r"]},{"word":"quiche","syllables":1,"notFollowedBy":["s"]},{"word":"house","syllables":1,"notFollowedBy":["n","s"]},{"word":"sauce","syllables":1,"notFollowedBy":["n","s"]},{"word":"space","syllables":1,"notFollowedBy":["n","s"]},{"word":"airline","syllables":2,"notFollowedBy":["n","r"]},{"word":"autosave","syllables":3,"notFollowedBy":["n","r"]},{"word":"bagpipe","syllables":2,"notFollowedBy":["n","r"]},{"word":"bike","syllables":1,"notFollowedBy":["n","r"]},{"word":"dance","syllables":1,"notFollowedBy":["n","r"]},{"word":"deadline","syllables":2,"notFollowedBy":["n","r"]},{"word":"halfpipe","syllables":2,"notFollowedBy":["n","r"]},{"word":"headline","syllables":2,"notFollowedBy":["n","r"]},{"word":"home","syllables":1,"notFollowedBy":["n","r"]},{"word":"hornpipe","syllables":2,"notFollowedBy":["n","r"]},{"word":"hotline","syllables":2,"notFollowedBy":["n","r"]},{"word":"infoline","syllables":3,"notFollowedBy":["n","r"]},{"word":"inline","syllables":2,"notFollowedBy":["n","r"]},{"word":"kite","syllables":1,"notFollowedBy":["n","r"]},{"word":"rollerblade","syllables":1,"notFollowedBy":["n","r"]},{"word":"score","syllables":1,"notFollowedBy":["n","r"]},{"word":"skyline","syllables":2,"notFollowedBy":["n","r"]},{"word":"slackline","syllables":2,"notFollowedBy":["n","r"]},{"word":"slice","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"snooze","syllables":1,"notFollowedBy":["n","r"]},{"word":"storyline","syllables":3,"notFollowedBy":["n","r"]},{"word":"office","syllables":2,"notFollowedBy":["s","r"]},{"word":"space","syllables":1,"notFollowedBy":["n","s","r"]},{"word":"tease","syllables":1,"notFollowedBy":["n","s","r"]},{"word":"cache","syllables":1,"notFollowedBy":["t"]}],"atBeginningOrEnd":[{"word":"case","syllables":1},{"word":"life","syllables":1},{"word":"teak","syllables":1},{"word":"team","syllables":1},{"word":"creme","syllables":1,"notFollowedBy":["n","r"]},{"word":"crème","syllables":1,"notFollowedBy":["n","r"]},{"word":"drive","syllables":1,"notFollowedBy":["n","r"]},{"word":"skate","syllables":1,"notFollowedBy":["n","r"]},{"word":"update","syllables":2,"notFollowedBy":["n","r"]},{"word":"upgrade","syllables":2,"notFollowedBy":["n","r"]}],"atBeginning":[{"word":"anion","syllables":3},{"word":"facelift","syllables":2},{"word":"jiu","syllables":1},{"word":"pace","syllables":1},{"word":"shake","syllables":1},{"word":"tea","syllables":1},{"word":"trade","syllables":1},{"word":"deal","syllables":1}],"atEnd":[{"word":"face","syllables":1},{"word":"file","syllables":1},{"word":"mousse","syllables":1},{"word":"plate","syllables":1},{"word":"tape","syllables":1},{"word":"byte","syllables":1,"alsoFollowedBy":["s"]},{"word":"cape","syllables":1,"alsoFollowedBy":["s"]},{"word":"five","syllables":1,"alsoFollowedBy":["s"]},{"word":"hype","syllables":1,"alsoFollowedBy":["s"]},{"word":"leak","syllables":1,"alsoFollowedBy":["s"]},{"word":"like","syllables":1,"alsoFollowedBy":["s"]},{"word":"make","syllables":1,"alsoFollowedBy":["s"]},{"word":"phone","syllables":1,"alsoFollowedBy":["s"]},{"word":"rave","syllables":1,"alsoFollowedBy":["s"]},{"word":"regime","syllables":2,"alsoFollowedBy":["s"]},{"word":"statue","syllables":2,"alsoFollowedBy":["s"]},{"word":"store","syllables":1,"alsoFollowedBy":["s"]},{"word":"wave","syllables":1,"alsoFollowedBy":["s"]},{"word":"date","syllables":1,"notFollowedBy":["n"]},{"word":"image","syllables":2,"notFollowedBy":["s"]}]}}}}
 
 /***/ }),
-/* 567 */
+/* 568 */
 /***/ (function(module, exports) {
 
 module.exports = {"vowels":"aeiouy","deviations":{"vowels":[{"fragments":["cial","tia","cius","giu","ion","[^bdnprv]iou","sia$","[^aeiuot]{2,}ed$","[aeiouy][^aeiuoyts]{1,}e$","[a-z]ely$","[cgy]ed$","rved$","[aeiouy][dt]es?$","eau","ieu","oeu","[aeiouy][^aeiouydt]e[sd]?$","[aeouy]rse$","^eye"],"countModifier":-1},{"fragments":["ia","iu","ii","io","[aeio][aeiou]{2}","[aeiou]ing","[^aeiou]ying","ui[aeou]"],"countModifier":1},{"fragments":["^ree[jmnpqrsx]","^reele","^reeva","riet","dien","[aeiouym][bdp]le$","uei","uou","^mc","ism$","[^l]lien","^coa[dglx].","[^gqauieo]ua[^auieo]","dn't$","uity$","ie(r|st)","[aeiouw]y[aeiou]","[^ao]ire[ds]","[^ao]ire$"],"countModifier":1},{"fragments":["eoa","eoo","ioa","ioe","ioo"],"countModifier":1}],"words":{"full":[{"word":"business","syllables":2},{"word":"coheiress","syllables":3},{"word":"colonel","syllables":2},{"word":"heiress","syllables":2},{"word":"i.e","syllables":2},{"word":"shoreline","syllables":2},{"word":"simile","syllables":3},{"word":"unheired","syllables":2},{"word":"wednesday","syllables":2}],"fragments":{"global":[{"word":"coyote","syllables":3},{"word":"graveyard","syllables":2},{"word":"lawyer","syllables":2}]}}}}
 
 /***/ }),
-/* 568 */
+/* 569 */
 /***/ (function(module, exports) {
 
 module.exports = {"vowels":"aeiouyàèéìîïòù","deviations":{"vowels":[{"fragments":["a[íúeo]","e[íúao]","o[íúaeè]","í[aeo]","ú[aeo]","ai[aeou]","àii","aiì","au[eé]","ei[aàeèé]","èia","ia[èiì]","iài","oi[aàeèo]","òia","óio","uí","ui[aàó]","ùio","ouï","coo[cmnpr]","lcool","coòf","[aeuioìùèéàò]y[aeuioíìùèàó]","ìa$","èa$"],"countModifier":1},{"fragments":["aoi","aoì","ioe","riae","ïa$"],"countModifier":1}],"words":{"full":[{"word":"via","syllables":2},{"word":"guaime","syllables":3},{"word":"guaina","syllables":3},{"word":"coke","syllables":1},{"word":"frame","syllables":1},{"word":"goal","syllables":1},{"word":"live","syllables":1},{"word":"mouse","syllables":1},{"word":"coon","syllables":1}],"fragments":{"global":[{"word":"mayoyào","syllables":4},{"word":"eye-liner","syllables":3},{"word":"scooner","syllables":2},{"word":"cocoon","syllables":2},{"word":"silhouette","syllables":4},{"word":"circuíto","syllables":4},{"word":"cruento","syllables":3},{"word":"cruènto","syllables":3},{"word":"rituale","syllables":4},{"word":"duello","syllables":3},{"word":"fuorviante","syllables":4},{"word":"league","syllables":1},{"word":"leader","syllables":2},{"word":"appeal","syllables":2},{"word":"backstage","syllables":2},{"word":"badge","syllables":1},{"word":"baseball","syllables":2},{"word":"beauty","syllables":2},{"word":"bondage","syllables":2,"notFollowedBy":["s"]},{"word":"break","syllables":1},{"word":"brokerage","syllables":3},{"word":"business","syllables":2},{"word":"cache","syllables":2,"notFollowedBy":["s","r"]},{"word":"cashmere","syllables":2},{"word":"challenge","syllables":2,"notFollowedBy":["s","r"]},{"word":"charleston","syllables":2},{"word":"cheap","syllables":1},{"word":"cottage","syllables":2,"notFollowedBy":["s"]},{"word":"cruise","syllables":1,"notFollowedBy":["s","r"]},{"word":"device","syllables":2,"notFollowedBy":["s"]},{"word":"downgrade","syllables":2,"notFollowedBy":["d"]},{"word":"download","syllables":2},{"word":"drive","syllables":1,"notFollowedBy":["r"]},{"word":"endorsement","syllables":3},{"word":"drive","syllables":1,"notFollowedBy":["r"]},{"word":"executive","syllables":4},{"word":"firmware","syllables":2},{"word":"fobia","syllables":3},{"word":"float","syllables":1},{"word":"freak","syllables":1},{"word":"game","syllables":1,"notFollowedBy":["r"]},{"word":"guideline","syllables":2},{"word":"hardware","syllables":2},{"word":"homeless","syllables":2},{"word":"hardware","syllables":1,"notFollowedBy":["r"]},{"word":"hardware","syllables":1,"notFollowedBy":["r"]},{"word":"hardware","syllables":1,"notFollowedBy":["r"]},{"word":"hospice","syllables":2,"notFollowedBy":["s"]},{"word":"impeachment","syllables":3},{"word":"jeans","syllables":1},{"word":"jukebox","syllables":2},{"word":"leasing","syllables":2},{"word":"lease","syllables":1,"notFollowedBy":["s"]},{"word":"lounge","syllables":1,"notFollowedBy":["r","s"]},{"word":"magazine","syllables":3},{"word":"notebook","syllables":2},{"word":"office","syllables":2,"notFollowedBy":["r","s"]},{"word":"online","syllables":2},{"word":"offline","syllables":2},{"word":"overcoat","syllables":3},{"word":"offside","syllables":2,"notFollowedBy":["r"]},{"word":"overdrive","syllables":3},{"word":"oversize","syllables":3},{"word":"pacemaker","syllables":3},{"word":"package","syllables":2,"notFollowedBy":["r","s"]},{"word":"pancake","syllables":2},{"word":"performance","syllables":3},{"word":"premium","syllables":3},{"word":"ragtime","syllables":2},{"word":"reading","syllables":2},{"word":"residence","syllables":3,"notFollowedBy":["s"]},{"word":"roaming","syllables":2},{"word":"rollerblade","syllables":3,"notFollowedBy":["r"]},{"word":"royalty","syllables":3},{"word":"shake","syllables":1,"notFollowedBy":["r"]},{"word":"shale","syllables":1},{"word":"shampooing","syllables":3},{"word":"shareware","syllables":2},{"word":"shearling","syllables":2},{"word":"sidecar","syllables":2},{"word":"hardware","syllables":1,"notFollowedBy":["r"]},{"word":"skate","syllables":1,"notFollowedBy":["n","r"]},{"word":"trial","syllables":2},{"word":"toast","syllables":1},{"word":"texture","syllables":2},{"word":"testimonial","syllables":5},{"word":"teaser","syllables":2},{"word":"sweater","syllables":2},{"word":"suspense","syllables":2,"notFollowedBy":["r"]},{"word":"subroutine","syllables":3},{"word":"steadicam","syllables":3},{"word":"spread","syllables":1},{"word":"speaker","syllables":2},{"word":"board","syllables":1},{"word":"sneaker","syllables":2},{"word":"smartphone","syllables":2},{"word":"slide","syllables":1,"notFollowedBy":["r"]},{"word":"skyline","syllables":2},{"word":"skinhead","syllables":2},{"word":"update","syllables":2,"notFollowedBy":["r"]},{"word":"upgrade","syllables":2,"notFollowedBy":["r"]},{"word":"upload","syllables":2},{"word":"vintage","syllables":2},{"word":"wakeboard","syllables":2},{"word":"website","syllables":2},{"word":"welfare","syllables":2},{"word":"yeah","syllables":1},{"word":"yearling","syllables":2}],"atEnd":[{"word":"byte","syllables":1,"alsoFollowedBy":["s"]},{"word":"bite","syllables":1,"alsoFollowedBy":["s"]},{"word":"beat","syllables":1,"alsoFollowedBy":["s"]},{"word":"coach","syllables":1},{"word":"line","syllables":1,"alsoFollowedBy":["s"]}],"atBeginning":[{"word":"cheese","syllables":1},{"word":"head","syllables":1},{"word":"streak","syllables":1}],"atBeginningOrEnd":[{"word":"team","syllables":1},{"word":"stream","syllables":1}]}}}}
 
 /***/ }),
-/* 569 */
-/***/ (function(module, exports) {
-
-module.exports = {"vowels":"aáäâeéëêiíïîoóöôuúüûy","deviations":{"vowels":[{"fragments":["ue$","dge$","[tcp]iënt","ace$","[br]each","[ainpr]tiaal","[io]tiaan","gua[yc]","[^i]deal","tive$","load","[^e]coke","[^s]core$"],"countModifier":-1},{"fragments":["aä","aeu","aie","ao","ë","eo","eú","ieau","ea$","ea[^u]","ei[ej]","eu[iu]","ï","iei","ienne","[^l]ieu[^w]","[^l]ieu$","i[auiy]","stion","[^cstx]io","^sion","riè","oö","oa","oeing","oie","[eu]ü","[^q]u[aeèo]","uie","[bhnpr]ieel","[bhnpr]iël"],"countModifier":1},{"fragments":["[aeolu]y[aeéèoóu]"],"countModifier":1}],"words":{"full":[{"word":"bye","syllables":1},{"word":"core","syllables":1},{"word":"cure","syllables":1},{"word":"dei","syllables":2},{"word":"dope","syllables":1},{"word":"dude","syllables":1},{"word":"fake","syllables":1},{"word":"fame","syllables":1},{"word":"five","syllables":1},{"word":"hole","syllables":1},{"word":"least","syllables":1},{"word":"lone","syllables":1},{"word":"minute","syllables":2},{"word":"move","syllables":1},{"word":"nice","syllables":1},{"word":"one","syllables":1},{"word":"state","syllables":1},{"word":"surplace","syllables":2},{"word":"take","syllables":1},{"word":"trade","syllables":1},{"word":"wide","syllables":1}],"fragments":{"global":[{"word":"adieu","syllables":2},{"word":"airline","syllables":2},{"word":"airmiles","syllables":2},{"word":"alien","syllables":3},{"word":"ambient","syllables":3},{"word":"announcement","syllables":3},{"word":"appearance","syllables":3},{"word":"appeasement","syllables":3},{"word":"atheneum","syllables":4},{"word":"awesome","syllables":2},{"word":"baccalaurei","syllables":5},{"word":"baccalaureus","syllables":5},{"word":"baseball","syllables":3},{"word":"basejump","syllables":2},{"word":"banlieue","syllables":3},{"word":"bapao","syllables":2},{"word":"barbecue","syllables":3},{"word":"beamer","syllables":2},{"word":"beanie","syllables":2},{"word":"beat","syllables":1},{"word":"belle","syllables":2},{"word":"bête","syllables":1},{"word":"bingewatch","syllables":2},{"word":"blocnote","syllables":2},{"word":"blue","syllables":1},{"word":"board","syllables":1},{"word":"break","syllables":1},{"word":"broad","syllables":1},{"word":"bulls-eye","syllables":2},{"word":"business","syllables":2},{"word":"byebye","syllables":2},{"word":"cacao","syllables":2},{"word":"caesar","syllables":2},{"word":"camaieu","syllables":3},{"word":"caoutchouc","syllables":2},{"word":"carbolineum","syllables":5},{"word":"catchphrase","syllables":1},{"word":"carrier","syllables":3},{"word":"cheat","syllables":1},{"word":"cheese","syllables":1},{"word":"circonflexe","syllables":3},{"word":"clean","syllables":1},{"word":"cloak","syllables":1},{"word":"cobuying","syllables":3},{"word":"comeback","syllables":2},{"word":"comfortzone","syllables":3},{"word":"communiqué","syllables":4},{"word":"conopeum","syllables":4},{"word":"console","syllables":2},{"word":"corporate","syllables":3},{"word":"coûte","syllables":1},{"word":"creamer","syllables":2},{"word":"crime","syllables":1},{"word":"cruesli","syllables":2},{"word":"deadline","syllables":2},{"word":"deautoriseren","syllables":6},{"word":"deuce","syllables":1},{"word":"deum","syllables":2},{"word":"dirndl","syllables":2},{"word":"dread","syllables":2},{"word":"dreamteam","syllables":2},{"word":"drone","syllables":1},{"word":"enquête","syllables":3},{"word":"escape","syllables":2},{"word":"exposure","syllables":3},{"word":"extranei","syllables":4},{"word":"extraneus","syllables":4},{"word":"eyecatcher","syllables":3},{"word":"eyeliner","syllables":3},{"word":"eyeopener","syllables":4},{"word":"eyetracker","syllables":3},{"word":"eyetracking","syllables":3},{"word":"fairtrade","syllables":2},{"word":"fauteuil","syllables":2},{"word":"feature","syllables":2},{"word":"feuilletee","syllables":3},{"word":"feuilleton","syllables":3},{"word":"fisheye","syllables":2},{"word":"fineliner","syllables":3},{"word":"finetunen","syllables":3},{"word":"forehand","syllables":2},{"word":"freak","syllables":1},{"word":"fusioneren","syllables":4},{"word":"gayparade","syllables":3},{"word":"gaypride","syllables":2},{"word":"goal","syllables":1},{"word":"grapefruit","syllables":2},{"word":"gruyère","syllables":3},{"word":"guele","syllables":1},{"word":"guerrilla","syllables":3},{"word":"guest","syllables":1},{"word":"hardware","syllables":2},{"word":"haute","syllables":1},{"word":"healing","syllables":2},{"word":"heater","syllables":2},{"word":"heavy","syllables":2},{"word":"hoax","syllables":1},{"word":"hotline","syllables":2},{"word":"idee-fixe","syllables":3},{"word":"inclusive","syllables":3},{"word":"inline","syllables":2},{"word":"intake","syllables":2},{"word":"intensive","syllables":3},{"word":"jeans","syllables":1},{"word":"Jones","syllables":1},{"word":"jubileum","syllables":4},{"word":"kalfsribeye","syllables":3},{"word":"kraaiennest","syllables":3},{"word":"lastminute","syllables":3},{"word":"learning","syllables":2},{"word":"league","syllables":1},{"word":"line-up","syllables":2},{"word":"linoleum","syllables":4},{"word":"load","syllables":1},{"word":"loafer","syllables":2},{"word":"longread","syllables":2},{"word":"lookalike","syllables":3},{"word":"louis","syllables":3},{"word":"lyceum","syllables":3},{"word":"magazine","syllables":3},{"word":"mainstream","syllables":2},{"word":"make-over","syllables":3},{"word":"make-up","syllables":2},{"word":"malware","syllables":2},{"word":"marmoleum","syllables":4},{"word":"mausoleum","syllables":4},{"word":"medeauteur","syllables":4},{"word":"midlifecrisis","syllables":4},{"word":"migraineaura","syllables":5},{"word":"milkshake","syllables":2},{"word":"millefeuille","syllables":4},{"word":"mixed","syllables":1},{"word":"muesli","syllables":2},{"word":"museum","syllables":3},{"word":"must-have","syllables":2},{"word":"must-read","syllables":2},{"word":"notebook","syllables":2},{"word":"nonsense","syllables":2},{"word":"nowhere","syllables":2},{"word":"nurture","syllables":2},{"word":"offline","syllables":2},{"word":"oneliner","syllables":3},{"word":"onesie","syllables":2},{"word":"online","syllables":2},{"word":"opinion","syllables":3},{"word":"paella","syllables":3},{"word":"pacemaker","syllables":3},{"word":"panache","syllables":2},{"word":"papegaaienneus","syllables":5},{"word":"passe-partout","syllables":3},{"word":"peanuts","syllables":2},{"word":"perigeum","syllables":4},{"word":"perineum","syllables":4},{"word":"perpetuum","syllables":4},{"word":"petroleum","syllables":4},{"word":"phone","syllables":3},{"word":"picture","syllables":2},{"word":"placemat","syllables":2},{"word":"porte-manteau","syllables":3},{"word":"portefeuille","syllables":4},{"word":"presse-papier","syllables":3},{"word":"primetime","syllables":2},{"word":"queen","syllables":1},{"word":"questionnaire","syllables":3},{"word":"queue","syllables":1},{"word":"reader","syllables":2},{"word":"reality","syllables":3},{"word":"reallife","syllables":2},{"word":"remake","syllables":2},{"word":"repeat","syllables":2},{"word":"repertoire","syllables":3},{"word":"research","syllables":2},{"word":"reverence","syllables":3},{"word":"ribeye","syllables":2},{"word":"ringtone","syllables":3},{"word":"road","syllables":1},{"word":"roaming","syllables":2},{"word":"sciencefiction","syllables":4},{"word":"selfmade","syllables":2},{"word":"sidekick","syllables":2},{"word":"sightseeing","syllables":3},{"word":"skyline","syllables":2},{"word":"smile","syllables":1},{"word":"sneaky","syllables":2},{"word":"software","syllables":2},{"word":"sparerib","syllables":2},{"word":"speaker","syllables":2},{"word":"spread","syllables":1},{"word":"statement","syllables":2},{"word":"steak","syllables":1},{"word":"steeplechase","syllables":3},{"word":"stonewash","syllables":2},{"word":"store","syllables":1},{"word":"streaken","syllables":2},{"word":"stream","syllables":1},{"word":"streetware","syllables":1},{"word":"supersoaker","syllables":4},{"word":"surprise-party","syllables":4},{"word":"sweater","syllables":2},{"word":"teaser","syllables":2},{"word":"tenue","syllables":2},{"word":"template","syllables":2},{"word":"timeline","syllables":2},{"word":"tissue","syllables":2},{"word":"toast","syllables":1},{"word":"tête-à-tête","syllables":3},{"word":"typecast","syllables":2},{"word":"unique","syllables":2},{"word":"ureum","syllables":3},{"word":"vibe","syllables":1},{"word":"vieux","syllables":1},{"word":"ville","syllables":1},{"word":"vintage","syllables":2},{"word":"wandelyup","syllables":3},{"word":"wiseguy","syllables":2},{"word":"wake-up-call","syllables":3},{"word":"webcare","syllables":2},{"word":"winegum","syllables":2},{"word":"base","syllables":1,"notFollowedBy":["e","n","r"]},{"word":"game","syllables":1,"notFollowedBy":["n","l","r"]},{"word":"style","syllables":1,"notFollowedBy":["n","s"]},{"word":"douche","syllables":1,"notFollowedBy":["n","s"]},{"word":"space","syllables":1,"notFollowedBy":["n","s"]},{"word":"striptease","syllables":2,"notFollowedBy":["n","s"]},{"word":"jive","syllables":1,"notFollowedBy":["n","r"]},{"word":"keynote","syllables":2,"notFollowedBy":["n","r"]},{"word":"mountainbike","syllables":3,"notFollowedBy":["n","r"]},{"word":"face","syllables":1,"notFollowedBy":["n","t"]},{"word":"challenge","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"cruise","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"house","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"dance","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"franchise","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"freelance","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"lease","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"linedance","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"lounge","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"merchandise","syllables":3,"notFollowedBy":["n","r","s"]},{"word":"performance","syllables":3,"notFollowedBy":["n","r","s"]},{"word":"release","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"resource","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"cache","syllables":1,"notFollowedBy":["c","l","n","t","x"]},{"word":"office","syllables":2,"notFollowedBy":["r","s"]},{"word":"close","syllables":1,"notFollowedBy":["r","t"]}],"atBeginningOrEnd":[{"word":"byte","syllables":1},{"word":"cake","syllables":1},{"word":"care","syllables":1},{"word":"coach","syllables":1},{"word":"coat","syllables":1},{"word":"earl","syllables":1},{"word":"foam","syllables":1},{"word":"gate","syllables":1},{"word":"head","syllables":1},{"word":"home","syllables":1},{"word":"live","syllables":1},{"word":"safe","syllables":1},{"word":"site","syllables":1},{"word":"soap","syllables":1},{"word":"teak","syllables":1},{"word":"team","syllables":1},{"word":"wave","syllables":1},{"word":"brace","syllables":1,"notFollowedBy":["s"]},{"word":"case","syllables":1,"notFollowedBy":["s"]},{"word":"fleece","syllables":1,"notFollowedBy":["s"]},{"word":"service","syllables":2,"notFollowedBy":["s"]},{"word":"voice","syllables":1,"notFollowedBy":["s"]},{"word":"kite","syllables":1,"notFollowedBy":["n","r"]},{"word":"skate","syllables":1,"notFollowedBy":["n","r"]},{"word":"race","syllables":1,"notFollowedBy":["n","r","s"]}],"atBeginning":[{"word":"coke","syllables":1},{"word":"deal","syllables":1},{"word":"image","syllables":2,"notFollowedBy":["s"]}],"atEnd":[{"word":"force","syllables":1},{"word":"tea","syllables":1},{"word":"time","syllables":1},{"word":"date","syllables":1,"alsoFollowedBy":["s"]},{"word":"hype","syllables":1,"alsoFollowedBy":["s"]},{"word":"quote","syllables":1,"alsoFollowedBy":["s"]},{"word":"tape","syllables":1,"alsoFollowedBy":["s"]},{"word":"upgrade","syllables":2,"alsoFollowedBy":["s"]}]}}}}
-
-/***/ }),
 /* 570 */
 /***/ (function(module, exports) {
 
-/* (ignored) */
+module.exports = {"vowels":"aáäâeéëêiíïîoóöôuúüûy","deviations":{"vowels":[{"fragments":["ue$","dge$","[tcp]iënt","ace$","[br]each","[ainpr]tiaal","[io]tiaan","gua[yc]","[^i]deal","tive$","load","[^e]coke","[^s]core$"],"countModifier":-1},{"fragments":["aä","aeu","aie","ao","ë","eo","eú","ieau","ea$","ea[^u]","ei[ej]","eu[iu]","ï","iei","ienne","[^l]ieu[^w]","[^l]ieu$","i[auiy]","stion","[^cstx]io","^sion","riè","oö","oa","oeing","oie","[eu]ü","[^q]u[aeèo]","uie","[bhnpr]ieel","[bhnpr]iël"],"countModifier":1},{"fragments":["[aeolu]y[aeéèoóu]"],"countModifier":1}],"words":{"full":[{"word":"bye","syllables":1},{"word":"core","syllables":1},{"word":"cure","syllables":1},{"word":"dei","syllables":2},{"word":"dope","syllables":1},{"word":"dude","syllables":1},{"word":"fake","syllables":1},{"word":"fame","syllables":1},{"word":"five","syllables":1},{"word":"hole","syllables":1},{"word":"least","syllables":1},{"word":"lone","syllables":1},{"word":"minute","syllables":2},{"word":"move","syllables":1},{"word":"nice","syllables":1},{"word":"one","syllables":1},{"word":"state","syllables":1},{"word":"surplace","syllables":2},{"word":"take","syllables":1},{"word":"trade","syllables":1},{"word":"wide","syllables":1}],"fragments":{"global":[{"word":"adieu","syllables":2},{"word":"airline","syllables":2},{"word":"airmiles","syllables":2},{"word":"alien","syllables":3},{"word":"ambient","syllables":3},{"word":"announcement","syllables":3},{"word":"appearance","syllables":3},{"word":"appeasement","syllables":3},{"word":"atheneum","syllables":4},{"word":"awesome","syllables":2},{"word":"baccalaurei","syllables":5},{"word":"baccalaureus","syllables":5},{"word":"baseball","syllables":3},{"word":"basejump","syllables":2},{"word":"banlieue","syllables":3},{"word":"bapao","syllables":2},{"word":"barbecue","syllables":3},{"word":"beamer","syllables":2},{"word":"beanie","syllables":2},{"word":"beat","syllables":1},{"word":"belle","syllables":2},{"word":"bête","syllables":1},{"word":"bingewatch","syllables":2},{"word":"blocnote","syllables":2},{"word":"blue","syllables":1},{"word":"board","syllables":1},{"word":"break","syllables":1},{"word":"broad","syllables":1},{"word":"bulls-eye","syllables":2},{"word":"business","syllables":2},{"word":"byebye","syllables":2},{"word":"cacao","syllables":2},{"word":"caesar","syllables":2},{"word":"camaieu","syllables":3},{"word":"caoutchouc","syllables":2},{"word":"carbolineum","syllables":5},{"word":"catchphrase","syllables":1},{"word":"carrier","syllables":3},{"word":"cheat","syllables":1},{"word":"cheese","syllables":1},{"word":"circonflexe","syllables":3},{"word":"clean","syllables":1},{"word":"cloak","syllables":1},{"word":"cobuying","syllables":3},{"word":"comeback","syllables":2},{"word":"comfortzone","syllables":3},{"word":"communiqué","syllables":4},{"word":"conopeum","syllables":4},{"word":"console","syllables":2},{"word":"corporate","syllables":3},{"word":"coûte","syllables":1},{"word":"creamer","syllables":2},{"word":"crime","syllables":1},{"word":"cruesli","syllables":2},{"word":"deadline","syllables":2},{"word":"deautoriseren","syllables":6},{"word":"deuce","syllables":1},{"word":"deum","syllables":2},{"word":"dirndl","syllables":2},{"word":"dread","syllables":2},{"word":"dreamteam","syllables":2},{"word":"drone","syllables":1},{"word":"enquête","syllables":3},{"word":"escape","syllables":2},{"word":"exposure","syllables":3},{"word":"extranei","syllables":4},{"word":"extraneus","syllables":4},{"word":"eyecatcher","syllables":3},{"word":"eyeliner","syllables":3},{"word":"eyeopener","syllables":4},{"word":"eyetracker","syllables":3},{"word":"eyetracking","syllables":3},{"word":"fairtrade","syllables":2},{"word":"fauteuil","syllables":2},{"word":"feature","syllables":2},{"word":"feuilletee","syllables":3},{"word":"feuilleton","syllables":3},{"word":"fisheye","syllables":2},{"word":"fineliner","syllables":3},{"word":"finetunen","syllables":3},{"word":"forehand","syllables":2},{"word":"freak","syllables":1},{"word":"fusioneren","syllables":4},{"word":"gayparade","syllables":3},{"word":"gaypride","syllables":2},{"word":"goal","syllables":1},{"word":"grapefruit","syllables":2},{"word":"gruyère","syllables":3},{"word":"guele","syllables":1},{"word":"guerrilla","syllables":3},{"word":"guest","syllables":1},{"word":"hardware","syllables":2},{"word":"haute","syllables":1},{"word":"healing","syllables":2},{"word":"heater","syllables":2},{"word":"heavy","syllables":2},{"word":"hoax","syllables":1},{"word":"hotline","syllables":2},{"word":"idee-fixe","syllables":3},{"word":"inclusive","syllables":3},{"word":"inline","syllables":2},{"word":"intake","syllables":2},{"word":"intensive","syllables":3},{"word":"jeans","syllables":1},{"word":"Jones","syllables":1},{"word":"jubileum","syllables":4},{"word":"kalfsribeye","syllables":3},{"word":"kraaiennest","syllables":3},{"word":"lastminute","syllables":3},{"word":"learning","syllables":2},{"word":"league","syllables":1},{"word":"line-up","syllables":2},{"word":"linoleum","syllables":4},{"word":"load","syllables":1},{"word":"loafer","syllables":2},{"word":"longread","syllables":2},{"word":"lookalike","syllables":3},{"word":"louis","syllables":3},{"word":"lyceum","syllables":3},{"word":"magazine","syllables":3},{"word":"mainstream","syllables":2},{"word":"make-over","syllables":3},{"word":"make-up","syllables":2},{"word":"malware","syllables":2},{"word":"marmoleum","syllables":4},{"word":"mausoleum","syllables":4},{"word":"medeauteur","syllables":4},{"word":"midlifecrisis","syllables":4},{"word":"migraineaura","syllables":5},{"word":"milkshake","syllables":2},{"word":"millefeuille","syllables":4},{"word":"mixed","syllables":1},{"word":"muesli","syllables":2},{"word":"museum","syllables":3},{"word":"must-have","syllables":2},{"word":"must-read","syllables":2},{"word":"notebook","syllables":2},{"word":"nonsense","syllables":2},{"word":"nowhere","syllables":2},{"word":"nurture","syllables":2},{"word":"offline","syllables":2},{"word":"oneliner","syllables":3},{"word":"onesie","syllables":2},{"word":"online","syllables":2},{"word":"opinion","syllables":3},{"word":"paella","syllables":3},{"word":"pacemaker","syllables":3},{"word":"panache","syllables":2},{"word":"papegaaienneus","syllables":5},{"word":"passe-partout","syllables":3},{"word":"peanuts","syllables":2},{"word":"perigeum","syllables":4},{"word":"perineum","syllables":4},{"word":"perpetuum","syllables":4},{"word":"petroleum","syllables":4},{"word":"phone","syllables":3},{"word":"picture","syllables":2},{"word":"placemat","syllables":2},{"word":"porte-manteau","syllables":3},{"word":"portefeuille","syllables":4},{"word":"presse-papier","syllables":3},{"word":"primetime","syllables":2},{"word":"queen","syllables":1},{"word":"questionnaire","syllables":3},{"word":"queue","syllables":1},{"word":"reader","syllables":2},{"word":"reality","syllables":3},{"word":"reallife","syllables":2},{"word":"remake","syllables":2},{"word":"repeat","syllables":2},{"word":"repertoire","syllables":3},{"word":"research","syllables":2},{"word":"reverence","syllables":3},{"word":"ribeye","syllables":2},{"word":"ringtone","syllables":3},{"word":"road","syllables":1},{"word":"roaming","syllables":2},{"word":"sciencefiction","syllables":4},{"word":"selfmade","syllables":2},{"word":"sidekick","syllables":2},{"word":"sightseeing","syllables":3},{"word":"skyline","syllables":2},{"word":"smile","syllables":1},{"word":"sneaky","syllables":2},{"word":"software","syllables":2},{"word":"sparerib","syllables":2},{"word":"speaker","syllables":2},{"word":"spread","syllables":1},{"word":"statement","syllables":2},{"word":"steak","syllables":1},{"word":"steeplechase","syllables":3},{"word":"stonewash","syllables":2},{"word":"store","syllables":1},{"word":"streaken","syllables":2},{"word":"stream","syllables":1},{"word":"streetware","syllables":1},{"word":"supersoaker","syllables":4},{"word":"surprise-party","syllables":4},{"word":"sweater","syllables":2},{"word":"teaser","syllables":2},{"word":"tenue","syllables":2},{"word":"template","syllables":2},{"word":"timeline","syllables":2},{"word":"tissue","syllables":2},{"word":"toast","syllables":1},{"word":"tête-à-tête","syllables":3},{"word":"typecast","syllables":2},{"word":"unique","syllables":2},{"word":"ureum","syllables":3},{"word":"vibe","syllables":1},{"word":"vieux","syllables":1},{"word":"ville","syllables":1},{"word":"vintage","syllables":2},{"word":"wandelyup","syllables":3},{"word":"wiseguy","syllables":2},{"word":"wake-up-call","syllables":3},{"word":"webcare","syllables":2},{"word":"winegum","syllables":2},{"word":"base","syllables":1,"notFollowedBy":["e","n","r"]},{"word":"game","syllables":1,"notFollowedBy":["n","l","r"]},{"word":"style","syllables":1,"notFollowedBy":["n","s"]},{"word":"douche","syllables":1,"notFollowedBy":["n","s"]},{"word":"space","syllables":1,"notFollowedBy":["n","s"]},{"word":"striptease","syllables":2,"notFollowedBy":["n","s"]},{"word":"jive","syllables":1,"notFollowedBy":["n","r"]},{"word":"keynote","syllables":2,"notFollowedBy":["n","r"]},{"word":"mountainbike","syllables":3,"notFollowedBy":["n","r"]},{"word":"face","syllables":1,"notFollowedBy":["n","t"]},{"word":"challenge","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"cruise","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"house","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"dance","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"franchise","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"freelance","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"lease","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"linedance","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"lounge","syllables":1,"notFollowedBy":["n","r","s"]},{"word":"merchandise","syllables":3,"notFollowedBy":["n","r","s"]},{"word":"performance","syllables":3,"notFollowedBy":["n","r","s"]},{"word":"release","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"resource","syllables":2,"notFollowedBy":["n","r","s"]},{"word":"cache","syllables":1,"notFollowedBy":["c","l","n","t","x"]},{"word":"office","syllables":2,"notFollowedBy":["r","s"]},{"word":"close","syllables":1,"notFollowedBy":["r","t"]}],"atBeginningOrEnd":[{"word":"byte","syllables":1},{"word":"cake","syllables":1},{"word":"care","syllables":1},{"word":"coach","syllables":1},{"word":"coat","syllables":1},{"word":"earl","syllables":1},{"word":"foam","syllables":1},{"word":"gate","syllables":1},{"word":"head","syllables":1},{"word":"home","syllables":1},{"word":"live","syllables":1},{"word":"safe","syllables":1},{"word":"site","syllables":1},{"word":"soap","syllables":1},{"word":"teak","syllables":1},{"word":"team","syllables":1},{"word":"wave","syllables":1},{"word":"brace","syllables":1,"notFollowedBy":["s"]},{"word":"case","syllables":1,"notFollowedBy":["s"]},{"word":"fleece","syllables":1,"notFollowedBy":["s"]},{"word":"service","syllables":2,"notFollowedBy":["s"]},{"word":"voice","syllables":1,"notFollowedBy":["s"]},{"word":"kite","syllables":1,"notFollowedBy":["n","r"]},{"word":"skate","syllables":1,"notFollowedBy":["n","r"]},{"word":"race","syllables":1,"notFollowedBy":["n","r","s"]}],"atBeginning":[{"word":"coke","syllables":1},{"word":"deal","syllables":1},{"word":"image","syllables":2,"notFollowedBy":["s"]}],"atEnd":[{"word":"force","syllables":1},{"word":"tea","syllables":1},{"word":"time","syllables":1},{"word":"date","syllables":1,"alsoFollowedBy":["s"]},{"word":"hype","syllables":1,"alsoFollowedBy":["s"]},{"word":"quote","syllables":1,"alsoFollowedBy":["s"]},{"word":"tape","syllables":1,"alsoFollowedBy":["s"]},{"word":"upgrade","syllables":2,"alsoFollowedBy":["s"]}]}}}}
 
 /***/ }),
 /* 571 */
@@ -70091,6 +70452,12 @@ module.exports = {"vowels":"aáäâeéëêiíïîoóöôuúüûy","deviations":{
 
 /***/ }),
 /* 572 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 573 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(259);
