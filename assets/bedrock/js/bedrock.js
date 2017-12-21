@@ -30994,7 +30994,7 @@ var MetaDescriptionLengthAssessment = function (_Assessment) {
 
         var defaultConfig = {
             recommendedMaximumLength: 120,
-            maximumLength: 320,
+            maximumLength: 156,
             scores: {
                 noMetaDescription: 1,
                 tooLong: 6,
@@ -33256,7 +33256,7 @@ var defaults = {
     previewMode: "desktop"
 };
 var titleMaxLength = 600;
-var metadescriptionMaxLength = 320;
+var metadescriptionMaxLength = 156;
 var inputPreviewBindings = [{
     preview: "title_container",
     inputField: "title"
@@ -33364,11 +33364,11 @@ function rateTitleLength(titleLength) {
 function rateMetaDescLength(metaDescLength) {
     var rating;
     switch (true) {
-        case metaDescLength > 0 && metaDescLength < 120:
-        case metaDescLength > 320:
+        case metaDescLength > 0 && metaDescLength <= 120:
+        case metaDescLength >= 157:
             rating = "ok";
             break;
-        case metaDescLength >= 120 && metaDescLength <= 320:
+        case metaDescLength >= 120 && metaDescLength <= 157:
             rating = "good";
             break;
         default:
@@ -33788,7 +33788,7 @@ SnippetPreview.prototype.formatMeta = function () {
 };
 /**
  * Generates a meta description with an educated guess based on the passed text and excerpt. It uses the keyword to
- * select an appropriate part of the text. If the keyword isn't present it takes the first 320 characters of the text.
+ * select an appropriate part of the text. If the keyword isn't present it takes the first 156 characters of the text.
  * If both the keyword, text and excerpt are empty this function returns the sample text.
  *
  * @returns {string} A generated meta description.
@@ -69428,9 +69428,13 @@ var ShortcodeReveal = function (_Plugin) {
         'click': this.insert.bind(this)
       });
 
-      this.$element.off('click', 'a[data-name]').on({
+      this.$menu.off('click', '[data-name]').on({
         'click': this._loadShortcode.bind(this)
-      }, 'a[data-name]');
+      }, '[data-name]');
+
+      this.$form.off('change', ':input:visible').on({
+        'change': this._loadPreview.bind(this)
+      }, ':input:visible');
     }
 
     /**
@@ -69451,7 +69455,7 @@ var ShortcodeReveal = function (_Plugin) {
     }
 
     /**
-     * Gets shortcodes items JSON from url.
+     * Loads shortcode with updated options.
      * @function
      * @private
      */
@@ -69462,11 +69466,24 @@ var ShortcodeReveal = function (_Plugin) {
       if (event) {
         this.activeShortcode = (0, _jquery2.default)(event.currentTarget).attr('data-name');
       } else {
-        this.activeShortcode = this.$menu.find('a[data-name]:first').attr('data-name');
+        this.activeShortcode = this.$menu.find('[data-name]:first').attr('data-name');
       }
 
       this._getForm(this.activeShortcode);
       this._getPreview(this.activeShortcode);
+    }
+
+    /**
+     * Loads preview with updated options.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_loadPreview',
+    value: function _loadPreview(event) {
+      var data = this.$form.find('form').serialize();
+      this._getPreview(this.activeShortcode, data);
     }
 
     /**
@@ -69482,7 +69499,7 @@ var ShortcodeReveal = function (_Plugin) {
 
       _jquery2.default.ajax(url).done(function (response) {
         this.$form.html(response);
-        this.$form.foundation();
+        // this.$form.foundation();
       }.bind(this));
     }
 
@@ -69494,11 +69511,11 @@ var ShortcodeReveal = function (_Plugin) {
 
   }, {
     key: '_getPreview',
-    value: function _getPreview(shortcode) {
+    value: function _getPreview(shortcode, data) {
       var url = this.previewUrl.replace('[name]', shortcode);
       var frame = (0, _jquery2.default)('<iframe frameborder="0"></iframe>');
 
-      _jquery2.default.ajax(url).done(function (response) {
+      _jquery2.default.ajax({ url: url, data: data }).done(function (response) {
         this.$preview.html(frame);
 
         frame.on('load', function (event) {
@@ -69531,16 +69548,17 @@ var ShortcodeReveal = function (_Plugin) {
   }, {
     key: '_appendMenuItems',
     value: function _appendMenuItems(data) {
+      var menu = (0, _jquery2.default)('<ul class="menu vertical icons icon-left"></ul>');
       this.clear();
 
       _jquery2.default.each(data, function (index, data) {
-        var item = (0, _jquery2.default)('<li><a data-name="' + data.name + '"><i class="' + data.icon + '"></i><span>' + data.label + '</span></a></li>');
+        var label = '<i class="' + data.icon + '"></i><span>' + data.label + '</span>';
+        var item = (0, _jquery2.default)('<li><a data-name="' + data.name + '">' + label + '</a></li>');
+
         this.items.push(item);
       }.bind(this));
 
-      var menu = (0, _jquery2.default)('<ul class="menu vertical icons icon-left"></ul>');
       menu.html(this.items);
-
       this.$menu.html(menu);
     }
 
@@ -69553,6 +69571,10 @@ var ShortcodeReveal = function (_Plugin) {
     key: 'clear',
     value: function clear() {
       this.items = [];
+
+      this.$menu.html('');
+      this.$form.html('');
+      this.$preview.html('');
     }
 
     /**
