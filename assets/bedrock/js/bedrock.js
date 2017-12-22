@@ -42557,6 +42557,9 @@ var TinyMceEditor = function (_Plugin) {
       this.options = _jquery2.default.extend({}, this.options, this.computed);
       this.options = this._snakeCase(this.options);
 
+      this.$media = (0, _jquery2.default)('#' + this.mediaHandler);
+      this.$shortcode = (0, _jquery2.default)('#' + this.shortcodeHandler);
+
       if (tinymce !== 'undefined') {
         tinymce.init(this.options);
       } else {
@@ -42607,12 +42610,35 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_setupCallback',
     value: function _setupCallback(editor) {
+      var _this = this;
       this.editor = editor;
 
-      editor.on('change', function () {
-        tinymce.triggerSave();
-        this.$element.trigger('change');
-      }.bind(this));
+      editor.on('change', function (event) {
+        editor.save();
+        _this.$element.trigger('change');
+      });
+
+      editor.on('preInit', function () {
+        editor.serializer.addAttributeFilter('data-mce-shortcode', _this._shortcodeCleanup());
+      });
+
+      editor.on('setContent', function (event) {
+        _this._shortcodeSetup(event, editor);
+      });
+
+      editor.addButton('mark', {
+        icon: 'backcolor',
+        tooltip: 'Mark/unmark text',
+        onclick: this._markButtonCallback.bind(this),
+        onPostRender: function onPostRender() {
+          var _this = this;
+
+          editor.on('NodeChange', function (e) {
+            var isActive = (0, _jquery2.default)(editor.selection.getNode()).is('mark');
+            _this.active(isActive);
+          });
+        }
+      });
 
       if (this.mediaHandler) {
         editor.addButton('image', {
@@ -42623,10 +42649,22 @@ var TinyMceEditor = function (_Plugin) {
       }
 
       if (this.shortcodeHandler) {
+        var shortcode = this.$shortcode.data('zfPlugin');
+
         editor.addButton('shortcode', {
           icon: 'template',
           tooltip: 'Insert/edit shortcodes',
-          onclick: this._shortcodeButtonCallback.bind(this)
+          onclick: this._shortcodeButtonCallback.bind(this),
+          onPostRender: function onPostRender() {
+            var _this = this;
+
+            editor.on('NodeChange', function (e) {
+              var text = (0, _jquery2.default)(editor.selection.getNode()).text();
+              var isActive = shortcode.isValid(text);
+
+              _this.active(isActive);
+            });
+          }
         });
       }
     }
@@ -42641,10 +42679,9 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_mediaButtonCallback',
     value: function _mediaButtonCallback(event) {
-      this.$reveal = (0, _jquery2.default)('#' + this.mediaHandler);
-      this.$reveal.foundation('open');
+      this.$media.foundation('open');
 
-      this.$reveal.off('insert.zf.media.reveal').on({
+      this.$media.off('insert.zf.media.reveal').on({
         'insert.zf.media.reveal': this._mediaInsert.bind(this)
       });
     }
@@ -42663,7 +42700,7 @@ var TinyMceEditor = function (_Plugin) {
       _jquery2.default.each(data, function (index, data) {
         var url = this._getObjectValue(data, this.mediaSrc);
         var alt = this._getObjectValue(data, this.mediaAlt);
-        var item = '<img src="' + this.mediaUrl.replace('[src]', url) + '" alt="' + alt + '" />';
+        var item = '<img class="inline-image" src="' + this.mediaUrl.replace('[src]', url) + '" alt="' + alt + '" />';
 
         this.editor.insertContent(item);
       }.bind(this));
@@ -42679,12 +42716,76 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_shortcodeButtonCallback',
     value: function _shortcodeButtonCallback(event) {
-      this.$shortcode = (0, _jquery2.default)('#' + this.shortcodeHandler);
       this.$shortcode.foundation('open');
 
       this.$shortcode.off('insert.zf.shortcode.reveal').on({
         'insert.zf.shortcode.reveal': this._shortcodeInsert.bind(this)
       });
+    }
+
+    /**
+     * Builds shortcode preview markup.
+     * @param {Object} event - Event object passed from listener.
+     * @param {Array} data - Shortcode configuration data.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_shortcodePreview',
+    value: function _shortcodePreview(snippet, shortcode, options) {
+      var name = '<span class="shortcode-name">' + shortcode + '</span>';
+      var preview = '<span class="shortcode-snippet">' + snippet + '</span>';
+      var item = '<span data-mce-shortcode class="shortcode-preview" contenteditable="false">' + name + preview + '</span>';
+
+      return item;
+    }
+
+    /**
+     * Clears shortcode markup.
+     * @param {Object} event - Event object passed from listener.
+     * @param {Object} editor - Editor instance.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_shortcodeCleanup',
+    value: function _shortcodeCleanup(event, editor) {
+      return function (nodes) {
+        for (var i = 0; i < nodes.length; i++) {
+          var node = nodes[i];
+          var text = node.lastChild;
+
+          text.name = 'div';
+          text.attr('class', 'shortcode');
+
+          nodes[i].parent.replace(text);
+        }
+      };
+    }
+
+    /**
+     * Replaces cleaned shortcodes to preview markup.
+     * @param {Object} event - Event object passed from listener.
+     * @param {Object} editor - Editor instance.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_shortcodeSetup',
+    value: function _shortcodeSetup(event, editor) {
+      if (this.shortcodeHandler) {
+        editor.$('.shortcode').each(function (index, elm) {
+          var $elm = editor.$(elm);
+          var snippet = $elm.text();
+          var shortcode = snippet.split(' ')[0].replace('[', '');
+          var preview = this._shortcodePreview(snippet, shortcode);
+
+          $elm.replaceWith('<p>' + preview + '</p>');
+        }.bind(this));
+      }
     }
 
     /**
@@ -42697,9 +42798,22 @@ var TinyMceEditor = function (_Plugin) {
 
   }, {
     key: '_shortcodeInsert',
-    value: function _shortcodeInsert(event, data) {
-      var item = data;
+    value: function _shortcodeInsert(event, snippet, shortcode, options) {
+      var item = this._shortcodePreview(snippet, shortcode, options);
       this.editor.insertContent(item);
+    }
+
+    /**
+     * Custom mark button click callback.
+     * @param {Object} event - Event passed from handler.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_markButtonCallback',
+    value: function _markButtonCallback(event) {
+      this.editor.formatter.toggle('mark');
     }
 
     /**
@@ -42723,11 +42837,11 @@ var TinyMceEditor = function (_Plugin) {
   return TinyMceEditor;
 }(_foundation.Plugin);
 
-TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote', 'image media shortcode', 'alignleft aligncenter alignright alignjustify', 'outdent indent', 'link unlink', 'formatselect', 'removeformat pastetext', 'fullscreen'];
+TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'bullist numlist blockquote mark', 'link image media shortcode', 'alignleft aligncenter alignright', 'formatselect', 'removeformat pastetext', 'fullscreen'];
 
-TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'table', 'wordcount',
-// 'image',
-'media', 'fullscreen'];
+TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'table', 'wordcount', 'media', 'fullscreen'];
+
+TinyMceEditor.styles = '\n  html {\n    padding: 0 .5rem;\n  }\n\n  .shortcode-preview {\n    display: inline-block;\n    background: #f0f0f0;\n    border: 1px dashed #cacaca;\n    margin: 0;\n    width: 100%;\n  }\n\n  .shortcode-name, .shortcode-snippet {\n    display: inline-block;\n    padding: .5rem 1rem;\n    color: #888;\n    white-space: nowrap;\n    pointer-events: none;\n    font-size: .8rem;\n  }\n\n  .shortcode-name {\n    color: #555;\n    font-weight: bold;\n    border-right: 1px dashed #cacaca;\n    text-transform: capitalize;\n  }\n';
 
 TinyMceEditor.defaults = {
   menubar: false,
@@ -42740,7 +42854,10 @@ TinyMceEditor.defaults = {
   autoresize_min_height: 300,
   plugins: TinyMceEditor.plugins.join(' '),
   toolbar: TinyMceEditor.toolbar.join(' | '),
-  content_style: "html { padding: 0 .5rem }"
+  content_style: TinyMceEditor.styles,
+  formats: {
+    mark: { inline: 'mark' }
+  }
 };
 
 exports.TinyMceEditor = TinyMceEditor;
@@ -43903,6 +44020,7 @@ var ShortcodeReveal = function (_Plugin) {
       this.options = _jquery2.default.extend({}, ShortcodeReveal.defaults, this.$element.data(), options);
       this.reveal = new Foundation.Reveal(element, this.options);
       this.shortcodes = [];
+      this.shortcodeNames = [];
       this.items = [];
       this.activeShortcode = null;
 
@@ -43991,6 +44109,9 @@ var ShortcodeReveal = function (_Plugin) {
         this.activeShortcode = this.$menu.find('[data-name]:first').attr('data-name');
       }
 
+      this.$menu.find('li').removeClass('is-active');
+      this.$menu.find('li a[data-name="' + this.activeShortcode + '"]').parent().addClass('is-active');
+
       this._getForm(this.activeShortcode);
       this._getPreview(this.activeShortcode);
     }
@@ -44070,6 +44191,9 @@ var ShortcodeReveal = function (_Plugin) {
   }, {
     key: '_appendMenuItems',
     value: function _appendMenuItems(data) {
+      this.items = [];
+      this.shortcodeNames = [];
+
       var menu = (0, _jquery2.default)('<ul class="menu vertical icons icon-left"></ul>');
       this.clear();
 
@@ -44077,11 +44201,39 @@ var ShortcodeReveal = function (_Plugin) {
         var label = '<i class="' + data.icon + '"></i><span>' + data.label + '</span>';
         var item = (0, _jquery2.default)('<li><a data-name="' + data.name + '">' + label + '</a></li>');
 
+        this.shortcodeNames.push(data.name);
         this.items.push(item);
       }.bind(this));
 
       menu.html(this.items);
       this.$menu.html(menu);
+    }
+
+    /**
+     * Checks if string has valid shortcode
+     * @function
+     */
+
+  }, {
+    key: 'isValid',
+    value: function isValid(string) {
+      var regex = /\[(\w+) (.+?)\]/g;
+      var matches = string.match(regex);
+      var valid = false;
+
+      _jquery2.default.each(matches, function (index, match) {
+        var groups = regex.exec(match);
+
+        if (groups) {
+          var name = groups[1];
+
+          if (_jquery2.default.inArray(name, this.shortcodeNames) !== -1) {
+            valid = true;
+          }
+        }
+      }.bind(this));
+
+      return valid;
     }
 
     /**
@@ -44092,8 +44244,6 @@ var ShortcodeReveal = function (_Plugin) {
   }, {
     key: 'clear',
     value: function clear() {
-      this.items = [];
-
       this.$menu.html('');
       this.$form.html('');
       this.$preview.html('');
@@ -44114,7 +44264,7 @@ var ShortcodeReveal = function (_Plugin) {
         this.reveal.open();
       }
 
-      // this.$element.trigger('open.zf.shortcode.reveal');
+      this.$element.trigger('open.zf.shortcode.reveal');
     }
 
     /**
@@ -44167,10 +44317,10 @@ var ShortcodeReveal = function (_Plugin) {
         }
       });
 
-      var snippet = '[' + this.activeShortcode + ' ' + params + ']';
+      var snippet = '[' + this.activeShortcode + params + ']';
 
       this.reveal.close();
-      this.$element.trigger('insert.zf.shortcode.reveal', [snippet]);
+      this.$element.trigger('insert.zf.shortcode.reveal', [snippet, this.activeShortcode, items]);
     }
 
     /**
