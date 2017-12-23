@@ -42610,8 +42610,11 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_setupCallback',
     value: function _setupCallback(editor) {
-      var _this = this;
       this.editor = editor;
+      this.shortcode = this.$shortcode.data('zfPlugin');
+
+      var _this = this;
+      var shortcode = this.shortcode;
 
       editor.on('change', function (event) {
         editor.save();
@@ -42649,8 +42652,6 @@ var TinyMceEditor = function (_Plugin) {
       }
 
       if (this.shortcodeHandler) {
-        var shortcode = this.$shortcode.data('zfPlugin');
-
         editor.addButton('shortcode', {
           icon: 'template',
           tooltip: 'Insert/edit shortcodes',
@@ -42734,7 +42735,15 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_shortcodePreview',
     value: function _shortcodePreview(snippet, shortcode, options) {
-      var name = '<span class="shortcode-name">' + shortcode + '</span>';
+      var data = this.shortcode.getInfo(shortcode);
+
+      if (data) {
+        var label = data.label;
+      } else {
+        var label = shortcode;
+      }
+
+      var name = '<span class="shortcode-name">' + label + '</span>';
       var preview = '<span class="shortcode-snippet">' + snippet + '</span>';
       var item = '<span data-mce-shortcode class="shortcode-preview" contenteditable="false">' + name + preview + '</span>';
 
@@ -44019,8 +44028,7 @@ var ShortcodeReveal = function (_Plugin) {
       this.$element = element;
       this.options = _jquery2.default.extend({}, ShortcodeReveal.defaults, this.$element.data(), options);
       this.reveal = new Foundation.Reveal(element, this.options);
-      this.shortcodes = [];
-      this.shortcodeNames = [];
+      this.shortcodes = {};
       this.items = [];
       this.activeShortcode = null;
 
@@ -44045,8 +44053,7 @@ var ShortcodeReveal = function (_Plugin) {
       this.formUrl = this.options.formUrl;
       this.previewUrl = this.options.previewUrl;
 
-      // this.$insert.addClass('disabled');
-
+      this._getItems();
       this._events();
     }
 
@@ -44086,8 +44093,12 @@ var ShortcodeReveal = function (_Plugin) {
   }, {
     key: '_getItems',
     value: function _getItems() {
+      this.shortcodes = {};
+
       _jquery2.default.ajax(this.shortcodesUrl).done(function (response) {
-        this.shortcodes = response;
+        _jquery2.default.each(response, function (index, el) {
+          this.shortcodes[el.name] = el;
+        }.bind(this));
 
         this._appendMenuItems(response);
         this._loadShortcode();
@@ -44143,6 +44154,10 @@ var ShortcodeReveal = function (_Plugin) {
       _jquery2.default.ajax(url).done(function (response) {
         this.$form.html(response);
         this.$form.foundation();
+
+        this.$form.find('form').on('submit', function (event) {
+          event.preventDefault();
+        });
       }.bind(this));
     }
 
@@ -44192,7 +44207,6 @@ var ShortcodeReveal = function (_Plugin) {
     key: '_appendMenuItems',
     value: function _appendMenuItems(data) {
       this.items = [];
-      this.shortcodeNames = [];
 
       var menu = (0, _jquery2.default)('<ul class="menu vertical icons icon-left"></ul>');
       this.clear();
@@ -44201,7 +44215,6 @@ var ShortcodeReveal = function (_Plugin) {
         var label = '<i class="' + data.icon + '"></i><span>' + data.label + '</span>';
         var item = (0, _jquery2.default)('<li><a data-name="' + data.name + '">' + label + '</a></li>');
 
-        this.shortcodeNames.push(data.name);
         this.items.push(item);
       }.bind(this));
 
@@ -44224,16 +44237,23 @@ var ShortcodeReveal = function (_Plugin) {
       _jquery2.default.each(matches, function (index, match) {
         var groups = regex.exec(match);
 
-        if (groups) {
-          var name = groups[1];
-
-          if (_jquery2.default.inArray(name, this.shortcodeNames) !== -1) {
-            valid = true;
-          }
+        if (groups && this.shortcodes[groups[1]]) {
+          valid = true;
         }
       }.bind(this));
 
       return valid;
+    }
+
+    /**
+     * Gets shortcode extended information
+     * @function
+     */
+
+  }, {
+    key: 'getInfo',
+    value: function getInfo(shortcode) {
+      return this.shortcodes[shortcode];
     }
 
     /**
@@ -44295,19 +44315,24 @@ var ShortcodeReveal = function (_Plugin) {
     value: function insert(event) {
       var params = '';
       var items = {};
-      var values = this.$form.find('form').serializeArray();
+      var form = this.$form;
+      var values = form.find('form').serializeArray();
 
       _jquery2.default.each(values, function (index, object) {
-        var key = object.name.replace('[]', '');
+        var input = form.find('[name="' + object.name + '"]');
 
-        if (/^.*\[\]$/.test(object.name)) {
-          if (items[key]) {
-            items[key] = items[key] + ',' + object.value;
+        if (input.length) {
+          var key = input.attr('data-attribute');
+
+          if (/^.*\[\]$/.test(object.name)) {
+            if (items[key]) {
+              items[key] = items[key] + ',' + object.value;
+            } else {
+              items[key] = object.value;
+            }
           } else {
             items[key] = object.value;
           }
-        } else {
-          items[key] = object.value;
         }
       });
 
@@ -44318,9 +44343,10 @@ var ShortcodeReveal = function (_Plugin) {
       });
 
       var snippet = '[' + this.activeShortcode + params + ']';
+      var active = this.activeShortcode;
 
       this.reveal.close();
-      this.$element.trigger('insert.zf.shortcode.reveal', [snippet, this.activeShortcode, items]);
+      this.$element.trigger('insert.zf.shortcode.reveal', [snippet, active, items]);
     }
 
     /**
