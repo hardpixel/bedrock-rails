@@ -44320,10 +44320,9 @@ var ShortcodeReveal = function (_Plugin) {
 
       _jquery2.default.each(values, function (index, object) {
         var input = form.find('[name="' + object.name + '"]');
+        var key = input.attr('data-attribute');
 
-        if (input.length) {
-          var key = input.attr('data-attribute');
-
+        if (key) {
           if (/^.*\[\]$/.test(object.name)) {
             if (items[key]) {
               items[key] = items[key] + ',' + object.value;
