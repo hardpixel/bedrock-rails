@@ -69489,7 +69489,7 @@ var ShortcodeReveal = function (_Plugin) {
       if (data != this.formValues) {
         this.formValues = data;
 
-        this._getPreview(this.activeShortcode, this.formValues);
+        this._getPreview(this.activeShortcode);
       }
     }
 
@@ -69524,10 +69524,11 @@ var ShortcodeReveal = function (_Plugin) {
 
   }, {
     key: '_getPreview',
-    value: function _getPreview(shortcode, data) {
+    value: function _getPreview(shortcode) {
       var height = 320;
+      var snippet = encodeURIComponent(this._buildShortcode(shortcode));
       var url = this.previewUrl.replace('[name]', shortcode);
-      var frame = (0, _jquery2.default)('<iframe frameborder="0" src="' + url + '?' + data + '"></iframe>');
+      var frame = (0, _jquery2.default)('<iframe frameborder="0" src="' + url + '?shortcode=' + snippet + '"></iframe>');
       var styles = '\n      html, body {\n        background: transparent !important;\n        overflow: hidden !important;\n        margin: 0 !important;\n      }\n\n      #shortcode-preview {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        max-width: 800px;\n        min-width: 400px;\n        margin: auto;\n      }\n    ';
 
       this.$preview.html(frame);
@@ -69586,6 +69587,63 @@ var ShortcodeReveal = function (_Plugin) {
 
       menu.html(this.items);
       this.$menu.html(menu);
+    }
+
+    /**
+     * Parses form values into key/value object.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_getValues',
+    value: function _getValues() {
+      var options = {};
+      var form = this.$form;
+      var values = form.find('form').serializeArray();
+
+      _jquery2.default.each(values, function (index, object) {
+        var input = form.find('[name="' + object.name + '"][data-attribute]');
+        var key = input.attr('data-attribute');
+
+        if (key) {
+          if (/^.*\[\]$/.test(object.name)) {
+            if (options[key]) {
+              options[key] = options[key] + ',' + object.value;
+            } else {
+              options[key] = object.value;
+            }
+          } else {
+            options[key] = object.value;
+          }
+        }
+      });
+
+      return options;
+    }
+
+    /**
+     * Builds shortcode string.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_buildShortcode',
+    value: function _buildShortcode(name, values) {
+      var params = '';
+
+      if (!values) {
+        values = this._getValues();
+      }
+
+      _jquery2.default.each(values, function (key, value) {
+        if (value) {
+          params += ' ' + key + '="' + value + '"';
+        }
+      });
+
+      return '[' + name + params + ']';
     }
 
     /**
@@ -69679,39 +69737,12 @@ var ShortcodeReveal = function (_Plugin) {
   }, {
     key: 'insert',
     value: function insert(event) {
-      var params = '';
-      var items = {};
-      var form = this.$form;
-      var values = form.find('form').serializeArray();
-
-      _jquery2.default.each(values, function (index, object) {
-        var input = form.find('[name="' + object.name + '"][data-attribute]');
-        var key = input.attr('data-attribute');
-
-        if (key) {
-          if (/^.*\[\]$/.test(object.name)) {
-            if (items[key]) {
-              items[key] = items[key] + ',' + object.value;
-            } else {
-              items[key] = object.value;
-            }
-          } else {
-            items[key] = object.value;
-          }
-        }
-      });
-
-      _jquery2.default.each(items, function (key, value) {
-        if (value) {
-          params += ' ' + key + '="' + value + '"';
-        }
-      });
-
-      var snippet = '[' + this.activeShortcode + params + ']';
+      var values = this._getValues();
       var active = this.activeShortcode;
+      var snippet = this._buildShortcode(active, values);
 
       this.reveal.close();
-      this.$element.trigger('insert.zf.shortcode.reveal', [snippet, active, items]);
+      this.$element.trigger('insert.zf.shortcode.reveal', [snippet, active, values]);
     }
 
     /**
@@ -70193,11 +70224,10 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_setupCallback',
     value: function _setupCallback(editor) {
+      var _this = this;
+
       this.editor = editor;
       this.shortcode = this.$shortcode.data('zfPlugin');
-
-      var _this = this;
-      var shortcode = this.shortcode;
 
       editor.on('change', function (event) {
         editor.save();
@@ -70251,9 +70281,7 @@ var TinyMceEditor = function (_Plugin) {
             var _this = this;
 
             editor.on('NodeChange', function (e) {
-              var text = (0, _jquery2.default)(editor.selection.getNode()).text();
-              var isActive = shortcode.isValid(text);
-
+              var isActive = (0, _jquery2.default)(editor.selection.getNode()).hasClass('shortcode-preview');
               _this.active(isActive);
             });
           }
