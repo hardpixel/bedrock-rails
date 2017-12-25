@@ -68011,6 +68011,9 @@ var MediaAttach = function (_Plugin) {
       this.$item = (0, _jquery2.default)(this.template);
       this.$reveal = (0, _jquery2.default)('#' + this.options.mediaAttach);
       this.$anchor = (0, _jquery2.default)('[data-open="' + this.id + '"]').length ? (0, _jquery2.default)('[data-open="' + this.id + '"]') : (0, _jquery2.default)('[data-toggle="' + this.id + '"]');
+      this.fieldName = this.$item.find('[data-value]').attr('name');
+      this.$hidden = this.$element.find('[name="' + this.fieldName + '"]');
+      this.required = this.$item.find('[data-value]').is('[required]');
       this.imageKey = this.$item.find('[data-src]').attr('data-src');
       this.imageUrl = this.$item.find('[data-url]').attr('data-url') || '[src]';
       this.titleKey = this.$item.find('[data-text]').attr('data-text');
@@ -68052,9 +68055,16 @@ var MediaAttach = function (_Plugin) {
 
       if (this.activeItems.length > 0) {
         this.$empty.addClass('hide');
+        this.$hidden.removeAttr('required');
       } else {
+        if (this.required) {
+          this.$hidden.attr('required', 'required');
+        }
+
         this.$empty.removeClass('hide');
       }
+
+      this.$hidden.trigger('change');
     }
 
     /**
@@ -68115,8 +68125,6 @@ var MediaAttach = function (_Plugin) {
       } else {
         this.$grid.html(items);
       }
-
-      this.$grid.find(':input').trigger('change');
 
       this._updateActiveItems();
     }
@@ -69398,6 +69406,8 @@ var ShortcodeReveal = function (_Plugin) {
       this.previewUrl = this.options.previewUrl;
       this.formParams = '';
 
+      this.$insert.addClass('disabled');
+
       this._getItems();
       this._events();
     }
@@ -69424,7 +69434,8 @@ var ShortcodeReveal = function (_Plugin) {
         'click': this._loadShortcode.bind(this)
       }, '[data-name]');
 
-      this.$form.off('change', ':input').on({
+      this.$form.off('input change', ':input').on({
+        'input': this._loadPreview.bind(this),
         'change': this._loadPreview.bind(this)
       }, ':input');
     }
@@ -69462,6 +69473,11 @@ var ShortcodeReveal = function (_Plugin) {
   }, {
     key: '_loadShortcode',
     value: function _loadShortcode(event) {
+      this.formValues = null;
+
+      this.$form.html('');
+      this.$preview.html('');
+
       if (event) {
         this.activeShortcode = (0, _jquery2.default)(event.currentTarget).attr('data-name');
       } else {
@@ -69472,7 +69488,6 @@ var ShortcodeReveal = function (_Plugin) {
       this.$menu.find('li a[data-name="' + this.activeShortcode + '"]').parent().addClass('is-active');
 
       this._getForm(this.activeShortcode);
-      this._getPreview(this.activeShortcode);
     }
 
     /**
@@ -69485,12 +69500,15 @@ var ShortcodeReveal = function (_Plugin) {
     key: '_loadPreview',
     value: function _loadPreview(event) {
       var data = this.$form.find('form').serialize();
+      var change = event && event.type == 'change';
+      var changed = this.formValues && data != this.formValues;
 
-      if (data != this.formValues) {
+      if (change && changed) {
         this.formValues = data;
-
         this._getPreview(this.activeShortcode);
       }
+
+      this._toggleInsert();
     }
 
     /**
@@ -69513,6 +69531,7 @@ var ShortcodeReveal = function (_Plugin) {
         });
 
         this.formValues = this.$form.find('form').serialize();
+        this._loadPreview();
       }.bind(this));
     }
 
@@ -69561,6 +69580,22 @@ var ShortcodeReveal = function (_Plugin) {
     key: '_getObjectValue',
     value: function _getObjectValue(obj, path) {
       return new Function('_', 'return _.' + path)(obj);
+    }
+
+    /**
+     * Toggles insert button if form is valid.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_toggleInsert',
+    value: function _toggleInsert() {
+      if (this.formValid()) {
+        this.$insert.removeClass('disabled');
+      } else {
+        this.$insert.addClass('disabled');
+      }
     }
 
     /**
@@ -69637,13 +69672,37 @@ var ShortcodeReveal = function (_Plugin) {
         values = this._getValues();
       }
 
-      _jquery2.default.each(values, function (key, value) {
-        if (value) {
-          params += ' ' + key + '="' + value + '"';
+      if (values) {
+        _jquery2.default.each(values, function (key, value) {
+          if (value) {
+            params += ' ' + key + '="' + value + '"';
+          }
+        });
+
+        return '[' + name + params + ']';
+      } else {
+        return '';
+      }
+    }
+
+    /**
+     * Checks if form is valid to insert shortcode
+     * @function
+     */
+
+  }, {
+    key: 'formValid',
+    value: function formValid() {
+      var valid = true;
+      var required = this.$form.find(':input[required]');
+
+      _jquery2.default.each(required, function (index, el) {
+        if (!(0, _jquery2.default)(el).val()) {
+          valid = false;
         }
       });
 
-      return '[' + name + params + ']';
+      return valid;
     }
 
     /**
@@ -70427,8 +70486,8 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_shortcodeInsert',
     value: function _shortcodeInsert(event, snippet, shortcode, options) {
-      var item = this._shortcodePreview(snippet, shortcode, options);
-      this.editor.insertContent(item);
+      var preview = this._shortcodePreview(snippet, shortcode, options);
+      this.editor.insertContent('<p>' + preview + '</p>');
     }
 
     /**
