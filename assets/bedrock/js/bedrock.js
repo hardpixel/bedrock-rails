@@ -69401,6 +69401,7 @@ var ShortcodeReveal = function (_Plugin) {
       this.$form = this.$element.find('[data-form]');
       this.$preview = this.$element.find('[data-preview]');
       this.$insert = this.$element.find('[data-insert]');
+      this.$empty = this.$element.find('[data-empty]').clone();
       this.shortcodesUrl = this.options.shortcodesUrl;
       this.formUrl = this.options.formUrl;
       this.previewUrl = this.options.previewUrl;
@@ -69476,7 +69477,7 @@ var ShortcodeReveal = function (_Plugin) {
       this.formValues = null;
 
       this.$form.html('');
-      this.$preview.html('');
+      this.$preview.html(this.$empty);
 
       if (event) {
         this.activeShortcode = (0, _jquery2.default)(event.currentTarget).attr('data-name');
@@ -69505,7 +69506,12 @@ var ShortcodeReveal = function (_Plugin) {
 
       if (change && changed) {
         this.formValues = data;
-        this._getPreview(this.activeShortcode);
+
+        if (this.formValid()) {
+          this._getPreview(this.activeShortcode);
+        } else {
+          this.$preview.html(this.$empty);
+        }
       }
 
       this._toggleInsert();
@@ -69697,7 +69703,9 @@ var ShortcodeReveal = function (_Plugin) {
       var required = this.$form.find(':input[required]');
 
       _jquery2.default.each(required, function (index, el) {
-        if (!(0, _jquery2.default)(el).val()) {
+        var value = (0, _jquery2.default)(el).val();
+
+        if (!value || value == '') {
           valid = false;
         }
       });
@@ -69749,7 +69757,7 @@ var ShortcodeReveal = function (_Plugin) {
     value: function clear() {
       this.$menu.html('');
       this.$form.html('');
-      this.$preview.html('');
+      this.$preview.html(this.$empty);
     }
 
     /**
