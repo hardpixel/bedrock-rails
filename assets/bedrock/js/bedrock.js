@@ -42182,6 +42182,8 @@ var _fileInput = __webpack_require__(291);
 
 var _seoAnalysis = __webpack_require__(292);
 
+var _resizeWatcher = __webpack_require__(574);
+
 Foundation.plugin(_offcanvasMenu.OffCanvasMenu, 'OffCanvasMenu');
 Foundation.plugin(_tinyMceEditor.TinyMceEditor, 'TinyMceEditor');
 Foundation.plugin(_tableCheckbox.TableCheckbox, 'TableCheckbox');
@@ -42195,6 +42197,7 @@ Foundation.plugin(_inlineEditBox.InlineEditBox, 'InlineEditBox');
 Foundation.plugin(_selectBox.SelectBox, 'SelectBox');
 Foundation.plugin(_fileInput.FileInput, 'FileInput');
 Foundation.plugin(_seoAnalysis.SeoAnalysis, 'SeoAnalysis');
+Foundation.plugin(_resizeWatcher.ResizeWatcher, 'ResizeWatcher');
 
 /***/ }),
 /* 278 */
@@ -44229,15 +44232,17 @@ var ShortcodeReveal = function (_Plugin) {
       var url = this.formUrl.replace('[name]', shortcode);
 
       _jquery2.default.ajax(url).done(function (response) {
-        this.$form.html(response);
-        this.$form.foundation();
+        if (this.activeShortcode == shortcode) {
+          this.$form.html(response);
+          this.$form.foundation();
 
-        this.$form.find('form').on('submit', function (event) {
-          event.preventDefault();
-        });
+          this.$form.find('form').on('submit', function (event) {
+            event.preventDefault();
+          });
 
-        this.formValues = this.$form.find('form').serialize();
-        this._loadPreview();
+          this.formValues = this.$form.find('form').serialize();
+          this._loadPreview();
+        }
       }.bind(this));
     }
 
@@ -70866,6 +70871,171 @@ CollectingHandler.prototype.restart = function () {
 		}
 	}
 };
+
+/***/ }),
+/* 574 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ResizeWatcher = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _foundation = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * ResizeWatcher module.
+ * @module resizeWatcher
+ */
+
+var ResizeWatcher = function (_Plugin) {
+  _inherits(ResizeWatcher, _Plugin);
+
+  function ResizeWatcher() {
+    _classCallCheck(this, ResizeWatcher);
+
+    return _possibleConstructorReturn(this, (ResizeWatcher.__proto__ || Object.getPrototypeOf(ResizeWatcher)).apply(this, arguments));
+  }
+
+  _createClass(ResizeWatcher, [{
+    key: '_setup',
+
+    /**
+     * Creates a new instance of an resize-watcher.
+     * @class
+     * @name ResizeWatcher
+     * @fires ResizeWatcher#init
+     * @param {Object} element - jQuery object to initialize.
+     * @param {Object} options - Overrides to the default plugin settings.
+     */
+    value: function _setup(element, options) {
+      this.className = 'ResizeWatcher'; // ie9 back compat
+      this.$element = element;
+      this.options = _jquery2.default.extend({}, ResizeWatcher.defaults, this.$element.data(), options);
+
+      this._init();
+    }
+
+    /**
+     * Initializes the resize-watcher wrapper.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_init',
+    value: function _init() {
+      this._triggerChanged = this._debounce(function (e) {
+        if (e.target.innerHTML.length > 0) {
+          (0, _jquery2.default)(document).trigger('contentchanged');
+        }
+      }, 500);
+
+      this._events();
+    }
+
+    /**
+     * Adds event handlers to the resize-watcher.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_events',
+    value: function _events() {
+      (0, _jquery2.default)(document).on('DOMSubtreeModified', this._triggerChanged);
+      (0, _jquery2.default)(document).on('contentchanged', this._resizeAttachments.bind(this));
+    }
+
+    /**
+     * Debounces function.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_debounce',
+    value: function _debounce(func, wait, immediate) {
+      var timeout;
+
+      return function () {
+        var context = this;
+        var args = arguments;
+
+        var later = function later() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+
+    /** Resizes attachments.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_resizeAttachments',
+    value: function _resizeAttachments() {
+      (0, _jquery2.default)('.attachments-grid:visible').each(function (index, el) {
+        var available = (0, _jquery2.default)(el).width();
+        var columns = Math.round(available / 170);
+        var existing = (0, _jquery2.default)(el).attr('data-grid-columns');
+
+        if (columns != existing) {
+          if (columns > 9) {
+            columns = 9;
+          }
+
+          if (columns > 0) {
+            (0, _jquery2.default)(el).attr('data-grid-columns', columns);
+          }
+        }
+      });
+    }
+
+    /**
+     * Destroys the resize-watcher plugin.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_destroy',
+    value: function _destroy() {
+      (0, _jquery2.default)(document).off('contentchanged');
+    }
+  }]);
+
+  return ResizeWatcher;
+}(_foundation.Plugin);
+
+ResizeWatcher.defaults = {};
+
+exports.ResizeWatcher = ResizeWatcher;
 
 /***/ })
 /******/ ]);
