@@ -43934,12 +43934,11 @@ var MediaReveal = function (_Plugin) {
   }, {
     key: 'open',
     value: function open(event) {
-      this._getItems();
-
       if (!this.reveal.isActive) {
         this.reveal.open();
       }
 
+      setTimeout(this._getItems.bind(this), 300);
       this.$element.trigger('open.zf.media.reveal');
     }
 
@@ -70946,7 +70945,7 @@ var ResizeWatcher = function (_Plugin) {
         if (e.target.innerHTML.length > 0) {
           (0, _jquery2.default)(document).trigger('contentchanged');
         }
-      }, 500);
+      }, 250);
 
       this._events();
     }
