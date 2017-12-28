@@ -42726,7 +42726,7 @@ var TinyMceEditor = function (_Plugin) {
             var _this = this;
 
             editor.on('NodeChange', function (e) {
-              var isActive = (0, _jquery2.default)(editor.selection.getNode()).hasClass('shortcode-preview');
+              var isActive = (0, _jquery2.default)(editor.selection.getNode()).hasClass('mce-shortcode-preview');
               _this.active(isActive);
             });
           }
@@ -42807,9 +42807,9 @@ var TinyMceEditor = function (_Plugin) {
         var label = shortcode;
       }
 
-      var name = '<span class="shortcode-name">' + label + '</span>';
-      var preview = '<span class="shortcode-snippet">' + snippet + '</span>';
-      var item = '<span data-mce-shortcode class="shortcode-preview" contenteditable="false">' + name + preview + '</span>';
+      var name = '<span class="mce-shortcode-name">' + label + '</span>';
+      var preview = '<span class="mce-shortcode-snippet">' + snippet + '</span>';
+      var item = '<span data-mce-shortcode class="mce-shortcode-preview" contenteditable="false">' + name + preview + '</span>';
 
       return item;
     }
@@ -42914,7 +42914,7 @@ TinyMceEditor.toolbar = ['bold italic underline strikethrough', 'blockquote shor
 
 TinyMceEditor.plugins = ['paste', 'link', 'lists', 'charmap', 'autoresize', 'table', 'wordcount', 'fullscreen'];
 
-TinyMceEditor.styles = '\n  html {\n    padding: 0 .5rem;\n  }\n\n  .shortcode-preview {\n    display: inline-block;\n    background: #f0f0f0;\n    border: 1px dashed #cacaca;\n    margin: 0;\n    width: 100%;\n  }\n\n  .shortcode-name, .shortcode-snippet {\n    display: inline-block;\n    padding: .5rem 1rem;\n    color: #888;\n    white-space: nowrap;\n    pointer-events: none;\n    font-size: .8rem;\n  }\n\n  .shortcode-name {\n    color: #555;\n    font-weight: bold;\n    border-right: 1px dashed #cacaca;\n    text-transform: capitalize;\n  }\n';
+TinyMceEditor.styles = '\n  html {\n    padding: 1rem;\n  }\n\n  body, html {\n    background: white;\n    margin: 0;\n    font-size: 100%;\n  }\n\n  .mce-shortcode-preview {\n    display: inline-block;\n    background: #f0f0f0;\n    border: 1px dashed #cacaca;\n    margin: 0;\n    width: 100%;\n  }\n\n  .mce-shortcode-name, .mce-shortcode-snippet {\n    display: inline-block;\n    padding: .5rem 1rem;\n    color: #888;\n    white-space: nowrap;\n    pointer-events: none;\n    font-size: .8rem;\n  }\n\n  .mce-shortcode-name {\n    color: #555;\n    font-weight: bold;\n    border-right: 1px dashed #cacaca;\n    text-transform: capitalize;\n  }\n';
 
 TinyMceEditor.defaults = {
   menubar: false,
@@ -42926,6 +42926,7 @@ TinyMceEditor.defaults = {
   plugins: TinyMceEditor.plugins.join(' '),
   toolbar: TinyMceEditor.toolbar.join(' | '),
   content_style: TinyMceEditor.styles,
+  invalid_elements: 'br',
   formats: {
     mark: { inline: 'mark' }
   }
