@@ -42760,11 +42760,13 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_mediaButtonCallback',
     value: function _mediaButtonCallback(event) {
-      this.$media.foundation('open');
+      this.$media.addClass('mce-in');
 
       this.$media.off('insert.zf.media.reveal').on({
         'insert.zf.media.reveal': this._mediaInsert.bind(this)
       });
+
+      this.$media.foundation('open');
     }
 
     /**
@@ -42785,6 +42787,8 @@ var TinyMceEditor = function (_Plugin) {
 
         this.editor.insertContent(item);
       }.bind(this));
+
+      this.$media.removeClass('mce-in');
     }
 
     /**
@@ -42797,11 +42801,19 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_shortcodeButtonCallback',
     value: function _shortcodeButtonCallback(event) {
-      this.$shortcode.foundation('open');
+      this.$shortcode.addClass('mce-in');
+
+      this.activeShortcode = this.editor.selection.getNode();
+      this.$activeShortcode = (0, _jquery2.default)(this.activeShortcode);
+
+      var snippet = this.$activeShortcode.find('.mce-shortcode-snippet').text();
+      this.shortcode.setSnippet(snippet);
 
       this.$shortcode.off('insert.zf.shortcode.reveal').on({
         'insert.zf.shortcode.reveal': this._shortcodeInsert.bind(this)
       });
+
+      this.$shortcode.foundation('open');
     }
 
     /**
@@ -42889,7 +42901,15 @@ var TinyMceEditor = function (_Plugin) {
     key: '_shortcodeInsert',
     value: function _shortcodeInsert(event, snippet, shortcode, options) {
       var preview = this._shortcodePreview(snippet, shortcode, options);
-      this.editor.insertContent('<p>' + preview + '</p>');
+      var selected = this.$activeShortcode.hasClass('mce-shortcode-preview');
+
+      if (selected) {
+        this.editor.$(this.activeShortcode).replaceWith(preview);
+      } else {
+        this.editor.insertContent('<p>' + preview + '</p>');
+      }
+
+      this.$shortcode.removeClass('mce-in');
     }
 
     /**
@@ -44109,6 +44129,7 @@ var ShortcodeReveal = function (_Plugin) {
       this.shortcodes = {};
       this.items = [];
       this.activeShortcode = null;
+      this.activeSnippet = null;
 
       this._init();
     }
@@ -44186,7 +44207,11 @@ var ShortcodeReveal = function (_Plugin) {
         this._appendMenuItems(response);
 
         if (this.reveal.isActive) {
-          this.$menu.find('[data-name]:first').click();
+          if (this.activeShortcode) {
+            this.$menu.find('[data-name="' + this.activeShortcode + '"]').click();
+          } else {
+            this.$menu.find('[data-name]:first').click();
+          }
         }
       }.bind(this));
     }
@@ -44227,8 +44252,13 @@ var ShortcodeReveal = function (_Plugin) {
     key: '_loadPreview',
     value: function _loadPreview(event) {
       var data = this.$form.find('form').serialize();
+      var init = event && event.type == 'init';
       var change = event && event.type == 'change';
       var changed = this.formValues && data != this.formValues;
+
+      if (init && this.formValid()) {
+        this._getPreview(this.activeShortcode);
+      }
 
       if (change && changed) {
         this.formValues = data;
@@ -44252,9 +44282,11 @@ var ShortcodeReveal = function (_Plugin) {
   }, {
     key: '_getForm',
     value: function _getForm(shortcode) {
+      var snippet = encodeURIComponent(this.activeSnippet);
       var url = this.formUrl.replace('[name]', shortcode);
+      var data = { shortcode: snippet };
 
-      _jquery2.default.ajax(url).done(function (response) {
+      _jquery2.default.ajax({ url: url, data: data }).done(function (response) {
         if (this.activeShortcode == shortcode) {
           this.$form.html(response);
           this.$form.foundation();
@@ -44264,7 +44296,7 @@ var ShortcodeReveal = function (_Plugin) {
           });
 
           this.formValues = this.$form.find('form').serialize();
-          this._loadPreview();
+          this._loadPreview({ type: 'init' });
         }
       }.bind(this));
     }
@@ -44473,6 +44505,18 @@ var ShortcodeReveal = function (_Plugin) {
     key: 'getInfo',
     value: function getInfo(shortcode) {
       return this.shortcodes[shortcode];
+    }
+
+    /**
+     * Sets the active shortcode snippet
+     * @function
+     */
+
+  }, {
+    key: 'setSnippet',
+    value: function setSnippet(snippet) {
+      this.activeShortcode = snippet.split(' ')[0].replace('[', '');
+      this.activeSnippet = snippet;
     }
 
     /**
