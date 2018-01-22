@@ -1,0 +1,146 @@
+$datepicker-width: 8rem !default;
+$datepicker-background: $white !default;
+$datepicker-color: inherit !default;
+
+// Date Picker Mixins
+
+@mixin background-calendar($color: $black) {
+  $rgb: 'rgb%28#{red($color)}, #{green($color)}, #{blue($color)}%29';
+  $path: 'M14,14H7V16H14M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M17,10H7V12H17V10Z';
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path style='fill:#{$rgb}' d='#{$path}'></path></svg>");
+}
+
+@mixin date-picker-clndr {
+  background: $datepicker-background;
+  color: $datepicker-color;
+
+  .clndr-controls {
+    @include xy-grid;
+    text-align: center;
+    align-items: center;
+
+    .month {
+      @include xy-cell(auto, false);
+      padding: .5rem;
+      cursor: default;
+    }
+
+    .clndr-control-button {
+      @include xy-cell(shrink, false);
+
+      span {
+        font-size: 0;
+        white-space: nowrap;
+        width: 2rem;
+        overflow: hidden;
+        padding: .6rem;
+        display: block;
+        cursor: pointer;
+
+        &:before {
+          display: inline-block !important;
+          vertical-align: middle;
+        }
+
+        &.inactive {
+          opacity: .5;
+          cursor: default;
+        }
+      }
+
+      .clndr-previous-button:before {
+        @include css-triangle(8px, $medium-gray, left);
+      }
+
+      .clndr-next-button:before {
+        @include css-triangle(8px, $medium-gray, right);
+      }
+    }
+  }
+
+  .clndr-table {
+    max-width: 100%;
+    margin: 0;
+    border: 0;
+    background: none;
+
+    tbody {
+      border-width: 0;
+      background: none;
+    }
+
+    thead, tfoot {
+      border-width: 1px 0;
+      background: none;
+    }
+
+    tr {
+      background: none;
+    }
+
+    td {
+      padding: .5rem;
+      text-align: center;
+      background: none;
+    }
+
+    tbody td {
+
+      &:hover {
+        background: $dark-gray;
+        color: $white;
+      }
+    }
+
+    .day {
+      cursor: pointer;
+
+      &.today:not(:hover):not(.selected) {
+        background: $light-gray;
+      }
+
+      &.adjacent-month, &.inactive {
+        opacity: .5;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      &.selected {
+        background: $anchor-color;
+        color: $white;
+      }
+    }
+  }
+}
+
+@mixin date-picker-dropdown {
+  border-top-width: 0;
+  min-width: $datepicker-width;
+  padding: 0;
+
+  .clndr {
+    @include date-picker-clndr;
+  }
+}
+
+@mixin date-picker-input {
+  @include background-calendar($select-triangle-color);
+  padding-right: ($form-spacing / 2) + 1.8rem;
+  background-size: 24px;
+  background-position: $global-right (-1.8rem) top;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
+
+
+// Date Picker Component
+
+@mixin bedrock-date-picker {
+  .datepicker-dropdown {
+    @include date-picker-dropdown;
+  }
+
+  input.datepicker {
+    @include date-picker-input;
+  }
+}
