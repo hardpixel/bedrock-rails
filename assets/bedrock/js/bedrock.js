@@ -106762,6 +106762,10 @@ var AceEditor = function (_Plugin) {
       this.className = 'AceEditor'; // ie9 back compat
       this.$element = element;
       this.options = _jquery2.default.extend({}, AceEditor.defaults, this.$element.data(), options);
+      this.basePath = this.options.basePath;
+
+      delete this.options.aceEditor;
+      delete this.options.basePath;
 
       this._init();
     }
@@ -106776,6 +106780,12 @@ var AceEditor = function (_Plugin) {
     key: '_init',
     value: function _init() {
       if (ace !== 'undefined') {
+        if (this.basePath) {
+          ace.config.set('basePath', this.basePath);
+          ace.config.set('modePath', this.basePath);
+          ace.config.set('themePath', this.basePath);
+        }
+
         this.id = this.$element.attr('id');
         this.eid = this.id + '-ace-editor';
         this.$element.wrap('<div class="ace-editor"></div>');
