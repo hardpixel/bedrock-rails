@@ -1,0 +1,21 @@
+// No Content Mixins
+
+@mixin ace-editor {
+  border: 1px solid smart-scale($panel-background, $panel-color-scale);
+
+  .ace_editor {
+
+    textarea {
+      min-height: 0;
+    }
+  }
+}
+
+
+// No Content Component
+
+@mixin bedrock-ace-editor {
+  .ace-editor {
+    @include ace-editor;
+  }
+}

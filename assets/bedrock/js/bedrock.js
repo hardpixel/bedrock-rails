@@ -53174,7 +53174,7 @@ __webpack_require__(398);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
-window.Cookies = __webpack_require__(700);
+window.Cookies = __webpack_require__(701);
 
 (0, _jquery2.default)(document).foundation();
 
@@ -58664,6 +58664,8 @@ var _textarea = __webpack_require__(694);
 
 var _datePicker = __webpack_require__(696);
 
+var _aceEditor = __webpack_require__(700);
+
 Foundation.plugin(_offcanvasMenu.OffCanvasMenu, 'OffCanvasMenu');
 Foundation.plugin(_tinyMceEditor.TinyMceEditor, 'TinyMceEditor');
 Foundation.plugin(_tableCheckbox.TableCheckbox, 'TableCheckbox');
@@ -58680,6 +58682,7 @@ Foundation.plugin(_seoAnalysis.SeoAnalysis, 'SeoAnalysis');
 Foundation.plugin(_resizeWatcher.ResizeWatcher, 'ResizeWatcher');
 Foundation.plugin(_textarea.Textarea, 'Textarea');
 Foundation.plugin(_datePicker.DatePicker, 'DatePicker');
+Foundation.plugin(_aceEditor.AceEditor, 'AceEditor');
 
 /***/ }),
 /* 399 */
@@ -59043,18 +59046,18 @@ var TinyMceEditor = function (_Plugin) {
   }, {
     key: '_init',
     value: function _init() {
-      this.$element.wrap('<div class="tiny-mce-editor"></div>');
-
-      this.id = this.$element.attr('id');
-      this.$wrapper = this.$element.parents('.tiny-mce-editor:first');
-      this.computed = { target: this.$element.get(0), setup: this._setupCallback.bind(this) };
-      this.options = _jquery2.default.extend({}, this.options, this.computed);
-      this.options = this._snakeCase(this.options);
-
-      this.$media = (0, _jquery2.default)('#' + this.mediaHandler);
-      this.$shortcode = (0, _jquery2.default)('#' + this.shortcodeHandler);
-
       if (tinymce !== 'undefined') {
+        this.$element.wrap('<div class="tiny-mce-editor"></div>');
+
+        this.id = this.$element.attr('id');
+        this.$wrapper = this.$element.parents('.tiny-mce-editor:first');
+        this.computed = { target: this.$element.get(0), setup: this._setupCallback.bind(this) };
+        this.options = _jquery2.default.extend({}, this.options, this.computed);
+        this.options = this._snakeCase(this.options);
+
+        this.$media = (0, _jquery2.default)('#' + this.mediaHandler);
+        this.$shortcode = (0, _jquery2.default)('#' + this.shortcodeHandler);
+
         tinymce.init(this.options);
         this._events();
       } else {
@@ -106704,6 +106707,156 @@ webpackContext.id = 699;
 
 /***/ }),
 /* 700 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.AceEditor = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(1);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _foundation = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * AceEditor module.
+ * @module aceEditor
+ */
+
+var AceEditor = function (_Plugin) {
+  _inherits(AceEditor, _Plugin);
+
+  function AceEditor() {
+    _classCallCheck(this, AceEditor);
+
+    return _possibleConstructorReturn(this, (AceEditor.__proto__ || Object.getPrototypeOf(AceEditor)).apply(this, arguments));
+  }
+
+  _createClass(AceEditor, [{
+    key: '_setup',
+
+    /**
+     * Creates a new instance of an ace-editor.
+     * @class
+     * @name AceEditor
+     * @fires AceEditor#init
+     * @param {Object} element - jQuery object to initialize.
+     * @param {Object} options - Overrides to the default plugin settings.
+     */
+    value: function _setup(element, options) {
+      this.className = 'AceEditor'; // ie9 back compat
+      this.$element = element;
+      this.options = _jquery2.default.extend({}, AceEditor.defaults, this.$element.data(), options);
+
+      this._init();
+    }
+
+    /**
+     * Initializes the ace-editor wrapper.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_init',
+    value: function _init() {
+      if (ace !== 'undefined') {
+        this.id = this.$element.attr('id');
+        this.eid = this.id + '-ace-editor';
+        this.$element.wrap('<div class="ace-editor"></div>');
+        this.$element.hide();
+
+        this.$editor = (0, _jquery2.default)('<div id="' + this.eid + '"></div>');
+        this.$element.parent().append(this.$editor);
+
+        this.editor = ace.edit(this.eid);
+        this.editor.setOptions(this.options);
+        this.editor.setValue(this.$element[0].value, 1);
+        this.editor.setTheme('ace/theme/' + this.options.theme);
+        this.editor.session.setMode('ace/mode/' + this.options.mode);
+
+        this._events();
+      } else {
+        console.log('AceEditor is not available! Please download and install AceEditor.');
+      }
+    }
+
+    /**
+     * Adds event handlers to the ace-editor.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_events',
+    value: function _events() {
+      this.editor.on('change', this._change.bind(this));
+    }
+
+    /**
+     * Updates textarea value on editor changes.
+     * @param {Object} event - Event object passed from listener.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_change',
+    value: function _change(event) {
+      this.$element[0].value = this.editor.getValue();
+    }
+
+    /**
+     * Destroys the ace-editor plugin.
+     * @function
+     * @private
+     */
+
+  }, {
+    key: '_destroy',
+    value: function _destroy() {
+      if (this.editor) {
+        this.editor.destroy();
+        this.editor = null;
+
+        this.$editor.remove();
+        this.$element.show();
+        this.$element.unwrap();
+      } else {
+        console.log('No editor instance found! Maybe you are missing AceEditor.');
+      }
+    }
+  }]);
+
+  return AceEditor;
+}(_foundation.Plugin);
+
+AceEditor.defaults = {
+  theme: 'monokai',
+  mode: 'html',
+  maxLines: Infinity,
+  minLines: 10
+};
+
+exports.AceEditor = AceEditor;
+
+/***/ }),
+/* 701 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
