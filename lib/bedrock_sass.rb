@@ -40,6 +40,10 @@ module BedrockSass
       @tinymce_path ||= File.join(vendor_path, 'tinymce')
     end
 
+    def ace_path
+      @ace_path ||= File.join(vendor_path, 'ace')
+    end
+
     def yoastseo_path
       @yoastseo_path ||= File.join(vendor_path, 'yoastseo', 'css')
     end
@@ -57,6 +61,7 @@ module BedrockSass
 
       def register_sprockets
         Sprockets.append_path(tinymce_path)
+        Sprockets.append_path(ace_path)
         Sprockets.append_path(motion_ui_path)
         Sprockets.append_path(foundation_path)
         Sprockets.append_path(stylesheets_path)
