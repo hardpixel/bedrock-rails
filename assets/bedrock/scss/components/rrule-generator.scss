@@ -1,0 +1,102 @@
+// Rrule Generator Mixins
+
+@mixin rrule-generator {
+  [data-rrule-controls] {
+    display: none;
+  }
+}
+
+@mixin rrule-output {
+  td {
+    border: $table-border;
+    padding: .5rem;
+    line-height: 1.012;
+
+    &:first-child {
+      text-align: right;
+      color: $cite-color;
+    }
+  }
+}
+
+@mixin rrule-picker {
+  text-align: center;
+
+  table {
+    background: white;
+  }
+
+  tr {
+    background: none !important;
+
+    &:first-child {
+
+      td {
+        border-top: $input-border;
+      }
+    }
+
+    &:last-child {
+
+      td {
+        border-bottom: $input-border;
+      }
+    }
+  }
+
+  td {
+    border: $table-border;
+    padding: 0;
+
+    &:first-child {
+      border-left: $input-border;
+    }
+
+    &:last-child {
+      border-right: $input-border;
+    }
+
+    &.last-day {
+      background: rgba(black, .03);
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked + span {
+      background: $anchor-color;
+      color: white;
+    }
+  }
+
+  label {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  span {
+    display: block;
+    padding: .5rem;
+    line-height: 1.272;
+    cursor: pointer;
+  }
+}
+
+
+// Rrule Generator Component
+
+@mixin bedrock-rrule-generator {
+  [data-rrule-generator] {
+    @include rrule-generator;
+  }
+
+  [data-rrule-output] {
+    @include rrule-output;
+  }
+
+  .rrule-picker {
+    @include rrule-picker;
+  }
+}
