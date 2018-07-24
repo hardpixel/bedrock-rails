@@ -11,7 +11,10 @@ foundation_vendor_path="${root_path}/assets/_vendor/foundation/_vendor"
 motion_ui_path="${root_path}/assets/_vendor/motion-ui"
 
 cd "../../Node/bedrock/"
-foundation build
+
+if [[ $1 == 'build' ]]; then
+  foundation build
+fi
 
 rm -r "$bedrock_js_path"
 cp -a "dist/assets/js/." "$bedrock_js_path"
