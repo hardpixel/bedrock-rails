@@ -1,11 +1,11 @@
-require 'bedrock_sass/engine'
 require 'bedrock_sass/version'
 
 module BedrockSass
   class << self
     def load!
-      register_sprockets
-      configure_sass
+      register_rails_engine if rails?
+      register_sprockets if sprockets?
+      register_deprecated_sass if deprecated_sass?
     end
 
     def gem_path
@@ -48,15 +48,22 @@ module BedrockSass
       @yoastseo_path ||= File.join(vendor_path, 'yoastseo', 'css')
     end
 
+    def sprockets?
+      defined?(::Sprockets)
+    end
+
+    def rails?
+      defined?(::Rails)
+    end
+
+    def deprecated_sass?
+      defined?(::Sass) && ::Sass.respond_to?(:load_paths)
+    end
+
     private
 
-    def configure_sass
-      require 'sass'
-
-      ::Sass.load_paths << motion_ui_path
-      ::Sass.load_paths << yoastseo_path
-      ::Sass.load_paths << foundation_path
-      ::Sass.load_paths << stylesheets_path
+    def register_rails_engine
+      require 'bedrock_sass/engine'
     end
 
     def register_sprockets
@@ -66,6 +73,13 @@ module BedrockSass
       Sprockets.append_path(foundation_path)
       Sprockets.append_path(stylesheets_path)
       Sprockets.append_path(javascripts_path)
+    end
+
+    def register_deprecated_sass
+      ::Sass.load_paths << motion_ui_path
+      ::Sass.load_paths << yoastseo_path
+      ::Sass.load_paths << foundation_path
+      ::Sass.load_paths << stylesheets_path
     end
   end
 end
