@@ -48,6 +48,27 @@ module BedrockSass
       @yoastseo_path ||= File.join(vendor_path, 'yoastseo', 'css')
     end
 
+    def assets_paths
+      @assets_paths ||= [
+        tinymce_path,
+        ace_path,
+        motion_ui_path,
+        foundation_path,
+        yoastseo_path,
+        stylesheets_path,
+        javascripts_path
+      ]
+    end
+
+    def styles_paths
+      @styles_paths ||= [
+        motion_ui_path,
+        yoastseo_path,
+        foundation_path,
+        stylesheets_path
+      ]
+    end
+
     def sprockets?
       defined?(::Sprockets)
     end
@@ -67,19 +88,15 @@ module BedrockSass
     end
 
     def register_sprockets
-      Sprockets.append_path(tinymce_path)
-      Sprockets.append_path(ace_path)
-      Sprockets.append_path(motion_ui_path)
-      Sprockets.append_path(foundation_path)
-      Sprockets.append_path(stylesheets_path)
-      Sprockets.append_path(javascripts_path)
+      assets_paths.each do |asset_path|
+        Sprockets.append_path(asset_path)
+      end
     end
 
     def register_deprecated_sass
-      ::Sass.load_paths << motion_ui_path
-      ::Sass.load_paths << yoastseo_path
-      ::Sass.load_paths << foundation_path
-      ::Sass.load_paths << stylesheets_path
+      styles_paths.each do |style_path|
+        ::Sass.load_paths << style_path
+      end
     end
   end
 end
