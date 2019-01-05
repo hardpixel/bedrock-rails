@@ -50,23 +50,23 @@ module BedrockSass
 
     private
 
-      def configure_sass
-        require 'sass'
+    def configure_sass
+      require 'sass'
 
-        ::Sass.load_paths << motion_ui_path
-        ::Sass.load_paths << yoastseo_path
-        ::Sass.load_paths << foundation_path
-        ::Sass.load_paths << stylesheets_path
-      end
+      ::Sass.load_paths << motion_ui_path
+      ::Sass.load_paths << yoastseo_path
+      ::Sass.load_paths << foundation_path
+      ::Sass.load_paths << stylesheets_path
+    end
 
-      def register_sprockets
-        Sprockets.append_path(tinymce_path)
-        Sprockets.append_path(ace_path)
-        Sprockets.append_path(motion_ui_path)
-        Sprockets.append_path(foundation_path)
-        Sprockets.append_path(stylesheets_path)
-        Sprockets.append_path(javascripts_path)
-      end
+    def register_sprockets
+      Sprockets.append_path(tinymce_path)
+      Sprockets.append_path(ace_path)
+      Sprockets.append_path(motion_ui_path)
+      Sprockets.append_path(foundation_path)
+      Sprockets.append_path(stylesheets_path)
+      Sprockets.append_path(javascripts_path)
+    end
   end
 end
 
