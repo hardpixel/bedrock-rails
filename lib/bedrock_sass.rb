@@ -3,9 +3,13 @@ require 'bedrock_sass/version'
 module BedrockSass
   class << self
     def load!
-      register_rails_engine if rails?
-      register_sprockets if sprockets?
-      register_deprecated_sass if deprecated_sass?
+      if rails?
+        register_rails_engine
+      elsif sprockets?
+        register_sprockets
+      elsif deprecated_sass?
+        register_deprecated_sass
+      end
     end
 
     def gem_path
